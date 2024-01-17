@@ -1,0 +1,1005 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'models/amazon_mhpy/mpc_det';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/mfr.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/mfr.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../MPC.html">Carbon prices and forest preservation over space and time in the Brazilian Amazon</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../HMC.html">Carbon prices and forest preservation over space and time in the Brazilian Amazon</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodels/amazon_mhpy/mpc_det.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/models/amazon_mhpy/mpc_det.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">casadi</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="c1"># Required packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalization</span> <span class="o">=</span> <span class="mf">1e9</span>
+<span class="n">δ</span>  <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">α</span>  <span class="o">=</span> <span class="mf">0.045007414</span>
+<span class="n">κ</span>  <span class="o">=</span> <span class="mf">2.094215255</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="mf">20.76</span>
+<span class="n">ζ</span>  <span class="o">=</span> <span class="mf">1.66e-4</span> <span class="o">*</span> <span class="n">normalization</span> 
+<span class="n">p1</span> <span class="o">=</span>  <span class="mf">38.29</span>
+<span class="n">p2</span> <span class="o">=</span>  <span class="mf">44.75</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Probability Matrix</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">logm</span><span class="p">,</span> <span class="n">expm</span>
+<span class="n">dτ</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mf">0.984</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">],[</span><span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.965</span><span class="p">]])</span> 
+<span class="n">M</span> <span class="o">=</span> <span class="n">logm</span><span class="p">(</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">dτ</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Site Data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/calibration_25SitesModel.csv&quot;</span><span class="p">)</span>
+<span class="n">z0_list</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z_2017_25Sites&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">γ_list</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">516.02993345</span><span class="p">,</span> <span class="mf">488.49808684</span><span class="p">,</span> <span class="mf">412.33930949</span><span class="p">,</span> <span class="mf">610.50941424</span><span class="p">,</span>
+       <span class="mf">658.45330829</span><span class="p">,</span> <span class="mf">592.16877206</span><span class="p">,</span> <span class="mf">537.94448328</span><span class="p">,</span> <span class="mf">494.59293383</span><span class="p">,</span>
+       <span class="mf">477.150307</span>  <span class="p">,</span> <span class="mf">339.73463789</span><span class="p">,</span> <span class="mf">398.53061589</span><span class="p">,</span> <span class="mf">214.64004431</span><span class="p">,</span>
+       <span class="mf">629.09468404</span><span class="p">,</span> <span class="mf">602.78528289</span><span class="p">,</span> <span class="mf">530.96057575</span><span class="p">,</span> <span class="mf">429.06875196</span><span class="p">,</span>
+        <span class="mf">87.7872593</span> <span class="p">,</span> <span class="mf">293.83458315</span><span class="p">,</span> <span class="mf">776.20168882</span><span class="p">,</span> <span class="mf">325.71253854</span><span class="p">,</span>
+       <span class="mf">327.10909521</span><span class="p">,</span> <span class="mf">368.99247031</span><span class="p">,</span> <span class="mf">361.7819838</span> <span class="p">,</span> <span class="mf">301.54938771</span><span class="p">,</span>
+       <span class="mf">257.16349234</span><span class="p">])</span>
+<span class="n">x0_list</span> <span class="o">=</span> <span class="n">γ_list</span> <span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;forestArea_2017_ha_25Sites&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">θ_list</span>  <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;theta_25Sites&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="n">Z0_list</span> <span class="o">=</span> <span class="n">z0_list</span><span class="o">/</span> <span class="n">normalization</span>
+<span class="n">X0_list</span> <span class="o">=</span> <span class="n">x0_list</span><span class="o">/</span> <span class="n">normalization</span>
+
+<span class="n">z̄</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;zbar_2017_25Sites&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="p">)</span><span class="o">/</span><span class="n">normalization</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">z̄</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Construct Matrix A</span>
+<span class="n">Az</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Ax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">Ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">α</span> <span class="o">*</span><span class="n">γ_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span>
+<span class="n">Ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">γ_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">z̄</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">])</span>
+<span class="n">Ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="o">=</span> <span class="o">-</span><span class="n">α</span>
+
+<span class="n">A</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Az</span><span class="p">,</span> <span class="n">Ax</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct Matrix B</span>
+<span class="n">Bz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">Bx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">)))</span>
+
+<span class="n">B</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Bz</span><span class="p">,</span> <span class="n">Bx</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct Matrix B</span>
+<span class="n">Dz</span> <span class="o">=</span>   <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">Dx</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span><span class="o">*</span><span class="n">γ_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">])</span>
+
+<span class="n">D</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Dz</span><span class="p">,</span> <span class="n">Dx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span>   <span class="o">=</span> <span class="mi">200</span>
+<span class="n">N</span>   <span class="o">=</span> <span class="n">T</span>
+
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="n">N</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">MX</span><span class="o">.</span><span class="n">sym</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span> 
+<span class="n">up</span> <span class="o">=</span> <span class="n">MX</span><span class="o">.</span><span class="n">sym</span><span class="p">(</span><span class="s1">&#39;up&#39;</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span> 
+<span class="n">um</span> <span class="o">=</span> <span class="n">MX</span><span class="o">.</span><span class="n">sym</span><span class="p">(</span><span class="s1">&#39;um&#39;</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span> 
+
+<span class="n">rhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">sparsify</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="nd">@Y</span> <span class="o">+</span> <span class="n">sparsify</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">@</span><span class="p">(</span><span class="n">up</span><span class="o">-</span><span class="n">um</span><span class="p">)</span> <span class="o">+</span> <span class="n">sparsify</span><span class="p">(</span><span class="n">D</span><span class="p">)</span><span class="o">@</span><span class="p">(</span><span class="n">up</span><span class="p">))</span><span class="o">*</span><span class="n">dt</span> <span class="o">+</span> <span class="n">Y</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">Y</span><span class="p">,</span> <span class="n">um</span><span class="p">,</span> <span class="n">up</span><span class="p">],[</span><span class="n">rhs</span><span class="p">])</span>
+
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">ds_vect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">ds_vect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span>
+    
+<span class="n">P</span><span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opti</span> <span class="o">=</span> <span class="n">casadi</span><span class="o">.</span><span class="n">Opti</span><span class="p">()</span>
+
+<span class="c1"># Decision variables for states</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span> <span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Aliases for states</span>
+
+<span class="n">Up</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Um</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Ua</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c1"># 1.2: Parameter for initial state</span>
+<span class="n">ic</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">parameter</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="o">-</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Gap-closing shooting constraints</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="n">k</span><span class="p">],</span><span class="n">Um</span><span class="p">[:,</span><span class="n">k</span><span class="p">],</span> <span class="n">Up</span><span class="p">[:,</span><span class="n">k</span><span class="p">]))</span>
+    
+<span class="c1"># Initial and terminal constraints</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ic</span><span class="p">)</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">,:],</span><span class="n">z̄</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]))</span>
+<span class="c1"># Objective: regularization of controls</span>
+<span class="c1"># 1.1: added regularization</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Um</span><span class="p">[</span><span class="n">k</span><span class="p">,:],</span><span class="n">inf</span><span class="p">))</span>
+    <span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">bounded</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Up</span><span class="p">[</span><span class="n">k</span><span class="p">,:],</span><span class="n">inf</span><span class="p">))</span>
+
+<span class="n">opti</span><span class="o">.</span><span class="n">subject_to</span><span class="p">(</span><span class="n">Ua</span> <span class="o">==</span> <span class="n">sum1</span><span class="p">(</span><span class="n">Up</span><span class="o">+</span><span class="n">Um</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+
+<span class="n">opti</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">Ua</span><span class="o">*</span> <span class="n">ζ</span><span class="o">/</span><span class="mi">2</span> <span class="p">))</span>
+              <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">pf</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="p">))</span>
+              <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">sum1</span><span class="p">((</span><span class="n">p2</span><span class="o">*</span><span class="n">θ_list</span> <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">κ</span> <span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">0</span><span class="p">,:]</span> <span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve optimization problem </span>
+<span class="n">options</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">options</span><span class="p">[</span><span class="s2">&quot;print_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">options</span><span class="p">[</span><span class="s2">&quot;expand&quot;</span><span class="p">]</span>     <span class="o">=</span> <span class="kc">True</span>
+<span class="n">options</span><span class="p">[</span><span class="s2">&quot;ipopt&quot;</span><span class="p">]</span>      <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;print_level&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                    <span class="s1">&#39;fast_step_computation&#39;</span><span class="p">:</span>            <span class="s1">&#39;yes&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;mu_allow_fast_monotone_decrease&#39;</span><span class="p">:</span>  <span class="s1">&#39;yes&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;warm_start_init_point&#39;</span><span class="p">:</span>            <span class="s1">&#39;yes&#39;</span><span class="p">,</span>
+                        <span class="p">}</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">solver</span><span class="p">(</span><span class="s1">&#39;ipopt&#39;</span><span class="p">,</span><span class="n">options</span><span class="p">)</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">opti</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span><span class="n">vertcat</span><span class="p">(</span><span class="n">Z0_list</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X0_list</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">disp</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Initial, time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:    41227
+Number of nonzeros in inequality constraint Jacobian.:    15025
+Number of nonzeros in Lagrangian Hessian.............:   255000
+
+Total number of variables............................:    15627
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:        0
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:     5627
+Total number of inequality constraints...............:    15025
+        inequality constraints with only lower bounds:    10000
+   inequality constraints with lower and upper bounds:     5025
+        inequality constraints with only upper bounds:        0
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  0.0000000e+00 1.55e+02 1.00e+02  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  2.8074662e+03 1.55e+02 1.00e+02  -1.0 2.53e+07    -  2.20e-04 8.28e-06f  1
+   2  3.2183296e+05 1.55e+02 1.20e+04  -1.0 2.26e+07    -  1.00e+00 4.49e-04f  1
+   3 -8.2644786e+06 1.48e+02 1.81e+04  -1.0 2.46e+05    -  1.51e-02 4.32e-02f  1
+   4 -5.1762209e+06 8.68e+01 3.49e+04  -1.0 2.87e+04    -  6.64e-02 4.15e-01h  1
+   5 -4.5636156e+06 5.14e+01 2.04e+04  -1.0 2.17e+04    -  5.99e-01 4.08e-01h  1
+   6  4.1318576e+05 2.18e-01 4.02e+00  -1.0 1.30e+03    -  1.00e+00 1.00e+00h  1
+   7  4.2496196e+05 2.74e-02 1.00e-06  -1.0 3.61e+02    -  1.00e+00 1.00e+00h  1
+   8  1.8200596e+04 3.16e-01 1.36e+04  -2.5 2.27e+03    -  9.18e-01 1.00e+00f  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   9  1.9152090e+04 6.54e-02 2.83e-08  -2.5 1.04e+03    -  1.00e+00 1.00e+00h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.4264625e+04 1.29e-02 2.83e-08  -2.5 4.63e+02    -  1.00e+00 1.00e+00h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  11  1.9670956e+03 1.16e-02 5.10e+02  -3.8 4.40e+02    -  8.88e-01 1.00e+00f  1
+  12  1.3415590e+03 2.15e-03 1.50e-09  -3.8 2.04e+02    -  1.00e+00 1.00e+00h  1
+  13  9.0101028e+02 3.59e-04 1.50e-09  -3.8 9.47e+01    -  1.00e+00 1.00e+00h  1
+  14  2.9130097e+02 3.33e-04 9.08e+01  -5.7 1.13e+02    -  2.68e-01 6.27e-01f  1
+  15  9.2108388e+01 2.09e-04 3.98e+01  -5.7 7.16e+01    -  5.31e-01 5.02e-01f  1
+  16 -4.9417997e+01 1.29e-04 1.96e+01  -5.7 6.14e+01    -  5.17e-01 5.24e-01f  1
+  17 -1.5100525e+02 7.19e-05 1.84e+01  -5.7 4.69e+01    -  3.55e-01 6.15e-01f  1
+  18 -1.9234551e+02 3.99e-05 1.40e+01  -5.7 2.75e+01    -  3.34e-01 5.33e-01f  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  19 -2.2246324e+02 1.71e-05 9.44e+00  -5.7 1.74e+01    -  4.06e-01 6.90e-01f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20 -2.3425263e+02 7.33e-06 4.62e+00  -5.7 8.37e+00    -  5.25e-01 6.37e-01f  1
+  21 -2.3947154e+02 3.30e-06 1.20e+00  -5.7 4.25e+00    -  7.27e-01 5.87e-01f  1
+  22 -2.4169763e+02 1.71e-06 1.43e-01  -5.7 2.22e+00    -  1.00e+00 5.00e-01f  2
+  23 -2.4405275e+02 8.12e-08 1.84e-11  -5.7 1.22e+00    -  1.00e+00 1.00e+00h  1
+  24 -2.5410746e+02 5.35e-07 3.80e-01  -8.6 6.75e+00    -  3.76e-01 4.97e-01f  1
+  25 -2.5842728e+02 4.34e-07 2.69e-01  -8.6 3.76e+00    -  3.89e-01 4.12e-01f  1
+  26 -2.6236531e+02 2.87e-07 6.97e-01  -8.6 2.35e+00    -  3.28e-01 6.23e-01f  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  27 -2.6364306e+02 1.58e-07 1.15e+00  -8.6 9.64e-01    -  1.47e-01 5.14e-01f  1
+  28 -2.6422333e+02 8.99e-08 6.61e-01  -8.6 4.95e-01    -  4.38e-01 4.64e-01f  1
+  29 -2.6464388e+02 4.00e-08 1.10e+00  -8.6 2.86e-01    -  3.09e-01 6.02e-01f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  30 -2.6486272e+02 1.19e-08 1.35e+00  -8.6 1.26e-01    -  3.52e-01 7.54e-01f  1
+  31 -2.6493858e+02 2.19e-09 6.30e-01  -8.6 4.87e-02    -  6.00e-01 9.93e-01f  1
+  32 -2.6494161e+02 6.07e-10 2.56e-02  -8.6 3.13e-02    -  7.36e-01 1.00e+00f  1
+  33 -2.6494205e+02 1.91e-10 3.79e-02  -8.6 1.85e-02    -  7.86e-01 1.00e+00h  1
+  34 -2.6494208e+02 3.01e-11 2.58e-14  -8.6 3.94e-03    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 34
+
+                                   (scaled)                 (unscaled)
+Objective...............:  -3.1920732610576574e-01   -2.6494208066778555e+02
+Dual infeasibility......:   2.5757174171303632e-14    2.1378454562182011e-11
+Constraint violation....:   3.0073214949143495e-11    3.0073214949143495e-11
+Variable bound violation:   0.0000000000000000e+00    0.0000000000000000e+00
+Complementarity.........:   3.1195318632574822e-09    2.5892114465037101e-06
+Overall NLP error.......:   3.1195318632574822e-09    2.5892114465037101e-06
+
+
+Number of objective function evaluations             = 36
+Number of objective gradient evaluations             = 35
+Number of equality constraint evaluations            = 36
+Number of inequality constraint evaluations          = 36
+Number of equality constraint Jacobian evaluations   = 35
+Number of inequality constraint Jacobian evaluations = 35
+Number of Lagrangian Hessian evaluations             = 34
+Total seconds in IPOPT                               = 22.749
+
+EXIT: Optimal Solution Found.
+Initial, time: 24.585572242736816
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;gamma_u_0.05&#39;</span><span class="p">,</span><span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;theta_u_0.05.npy&#39;</span><span class="p">)</span>
+<span class="n">x_gamma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;gamma_u_0.05.npy&#39;</span><span class="p">)</span>
+
+<span class="n">x_no_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;no_u.npy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x_theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;theta_u_0.05.npy&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x_gamma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;gamma_u_0.05.npy&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">x_no_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;no_u.npy&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/numpy/lib/npyio.py:427,</span> in <span class="ni">load</span><span class="nt">(file, mmap_mode, allow_pickle, fix_imports, encoding, max_header_size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">427</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os_fspath</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span> <span class="c1"># Code to distinguish from NumPy binary files and pickles.</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;theta_u_0.05.npy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_theta</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_gamma</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_no_u</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;uncertainty theta&#39;</span><span class="p">,</span><span class="s1">&#39;uncertainty gamma&#39;</span><span class="p">,</span><span class="s1">&#39;certainty&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bd5afd814ba2ebf7d377329eddea45bab2e2e1931853d4457f2841b12400f3eb.png" src="../../_images/bd5afd814ba2ebf7d377329eddea45bab2e2e1931853d4457f2841b12400f3eb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_gamma</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e55dee53ce2d2acc31c4d98f496e1702ec6b8acc6eed6c45bf6bb28296961254.png" src="../../_images/e55dee53ce2d2acc31c4d98f496e1702ec6b8acc6eed6c45bf6bb28296961254.png" />
+<img alt="../../_images/20d20b2d2eae7692a3c166367c4500b613ce148fdaeab8a62efb188dd9a5d6f0.png" src="../../_images/20d20b2d2eae7692a3c166367c4500b613ce148fdaeab8a62efb188dd9a5d6f0.png" />
+<img alt="../../_images/f7816224865e754191d61c5e004ddd94e8dcd455d973e3e5e161823426b589da.png" src="../../_images/f7816224865e754191d61c5e004ddd94e8dcd455d973e3e5e161823426b589da.png" />
+<img alt="../../_images/a87dfcb7c02de487fda8cd3c1fbafa49a760b731ef7dfb060e69fd4cbaf3d55e.png" src="../../_images/a87dfcb7c02de487fda8cd3c1fbafa49a760b731ef7dfb060e69fd4cbaf3d55e.png" />
+<img alt="../../_images/0ec84b9afaec19b6be83030d505423380438610ba5b43e5cb84fdd1976cd302a.png" src="../../_images/0ec84b9afaec19b6be83030d505423380438610ba5b43e5cb84fdd1976cd302a.png" />
+<img alt="../../_images/1cf7875d94fa26ef65d0a97c5184b2d721c2e2e1019d34482cb020cd59e121b2.png" src="../../_images/1cf7875d94fa26ef65d0a97c5184b2d721c2e2e1019d34482cb020cd59e121b2.png" />
+<img alt="../../_images/97d1246d6da3217e648c4f77eb7b26d6f21e771044d721798bc1140cfb92c1ca.png" src="../../_images/97d1246d6da3217e648c4f77eb7b26d6f21e771044d721798bc1140cfb92c1ca.png" />
+<img alt="../../_images/e41f055ca868aef6b87093b216241802505bdc8b4074531b82bdc94bba922a46.png" src="../../_images/e41f055ca868aef6b87093b216241802505bdc8b4074531b82bdc94bba922a46.png" />
+<img alt="../../_images/823f5605071ebc0caf80ff34752157ece3244fbba7ec6f3a7d622f7873d9a3eb.png" src="../../_images/823f5605071ebc0caf80ff34752157ece3244fbba7ec6f3a7d622f7873d9a3eb.png" />
+<img alt="../../_images/76a60cde617ea5699babdb2303c42f8a932960e16ed86815ccde5d455c06118c.png" src="../../_images/76a60cde617ea5699babdb2303c42f8a932960e16ed86815ccde5d455c06118c.png" />
+<img alt="../../_images/a5004a0b5b22dfb2519469422309ecd9fa008305614909ed240cb9955d6bcf31.png" src="../../_images/a5004a0b5b22dfb2519469422309ecd9fa008305614909ed240cb9955d6bcf31.png" />
+<img alt="../../_images/9b0f713e6e74741a0f57dd8037f445e7064e35b1ae7e153ca8c52bd877d6551a.png" src="../../_images/9b0f713e6e74741a0f57dd8037f445e7064e35b1ae7e153ca8c52bd877d6551a.png" />
+<img alt="../../_images/5a3d9fbeb158f18203cd241e04c62a2f03eab6c1ec9c46bf940bc9093310693e.png" src="../../_images/5a3d9fbeb158f18203cd241e04c62a2f03eab6c1ec9c46bf940bc9093310693e.png" />
+<img alt="../../_images/e3b62a956e6566dfef4d219f1638ec97a07c25207918242edd12c9ac275ce950.png" src="../../_images/e3b62a956e6566dfef4d219f1638ec97a07c25207918242edd12c9ac275ce950.png" />
+<img alt="../../_images/eff354761bfe65ed17119e905ed06b686e9d50ccc422b9377c55aab7bddcdeb0.png" src="../../_images/eff354761bfe65ed17119e905ed06b686e9d50ccc422b9377c55aab7bddcdeb0.png" />
+<img alt="../../_images/ad20692d4b134ff10ff14bc853880ca1798ba5c63c34d3da3fe7c1690342cbbc.png" src="../../_images/ad20692d4b134ff10ff14bc853880ca1798ba5c63c34d3da3fe7c1690342cbbc.png" />
+<img alt="../../_images/214a2bd1cee038b8b47dfe177af3ea10be51bb2d3dee2edaec2b94ea0e222966.png" src="../../_images/214a2bd1cee038b8b47dfe177af3ea10be51bb2d3dee2edaec2b94ea0e222966.png" />
+<img alt="../../_images/dec93bb571503d9181b5b539b1c53878bdbac68114cf5b81f3bfb67ce403cc47.png" src="../../_images/dec93bb571503d9181b5b539b1c53878bdbac68114cf5b81f3bfb67ce403cc47.png" />
+<img alt="../../_images/70a7acc53f1bdca4558651d461b18fde386b7d4c04b4a6d72526778bc857292c.png" src="../../_images/70a7acc53f1bdca4558651d461b18fde386b7d4c04b4a6d72526778bc857292c.png" />
+<img alt="../../_images/7da762762bb954cb940f6048f8b0db505fe4ed0f597569b2bec4612def142194.png" src="../../_images/7da762762bb954cb940f6048f8b0db505fe4ed0f597569b2bec4612def142194.png" />
+<img alt="../../_images/fee69874928732195eb22d8a5532ddc57380f86e11940d7cdc7ebe7483c66ea4.png" src="../../_images/fee69874928732195eb22d8a5532ddc57380f86e11940d7cdc7ebe7483c66ea4.png" />
+<img alt="../../_images/af1e2a584c112ced7d7cf865b1c31bb43ddb698383341641b5e3f67b1356cdfc.png" src="../../_images/af1e2a584c112ced7d7cf865b1c31bb43ddb698383341641b5e3f67b1356cdfc.png" />
+<img alt="../../_images/9a3f4ee67440c4a1b432a53397f87c946091cf925f87e041661a63a5914759e1.png" src="../../_images/9a3f4ee67440c4a1b432a53397f87c946091cf925f87e041661a63a5914759e1.png" />
+<img alt="../../_images/d296f6caf592d82f35574062650ee060272de395babb3d52539c9bc214134839.png" src="../../_images/d296f6caf592d82f35574062650ee060272de395babb3d52539c9bc214134839.png" />
+<img alt="../../_images/69e71eaf923e3a670e804e7e32915253c19c53f670a65220dc81e5daedac41e7.png" src="../../_images/69e71eaf923e3a670e804e7e32915253c19c53f670a65220dc81e5daedac41e7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_gamma</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b5f5362e4febb46e202ebb9186f0bc94f10826ade9aa48a3f504dc57ba1dec31.png" src="../../_images/b5f5362e4febb46e202ebb9186f0bc94f10826ade9aa48a3f504dc57ba1dec31.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ic</span><span class="p">,</span><span class="n">opti</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">opti</span><span class="o">.</span><span class="n">lam_g</span><span class="p">]</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Up</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">Um</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">opti</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">opti</span><span class="o">.</span><span class="n">lam_g</span><span class="p">]</span>
+<span class="n">current_x</span> <span class="o">=</span> <span class="n">vertcat</span><span class="p">(</span><span class="n">Z0_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X0_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]),</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">mpc_step</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">to_function</span><span class="p">(</span><span class="s1">&#39;mpc_step&#39;</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">)</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">x_history</span>  <span class="o">=</span> <span class="n">DM</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">nn</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">u_history</span>  <span class="o">=</span> <span class="n">DM</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">um_history</span> <span class="o">=</span> <span class="n">DM</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">up_history</span> <span class="o">=</span> <span class="n">DM</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nn</span><span class="p">)</span>
+
+<span class="n">up</span>  <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Up</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span> 
+<span class="n">um</span>  <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Um</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">x</span>   <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">opti</span><span class="o">.</span><span class="n">lam_g</span><span class="p">)</span>
+
+
+<span class="n">x_history</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_x</span>
+<span class="n">pre_price</span> <span class="o">=</span> <span class="n">p2</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nn</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">u_history</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">up</span> <span class="o">-</span> <span class="n">um</span>
+    <span class="n">um_history</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">um</span>
+    <span class="n">up_history</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">up</span>
+    <span class="n">current_x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">current_x</span><span class="p">,</span><span class="n">um</span><span class="p">,</span> <span class="n">up</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">up</span><span class="p">,</span><span class="n">um</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lam</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpc_step</span><span class="p">(</span><span class="n">current_x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span>
+    <span class="n">x_history</span><span class="p">[:,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_x</span>
+    <span class="n">disp</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Year: </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">, time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t0</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">disp</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Finale, time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year: 1, time: 1.393894910812378
+Year: 2, time: 1.4591102600097656
+Year: 3, time: 1.5014500617980957
+Year: 4, time: 1.5379199981689453
+Year: 5, time: 1.4863290786743164
+Year: 6, time: 1.3831050395965576
+Year: 7, time: 1.468027114868164
+Year: 8, time: 1.8277990818023682
+Year: 9, time: 1.7628898620605469
+Year: 10, time: 1.470473051071167
+Year: 11, time: 1.4287099838256836
+Year: 12, time: 1.7237498760223389
+Year: 13, time: 1.6419668197631836
+Year: 14, time: 1.65364408493042
+Year: 15, time: 1.709245204925537
+Year: 16, time: 1.808694839477539
+Year: 17, time: 1.6676149368286133
+Year: 18, time: 1.5204567909240723
+Year: 19, time: 1.256669282913208
+Year: 20, time: 1.3253579139709473
+Year: 21, time: 1.1464300155639648
+Year: 22, time: 1.3157610893249512
+Year: 23, time: 1.2744381427764893
+Year: 24, time: 1.2816991806030273
+Year: 25, time: 1.0889737606048584
+Year: 26, time: 1.0590317249298096
+Year: 27, time: 1.213331937789917
+Year: 28, time: 1.2386269569396973
+Year: 29, time: 1.1364870071411133
+Year: 30, time: 1.1239898204803467
+Year: 31, time: 1.3000309467315674
+Year: 32, time: 1.1248829364776611
+Year: 33, time: 1.1807098388671875
+Year: 34, time: 1.2268779277801514
+Year: 35, time: 1.0768699645996094
+Year: 36, time: 1.238680124282837
+Year: 37, time: 1.3173508644104004
+Year: 38, time: 1.2450907230377197
+Year: 39, time: 1.328693151473999
+Year: 40, time: 1.3413550853729248
+Year: 41, time: 1.2936561107635498
+Year: 42, time: 1.698784589767456
+Year: 43, time: 1.6075730323791504
+Year: 44, time: 1.6070268154144287
+Year: 45, time: 1.2472388744354248
+Year: 46, time: 1.3199667930603027
+Year: 47, time: 1.142488718032837
+Year: 48, time: 1.6674189567565918
+Year: 49, time: 1.1694228649139404
+Year: 50, time: 1.3237340450286865
+Finale, time: 69.40014481544495
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_history</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9287e122d234f22371312226c19e79f3886950535ae7cec88fbc0bcc3b796af1.png" src="../../_images/9287e122d234f22371312226c19e79f3886950535ae7cec88fbc0bcc3b796af1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_history</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Z for each of the 10 sites&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0dd4462421320f59b61738ca7709be8ecb6d010f9d65eb74c5a49c1d88997004.png" src="../../_images/0dd4462421320f59b61738ca7709be8ecb6d010f9d65eb74c5a49c1d88997004.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x_history</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/22f6108623e9d00c46b9f76be26f5a8fab26d6b0ce106497ca0126b1944b4908.png" src="../../_images/22f6108623e9d00c46b9f76be26f5a8fab26d6b0ce106497ca0126b1944b4908.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./models/amazon_mhpy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
