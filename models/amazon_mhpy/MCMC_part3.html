@@ -178,11 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../MPC.html">Carbon prices and forest preservation over space and time in the Brazilian Amazon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MPC.html">Uncertainty in agricultural price</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../HMC.html">Carbon prices and forest preservation over space and time in the Brazilian Amazon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HMC.html">Uncertainty in parameters</a></li>
 
 
 
@@ -696,30 +696,25 @@ prepare simulations
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation 0
-Execution time: 0.38118910789489746 seconds
+Execution time: 0.38190746307373047 seconds
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:11062,</span> in <span class="ni">DM.toarray</span><span class="nt">(self, simplify)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11061</span> <span class="k">if</span> <span class="n">simplify</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">11062</span>   <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_scalar</span><span class="p">():</span>
-<span class="g g-Whitespace">  </span><span class="mi">11063</span>     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:11066,</span> in <span class="ni">DM.toarray</span><span class="nt">(self, simplify)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11065</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">elements</span><span class="p">())</span>
+<span class="ne">&gt; </span><span class="mi">11066</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">elements</span><span class="p">())</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:4580,</span> in <span class="ni">GenDM.is_scalar</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4559</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4560</span><span class="sd">   [INTERNAL] </span>
-<span class="g g-Whitespace">   </span><span class="mi">4561</span><span class="sd"> </span>
+<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:10485,</span> in <span class="ni">DM.elements</span><span class="nt">(self, *args)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10467</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">  </span><span class="mi">10468</span><span class="sd">   [INTERNAL] </span>
+<span class="g g-Whitespace">  </span><span class="mi">10469</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4578</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">4579</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">4580</span> <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">GenDM_is_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10483</span><span class="sd"> </span>
+<span class="g g-Whitespace">  </span><span class="mi">10484</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="ne">&gt; </span><span class="mi">10485</span> <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">DM_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
-<span class="ne">NotImplementedError</span>: Wrong number or type of arguments for function &#39;GenDM_is_scalar&#39;.
-  <span class="n">Prototype</span><span class="p">:</span>
-<span class="n">is_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">bool</span><span class="p">)</span>
-  <span class="n">You</span> <span class="n">have</span><span class="p">:</span> <span class="s1">&#39;(DM)&#39;</span>
-
+<span class="ne">KeyboardInterrupt</span>: 
 
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
