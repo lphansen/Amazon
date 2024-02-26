@@ -172,18 +172,19 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Welcome to your Jupyter Book
+                    Introduction
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../MPC.html">Uncertainty in agricultural price</a></li>
-
-
-
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../calibration/calibration.html">Data calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../HMC.html">Uncertainty in parameters</a></li>
 
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../MPC.html">Uncertainty in agricultural price</a></li>
 
 
 
@@ -715,42 +716,39 @@ prepare simulations
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation 0
-Execution time: 0.30226683616638184 seconds
+Execution time: 0.32662320137023926 seconds
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:11059,</span> in <span class="ni">DM.toarray</span><span class="nt">(self, simplify)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11058</span>   <span class="k">return</span> <span class="n">csc_matrix</span><span class="p">(</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nonzeros</span><span class="p">(),</span><span class="bp">self</span><span class="o">.</span><span class="n">row</span><span class="p">(),</span><span class="bp">self</span><span class="o">.</span><span class="n">colind</span><span class="p">()),</span> <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">double</span> <span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">11059</span> <span class="k">def</span> <span class="nf">toarray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">  </span><span class="mi">11060</span>   <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">list_prime</span> <span class="o">=</span> <span class="p">(</span><span class="n">post_list</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="n">innov</span><span class="p">[</span><span class="n">episode</span><span class="p">,:])</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">list_prime</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span> <span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">111</span>     <span class="n">innov_temp</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mean</span><span class="p">),</span> <span class="n">cov_list</span><span class="p">)</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">list_prime</span> <span class="o">=</span> <span class="p">(</span><span class="n">post_list</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="o">+</span> <span class="n">innov_temp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="n">x0_list</span> <span class="o">=</span> <span class="n">list_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;forestArea_2017_ha_25Sites&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/scipy/stats/_multivariate.py:878,</span> in <span class="ni">multivariate_normal_frozen.rvs</span><span class="nt">(self, size, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span> <span class="k">def</span> <span class="nf">rvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">878</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dist</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cov_object</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/scipy/stats/_multivariate.py:758,</span> in <span class="ni">multivariate_normal_gen.rvs</span><span class="nt">(self, mean, cov, size, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cov_object</span><span class="p">,</span> <span class="n">_covariance</span><span class="o">.</span><span class="n">CovViaPSD</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">757</span>     <span class="n">cov</span> <span class="o">=</span> <span class="n">cov_object</span><span class="o">.</span><span class="n">covariance</span>
+<span class="ne">--&gt; </span><span class="mi">758</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">random_state</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">759</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">_squeeze_output</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File mtrand.pyx:4235,</span> in <span class="ni">numpy.random.mtrand.RandomState.multivariate_normal</span><span class="nt">()</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/numpy/linalg/linalg.py:1681,</span> in <span class="ni">svd</span><span class="nt">(a, full_matrices, compute_uv, hermitian)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1678</span>         <span class="n">gufunc</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">svd_n_s</span>
+<span class="g g-Whitespace">   </span><span class="mi">1680</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;DdD&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;ddd&#39;</span>
+<span class="ne">-&gt; </span><span class="mi">1681</span> <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1682</span> <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1683</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_realType</span><span class="p">(</span><span class="n">result_t</span><span class="p">),</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">SystemError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">X_zero_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X0_list</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X0_list</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">123</span> <span class="n">ω</span> <span class="o">=</span>   <span class="p">(</span><span class="n">list_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">@</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">z̄_comp</span><span class="o">.</span><span class="n">T</span><span class="o">-</span> <span class="n">α</span><span class="o">*</span><span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span><span class="n">list_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="nd">@sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Up</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span><span class="p">(</span> <span class="p">(((</span><span class="mi">1</span><span class="o">-</span><span class="n">α</span><span class="p">)</span><span class="o">**</span><span class="n">Adym</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">*</span><span class="n">X_zero_list</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>  <span class="o">+</span><span class="p">(</span><span class="n">Bdym</span><span class="nd">@ω</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="n">objective_value</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Ua</span><span class="p">)</span><span class="o">*</span> <span class="n">ζ</span><span class="o">/</span><span class="mi">2</span> <span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>               <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">pf</span><span class="o">*</span><span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span> 
-<span class="g g-Whitespace">    </span><span class="mi">127</span>                                        <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>               <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">((</span><span class="n">p2</span><span class="o">*</span><span class="n">list_prime</span><span class="p">[</span><span class="n">n</span><span class="p">:]</span>  <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">κ</span> <span class="p">)</span><span class="nd">@sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,:]</span> <span class="p">)))</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:50275,</span> in <span class="ni">OptiSol.value</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">  </span><span class="mi">50139</span> <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;casadi::native_DM&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">  </span><span class="mi">50140</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">  </span><span class="mi">50141</span><span class="sd">       [INTERNAL] </span>
-<span class="g g-Whitespace">  </span><span class="mi">50142</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">  </span><span class="mi">50273</span><span class="sd"> </span>
-<span class="g g-Whitespace">  </span><span class="mi">50274</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">&gt; </span><span class="mi">50275</span>     <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">OptiSol_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="ne">SystemError</span>: &lt;built-in function OptiSol_value&gt; returned a result with an error set
 </pre></div>
 </div>
 </div>

@@ -67,8 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'models/MPC';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Uncertainty in parameters" href="HMC.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+    <link rel="prev" title="Uncertainty in parameters" href="HMC.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,18 +173,19 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to your Jupyter Book
+                    Introduction
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Uncertainty in agricultural price</a></li>
-
-
-
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Data calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HMC.html">Uncertainty in parameters</a></li>
 
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Uncertainty in agricultural price</a></li>
 
 
 
@@ -465,7 +465,7 @@ document.write(`
 Requirement already satisfied: numpy in /home/pengyu/.local/lib/python3.9/site-packages (from casadi) (1.25.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0</span> -&gt; <span class=" -Color -Color-Green">23.3.2</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.3.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -991,11 +991,11 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   10  6.7316066e+03 1.26e-03 2.83e-08  -2.5 2.28e+02    -  1.00e+00 1.00e+00h  1
   11 -4.9978268e+02 2.59e+00 5.01e-02  -3.8 8.73e+03    -  8.79e-01 1.00e+00f  1
   12 -5.0317339e+02 4.71e-01 1.50e-09  -3.8 3.72e+03    -  1.00e+00 1.00e+00h  1
+  13 -6.2411623e+02 7.50e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
+  14 -6.2124808e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  13 -6.2411623e+02 7.50e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
-  14 -6.2124808e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
-  15 -6.2123154e+02 1.68e-06 1.50e-09  -3.8 7.04e+00    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15 -6.2123154e+02 1.68e-06 1.50e-09  -3.8 7.04e+00    -  1.00e+00 1.00e+00h  1
   16 -1.0286335e+03 1.25e-01 8.19e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
   17 -1.0912362e+03 4.31e-02 1.38e-02  -5.7 1.08e+03    -  7.88e-01 9.35e-01h  1
   18 -1.1027869e+03 9.80e-03 1.85e-11  -5.7 5.36e+02    -  1.00e+00 1.00e+00h  1
@@ -1003,10 +1003,10 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   20 -1.1055770e+03 1.16e-04 1.84e-11  -5.7 5.85e+01    -  1.00e+00 1.00e+00h  1
   21 -1.1055760e+03 4.41e-07 1.84e-11  -5.7 3.60e+00    -  1.00e+00 1.00e+00h  1
+  22 -1.1124406e+03 1.39e-03 5.96e-04  -8.6 2.33e+02    -  8.28e-01 8.61e-01f  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.1124406e+03 1.39e-03 5.96e-04  -8.6 2.33e+02    -  8.28e-01 8.61e-01f  1
-  23 -1.1135194e+03 6.76e-04 7.66e-04  -8.6 1.20e+02    -  7.03e-01 7.60e-01h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  23 -1.1135194e+03 6.76e-04 7.66e-04  -8.6 1.20e+02    -  7.03e-01 7.60e-01h  1
   24 -1.1138094e+03 2.78e-04 5.56e-04  -8.6 4.31e+01    -  7.39e-01 8.01e-01h  1
   25 -1.1138797e+03 9.67e-05 5.26e-05  -8.6 1.25e+01    -  9.06e-01 8.71e-01h  1
   26 -1.1138969e+03 2.75e-05 5.08e-13  -8.6 1.18e+01    -  1.00e+00 1.00e+00f  1
@@ -1032,17 +1032,17 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total seconds in IPOPT                               = 5.397
+Total seconds in IPOPT                               = 5.228
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |   7.66ms (225.32us)   4.95ms (145.52us)        34
-       nlp_g  |  27.59ms (811.41us)  16.93ms (498.01us)        34
-  nlp_grad_f  |  13.85ms (446.71us)   8.67ms (279.79us)        31
-  nlp_hess_l  |  83.56ms (  2.88ms)   5.21ms (179.57us)        29
-   nlp_jac_g  |  41.78ms (  1.35ms)  26.53ms (855.93us)        31
-       total  |  45.77 s ( 45.77 s)   5.40 s (  5.40 s)         1
-Initial, time: 6.622876167297363
+       nlp_f  |  11.49ms (337.94us)   5.01ms (147.36us)        34
+       nlp_g  |  45.16ms (  1.33ms)  19.30ms (567.64us)        34
+  nlp_grad_f  |  22.65ms (730.71us)   9.65ms (311.23us)        31
+  nlp_hess_l  |  90.06ms (  3.11ms)   4.82ms (166.10us)        29
+   nlp_jac_g  |  63.40ms (  2.05ms)  27.03ms (872.02us)        31
+       total  |  44.90 s ( 44.90 s)   5.24 s (  5.24 s)         1
+Initial, time: 6.471640110015869
 </pre></div>
 </div>
 </div>
@@ -1175,50 +1175,48 @@ Total number of inequality constraints...............:    19232
 
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
    0 -1.1138963e+03 8.01e+00 1.00e-03  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   1 -1.0647416e+03 8.01e+00 3.41e-02  -1.0 1.24e+06    -  6.34e-04 3.58e-04f  1
+   1 -1.0647416e+03 8.01e+00 3.41e-02  -1.0 1.24e+06    -  6.34e-04 3.58e-04f  1
    2 -7.1388383e+02 7.99e+00 3.09e-02  -1.0 1.09e+06    -  1.36e-03 2.11e-03f  1
    3  2.5667877e+02 7.95e+00 1.35e-01  -1.0 8.13e+05    -  1.10e-02 4.62e-03f  1
    4  7.6895152e+03 1.20e+01 1.27e-01  -1.0 4.38e+05    -  2.94e-02 4.20e-02f  1
    5  3.1052668e+04 2.34e+01 9.78e+00  -1.0 1.96e+05    -  1.00e+00 9.79e-02f  1
    6  1.2566383e+05 5.00e+01 1.00e-06  -1.0 3.81e+04    -  1.00e+00 1.00e+00f  1
-   7  2.6651788e+05 3.58e+01 1.00e-06  -1.0 3.20e+04    -  1.00e+00 1.00e+00f  1
-   8  2.6650824e+05 7.19e-01 1.00e-06  -1.0 4.48e+03    -  1.00e+00 1.00e+00h  1
-   9  5.2771803e+04 6.56e+01 2.00e-07  -1.7 4.39e+04    -  1.00e+00 1.00e+00f  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   7  2.6651788e+05 3.58e+01 1.00e-06  -1.0 3.20e+04    -  1.00e+00 1.00e+00f  1
+   8  2.6650824e+05 7.19e-01 1.00e-06  -1.0 4.48e+03    -  1.00e+00 1.00e+00h  1
+   9  5.2771803e+04 6.56e+01 2.00e-07  -1.7 4.39e+04    -  1.00e+00 1.00e+00f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   10  5.2708152e+04 7.30e+00 2.00e-07  -1.7 1.47e+04    -  1.00e+00 1.00e+00h  1
   11  5.2716775e+04 1.50e-01 2.00e-07  -1.7 2.10e+03    -  1.00e+00 1.00e+00h  1
   12  6.7920907e+03 1.51e+01 2.83e-08  -2.5 2.11e+04    -  1.00e+00 1.00e+00f  1
   13  6.6826583e+03 2.14e+00 2.83e-08  -2.5 7.93e+03    -  1.00e+00 1.00e+00h  1
-  14  6.6994591e+03 8.35e-02 2.83e-08  -2.5 1.57e+03    -  1.00e+00 1.00e+00h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  14  6.6994591e+03 8.35e-02 2.83e-08  -2.5 1.57e+03    -  1.00e+00 1.00e+00h  1
   15  6.6996991e+03 1.50e-04 2.83e-08  -2.5 6.63e+01    -  1.00e+00 1.00e+00h  1
   16 -5.3044354e+02 2.59e+00 5.04e-02  -3.8 8.73e+03    -  8.78e-01 1.00e+00f  1
   17 -5.3604681e+02 4.71e-01 1.50e-09  -3.8 3.72e+03    -  1.00e+00 1.00e+00h  1
   18 -6.5685793e+02 7.51e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  19 -6.5393466e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
+  19 -6.5393466e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   20 -6.5391738e+02 1.69e-06 1.50e-09  -3.8 7.05e+00    -  1.00e+00 1.00e+00h  1
-  21 -1.0617990e+03 1.25e-01 8.26e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.1247138e+03 4.31e-02 1.40e-02  -5.7 1.09e+03    -  7.88e-01 9.36e-01h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  21 -1.0617990e+03 1.25e-01 8.26e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
+  22 -1.1247138e+03 4.31e-02 1.40e-02  -5.7 1.09e+03    -  7.88e-01 9.36e-01h  1
   23 -1.1363225e+03 9.79e-03 1.84e-11  -5.7 5.36e+02    -  1.00e+00 1.00e+00h  1
   24 -1.1392190e+03 2.12e-03 1.84e-11  -5.7 2.48e+02    -  1.00e+00 1.00e+00h  1
   25 -1.1391244e+03 1.16e-04 1.84e-11  -5.7 5.85e+01    -  1.00e+00 1.00e+00h  1
   26 -1.1391234e+03 4.41e-07 1.84e-11  -5.7 3.60e+00    -  1.00e+00 1.00e+00h  1
   27 -1.1460096e+03 1.40e-03 5.93e-04  -8.6 2.33e+02    -  8.28e-01 8.61e-01f  1
-  28 -1.1470891e+03 6.76e-04 7.25e-04  -8.6 1.20e+02    -  7.03e-01 7.60e-01h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  28 -1.1470891e+03 6.76e-04 7.25e-04  -8.6 1.20e+02    -  7.03e-01 7.60e-01h  1
   29 -1.1473785e+03 2.77e-04 4.73e-04  -8.6 4.31e+01    -  7.39e-01 8.00e-01h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   30 -1.1474489e+03 9.67e-05 4.08e-05  -8.6 1.26e+01    -  9.07e-01 8.71e-01h  1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  31 -1.1474663e+03 2.75e-05 9.95e-14  -8.6 1.18e+01    -  1.00e+00 1.00e+00f  1
+  31 -1.1474663e+03 2.75e-05 9.95e-14  -8.6 1.18e+01    -  1.00e+00 1.00e+00f  1
   32 -1.1474657e+03 4.77e-06 2.58e-14  -8.6 1.12e+01    -  1.00e+00 1.00e+00h  1
   33 -1.1474657e+03 3.78e-07 2.58e-14  -8.6 3.30e+00    -  1.00e+00 1.00e+00h  1
   34 -1.1474657e+03 3.37e-09 2.58e-14  -8.6 3.10e-01    -  1.00e+00 1.00e+00h  1
@@ -1241,17 +1239,19 @@ Number of inequality constraint evaluations          = 35
 Number of equality constraint Jacobian evaluations   = 35
 Number of inequality constraint Jacobian evaluations = 35
 Number of Lagrangian Hessian evaluations             = 34
-Total seconds in IPOPT                               = 5.471
+Total seconds in IPOPT                               = 5.527
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |   6.92ms (197.60us)   4.88ms (139.53us)        35
-       nlp_g  |  24.39ms (696.86us)  17.01ms (486.12us)        35
-  nlp_grad_f  |  13.84ms (384.42us)   9.61ms (266.83us)        36
-  nlp_hess_l  |  94.48ms (  2.78ms)   5.89ms (173.28us)        34
-   nlp_jac_g  |  42.71ms (  1.19ms)  31.05ms (862.48us)        36
-       total  |  49.71 s ( 49.71 s)   5.47 s (  5.47 s)         1
-Year: 1, time: 5.489343643188477
+       nlp_f  |   7.22ms (206.29us)   5.25ms (150.05us)        35
+       nlp_g  |  25.25ms (721.40us)  18.03ms (515.23us)        35
+  nlp_grad_f  |  13.00ms (361.08us)   9.25ms (256.84us)        36
+  nlp_hess_l  |  90.56ms (  2.66ms)   5.67ms (166.85us)        34
+   nlp_jac_g  |  41.28ms (  1.15ms)  30.68ms (852.22us)        36
+       total  |  49.75 s ( 49.75 s)   5.53 s (  5.53 s)         1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year: 1, time: 5.545274257659912
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
@@ -1296,23 +1296,25 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15 -5.5992710e+02 2.59e+00 5.08e-02  -3.8 8.73e+03    -  8.78e-01 1.00e+00f  1
   16 -5.6703394e+02 4.71e-01 1.50e-09  -3.8 3.72e+03    -  1.00e+00 1.00e+00h  1
   17 -6.8854428e+02 7.51e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
-  18 -6.8558978e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
-  19 -6.8557216e+02 1.69e-06 1.50e-09  -3.8 7.05e+00    -  1.00e+00 1.00e+00h  1
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  20 -1.0940150e+03 1.25e-01 8.34e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
-  21 -1.1572107e+03 4.31e-02 1.42e-02  -5.7 1.09e+03    -  7.88e-01 9.36e-01h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.1688619e+03 9.77e-03 1.85e-11  -5.7 5.36e+02    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  18 -6.8558978e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
+  19 -6.8557216e+02 1.69e-06 1.50e-09  -3.8 7.05e+00    -  1.00e+00 1.00e+00h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20 -1.0940150e+03 1.25e-01 8.34e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
+  21 -1.1572107e+03 4.31e-02 1.42e-02  -5.7 1.09e+03    -  7.88e-01 9.36e-01h  1
+  22 -1.1688619e+03 9.77e-03 1.85e-11  -5.7 5.36e+02    -  1.00e+00 1.00e+00h  1
   23 -1.1717715e+03 2.12e-03 1.84e-11  -5.7 2.48e+02    -  1.00e+00 1.00e+00h  1
   24 -1.1716767e+03 1.16e-04 1.84e-11  -5.7 5.84e+01    -  1.00e+00 1.00e+00h  1
   25 -1.1716757e+03 4.40e-07 1.84e-11  -5.7 3.60e+00    -  1.00e+00 1.00e+00h  1
   26 -1.1785839e+03 1.40e-03 5.80e-04  -8.6 2.33e+02    -  8.28e-01 8.62e-01f  1
-  27 -1.1796635e+03 6.75e-04 6.59e-04  -8.6 1.20e+02    -  7.03e-01 7.61e-01h  1
-  28 -1.1799524e+03 2.77e-04 3.84e-04  -8.6 4.30e+01    -  7.39e-01 8.00e-01h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  29 -1.1800230e+03 9.66e-05 4.12e-05  -8.6 1.26e+01    -  9.07e-01 8.71e-01h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  27 -1.1796635e+03 6.75e-04 6.59e-04  -8.6 1.20e+02    -  7.03e-01 7.61e-01h  1
+  28 -1.1799524e+03 2.77e-04 3.84e-04  -8.6 4.30e+01    -  7.39e-01 8.00e-01h  1
+  29 -1.1800230e+03 9.66e-05 4.12e-05  -8.6 1.26e+01    -  9.07e-01 8.71e-01h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   30 -1.1800404e+03 2.74e-05 2.84e-14  -8.6 1.18e+01    -  1.00e+00 1.00e+00h  1
   31 -1.1800398e+03 4.76e-06 2.58e-14  -8.6 1.12e+01    -  1.00e+00 1.00e+00h  1
@@ -1337,18 +1339,20 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 34
 Number of Lagrangian Hessian evaluations             = 33
-Total seconds in IPOPT                               = 5.526
+Total seconds in IPOPT                               = 5.555
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |  13.60ms (197.16us)   9.59ms (138.97us)        69
-       nlp_g  |  48.81ms (707.38us)  33.41ms (484.23us)        69
-    nlp_grad  |  25.26ms ( 25.26ms)   1.58ms (  1.58ms)         1
-  nlp_grad_f  |  30.89ms (435.14us)  18.87ms (265.81us)        71
-  nlp_hess_l  | 193.48ms (  2.89ms)  12.07ms (180.09us)        67
-   nlp_jac_g  |  96.66ms (  1.36ms)  61.49ms (866.02us)        71
-       total  |  48.55 s ( 48.55 s)   5.53 s (  5.53 s)         1
-Year: 2, time: 5.541388034820557
+       nlp_f  |  14.41ms (208.87us)  10.19ms (147.64us)        69
+       nlp_g  |  49.73ms (720.65us)  34.93ms (506.19us)        69
+    nlp_grad  |  24.37ms ( 24.37ms)   1.63ms (  1.63ms)         1
+  nlp_grad_f  |  29.85ms (420.38us)  18.45ms (259.92us)        71
+  nlp_hess_l  | 180.06ms (  2.69ms)  11.27ms (168.23us)        67
+   nlp_jac_g  |  93.69ms (  1.32ms)  60.80ms (856.35us)        71
+       total  |  47.82 s ( 47.82 s)   5.56 s (  5.56 s)         1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year: 2, time: 5.571815490722656
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
@@ -1395,21 +1399,23 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   17 -7.1920725e+02 7.51e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
   18 -7.1621739e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
   19 -7.1619939e+02 1.69e-06 1.50e-09  -3.8 7.05e+00    -  1.00e+00 1.00e+00h  1
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
-  20 -1.1252775e+03 1.25e-01 8.43e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
-  21 -1.1887220e+03 4.30e-02 1.45e-02  -5.7 1.08e+03    -  7.88e-01 9.37e-01h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.2004007e+03 9.75e-03 1.85e-11  -5.7 5.35e+02    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20 -1.1252775e+03 1.25e-01 8.43e-03  -5.7 2.10e+03    -  8.42e-01 9.13e-01f  1
+  21 -1.1887220e+03 4.30e-02 1.45e-02  -5.7 1.08e+03    -  7.88e-01 9.37e-01h  1
+  22 -1.2004007e+03 9.75e-03 1.85e-11  -5.7 5.35e+02    -  1.00e+00 1.00e+00h  1
   23 -1.2033246e+03 2.12e-03 1.84e-11  -5.7 2.48e+02    -  1.00e+00 1.00e+00h  1
   24 -1.2032295e+03 1.16e-04 1.84e-11  -5.7 5.84e+01    -  1.00e+00 1.00e+00h  1
   25 -1.2032285e+03 4.38e-07 1.84e-11  -5.7 3.59e+00    -  1.00e+00 1.00e+00h  1
-  26 -1.2101592e+03 1.40e-03 5.60e-04  -8.6 2.33e+02    -  8.28e-01 8.62e-01f  1
-  27 -1.2112385e+03 6.75e-04 5.86e-04  -8.6 1.19e+02    -  7.03e-01 7.61e-01h  1
-  28 -1.2115269e+03 2.77e-04 3.12e-04  -8.6 4.29e+01    -  7.39e-01 8.00e-01h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  29 -1.2115977e+03 9.64e-05 4.11e-05  -8.6 1.26e+01    -  9.07e-01 8.71e-01h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  26 -1.2101592e+03 1.40e-03 5.60e-04  -8.6 2.33e+02    -  8.28e-01 8.62e-01f  1
+  27 -1.2112385e+03 6.75e-04 5.86e-04  -8.6 1.19e+02    -  7.03e-01 7.61e-01h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  28 -1.2115269e+03 2.77e-04 3.12e-04  -8.6 4.29e+01    -  7.39e-01 8.00e-01h  1
+  29 -1.2115977e+03 9.64e-05 4.11e-05  -8.6 1.26e+01    -  9.07e-01 8.71e-01h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   30 -1.2116150e+03 2.74e-05 1.56e-13  -8.6 1.18e+01    -  1.00e+00 1.00e+00h  1
   31 -1.2116144e+03 4.75e-06 2.58e-14  -8.6 1.12e+01    -  1.00e+00 1.00e+00h  1
@@ -1434,18 +1440,18 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 34
 Number of Lagrangian Hessian evaluations             = 33
-Total seconds in IPOPT                               = 5.373
+Total seconds in IPOPT                               = 5.566
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |  20.26ms (196.71us)  14.26ms (138.43us)       103
-       nlp_g  |  72.76ms (706.38us)  49.67ms (482.25us)       103
-    nlp_grad  |  50.27ms ( 25.13ms)   3.15ms (  1.57ms)         2
-  nlp_grad_f  |  48.02ms (453.03us)  28.25ms (266.52us)       106
-  nlp_hess_l  | 279.53ms (  2.80ms)  17.43ms (174.32us)       100
-   nlp_jac_g  | 150.74ms (  1.42ms)  91.16ms (860.04us)       106
-       total  |  48.41 s ( 48.41 s)   5.38 s (  5.38 s)         1
-Year: 3, time: 5.387150049209595
+       nlp_f  |  21.36ms (207.35us)  15.13ms (146.94us)       103
+       nlp_g  |  74.41ms (722.46us)  52.29ms (507.66us)       103
+    nlp_grad  |  57.54ms ( 28.77ms)   3.71ms (  1.86ms)         2
+  nlp_grad_f  |  46.71ms (440.64us)  27.69ms (261.26us)       106
+  nlp_hess_l  | 264.28ms (  2.64ms)  16.53ms (165.34us)       100
+   nlp_jac_g  | 148.41ms (  1.40ms)  90.50ms (853.74us)       106
+       total  |  48.52 s ( 48.52 s)   5.57 s (  5.57 s)         1
+Year: 3, time: 5.580646753311157
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
@@ -1489,27 +1495,29 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15 -6.1546511e+02 2.59e+00 5.17e-02  -3.8 8.73e+03    -  8.78e-01 1.00e+00f  1
   16 -6.2605610e+02 4.71e-01 1.50e-09  -3.8 3.72e+03    -  1.00e+00 1.00e+00h  1
-  17 -7.4884773e+02 7.51e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  17 -7.4884773e+02 7.51e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
   18 -7.4581947e+02 2.04e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
   19 -7.4580109e+02 1.69e-06 1.50e-09  -3.8 7.05e+00    -  1.00e+00 1.00e+00h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   20 -1.1555839e+03 1.25e-01 8.52e-03  -5.7 2.10e+03    -  8.42e-01 9.14e-01f  1
   21 -1.2192436e+03 4.30e-02 1.47e-02  -5.7 1.08e+03    -  7.88e-01 9.38e-01h  1
+  22 -1.2309351e+03 9.73e-03 1.85e-11  -5.7 5.34e+02    -  1.00e+00 1.00e+00h  1
+  23 -1.2338746e+03 2.11e-03 1.84e-11  -5.7 2.48e+02    -  1.00e+00 1.00e+00h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.2309351e+03 9.73e-03 1.85e-11  -5.7 5.34e+02    -  1.00e+00 1.00e+00h  1
-  23 -1.2338746e+03 2.11e-03 1.84e-11  -5.7 2.48e+02    -  1.00e+00 1.00e+00h  1
-  24 -1.2337793e+03 1.16e-04 1.84e-11  -5.7 5.83e+01    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  24 -1.2337793e+03 1.16e-04 1.84e-11  -5.7 5.83e+01    -  1.00e+00 1.00e+00h  1
   25 -1.2337782e+03 4.36e-07 1.84e-11  -5.7 3.58e+00    -  1.00e+00 1.00e+00h  1
   26 -1.2407318e+03 1.40e-03 5.36e-04  -8.6 2.33e+02    -  8.28e-01 8.63e-01f  1
   27 -1.2418107e+03 6.75e-04 5.19e-04  -8.6 1.19e+02    -  7.03e-01 7.62e-01h  1
   28 -1.2420984e+03 2.76e-04 3.15e-04  -8.6 4.28e+01    -  7.39e-01 8.00e-01h  1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  29 -1.2421692e+03 9.62e-05 4.18e-05  -8.6 1.26e+01    -  9.08e-01 8.72e-01h  1
+  29 -1.2421692e+03 9.62e-05 4.18e-05  -8.6 1.26e+01    -  9.08e-01 8.72e-01h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   30 -1.2421866e+03 2.73e-05 3.78e-13  -8.6 1.18e+01    -  1.00e+00 1.00e+00f  1
-  31 -1.2421860e+03 4.74e-06 2.58e-14  -8.6 1.11e+01    -  1.00e+00 1.00e+00h  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  31 -1.2421860e+03 4.74e-06 2.58e-14  -8.6 1.11e+01    -  1.00e+00 1.00e+00h  1
   32 -1.2421860e+03 3.74e-07 2.58e-14  -8.6 3.29e+00    -  1.00e+00 1.00e+00h  1
   33 -1.2421860e+03 3.30e-09 2.58e-14  -8.6 3.07e-01    -  1.00e+00 1.00e+00h  1
 
@@ -1531,18 +1539,18 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 34
 Number of Lagrangian Hessian evaluations             = 33
-Total seconds in IPOPT                               = 5.321
+Total seconds in IPOPT                               = 5.640
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |  27.08ms (197.69us)  18.96ms (138.42us)       137
-       nlp_g  |  96.37ms (703.45us)  65.80ms (480.26us)       137
-    nlp_grad  |  75.78ms ( 25.26ms)   4.75ms (  1.58ms)         3
-  nlp_grad_f  |  65.28ms (462.98us)  37.54ms (266.24us)       141
-  nlp_hess_l  | 367.70ms (  2.76ms)  22.94ms (172.49us)       133
-   nlp_jac_g  | 205.73ms (  1.46ms) 120.76ms (856.43us)       141
-       total  |  48.37 s ( 48.37 s)   5.33 s (  5.33 s)         1
-Year: 4, time: 5.335770606994629
+       nlp_f  |  29.13ms (212.66us)  20.23ms (147.70us)       137
+       nlp_g  | 100.22ms (731.52us)  69.71ms (508.82us)       137
+    nlp_grad  |  82.95ms ( 27.65ms)   5.31ms (  1.77ms)         3
+  nlp_grad_f  |  65.44ms (464.14us)  37.08ms (262.95us)       141
+  nlp_hess_l  | 349.11ms (  2.62ms)  21.93ms (164.90us)       133
+   nlp_jac_g  | 204.31ms (  1.45ms) 119.56ms (847.92us)       141
+       total  |  48.34 s ( 48.34 s)   5.64 s (  5.64 s)         1
+Year: 4, time: 5.654280185699463
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
@@ -1582,29 +1590,29 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   12  6.5871768e+03 3.66e+00 2.83e-08  -2.5 1.04e+04    -  1.00e+00 1.00e+00h  1
   13  6.5882513e+03 2.20e-01 2.83e-08  -2.5 2.54e+03    -  1.00e+00 1.00e+00h  1
   14  6.5882473e+03 1.03e-03 2.83e-08  -2.5 1.74e+02    -  1.00e+00 1.00e+00h  1
+  15 -6.3714336e+02 2.59e+00 5.20e-02  -3.8 8.73e+03    -  8.78e-01 9.99e-01f  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15 -6.3714336e+02 2.59e+00 5.20e-02  -3.8 8.73e+03    -  8.78e-01 9.99e-01f  1
-  16 -6.5442488e+02 4.72e-01 1.50e-09  -3.8 3.73e+03    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  16 -6.5442488e+02 4.72e-01 1.50e-09  -3.8 3.73e+03    -  1.00e+00 1.00e+00h  1
   17 -7.7746628e+02 7.52e-02 1.50e-09  -3.8 1.49e+03    -  1.00e+00 1.00e+00h  1
   18 -7.7439729e+02 2.05e-03 1.50e-09  -3.8 2.45e+02    -  1.00e+00 1.00e+00h  1
   19 -7.7437850e+02 1.70e-06 1.50e-09  -3.8 7.07e+00    -  1.00e+00 1.00e+00h  1
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   20 -1.1849324e+03 1.25e-01 8.62e-03  -5.7 2.10e+03    -  8.42e-01 9.14e-01f  1
   21 -1.2487721e+03 4.29e-02 1.49e-02  -5.7 1.08e+03    -  7.88e-01 9.39e-01h  1
+  22 -1.2604618e+03 9.69e-03 1.27e-04  -5.7 5.34e+02    -  9.98e-01 1.00e+00h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  22 -1.2604618e+03 9.69e-03 1.27e-04  -5.7 5.34e+02    -  9.98e-01 1.00e+00h  1
-  23 -1.2634085e+03 2.10e-03 1.84e-11  -5.7 2.47e+02    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  23 -1.2634085e+03 2.10e-03 1.84e-11  -5.7 2.47e+02    -  1.00e+00 1.00e+00h  1
   24 -1.2633227e+03 1.16e-04 1.84e-11  -5.7 5.84e+01    -  1.00e+00 1.00e+00h  1
   25 -1.2633218e+03 4.40e-07 1.84e-11  -5.7 3.60e+00    -  1.00e+00 1.00e+00h  1
   26 -1.2702986e+03 1.40e-03 5.25e-04  -8.6 2.33e+02    -  8.28e-01 8.64e-01f  1
   27 -1.2713769e+03 6.74e-04 5.04e-04  -8.6 1.19e+02    -  7.03e-01 7.62e-01h  1
   28 -1.2716638e+03 2.76e-04 3.33e-04  -8.6 4.27e+01    -  7.40e-01 8.00e-01h  1
+  29 -1.2717345e+03 9.59e-05 4.20e-05  -8.6 1.26e+01    -  9.08e-01 8.73e-01h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  29 -1.2717345e+03 9.59e-05 4.20e-05  -8.6 1.26e+01    -  9.08e-01 8.73e-01h  1
-iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   30 -1.2717519e+03 2.72e-05 9.54e-14  -8.6 1.18e+01    -  1.00e+00 1.00e+00f  1
   31 -1.2717513e+03 4.72e-06 2.58e-14  -8.6 1.11e+01    -  1.00e+00 1.00e+00h  1
   32 -1.2717513e+03 3.72e-07 2.58e-14  -8.6 3.28e+00    -  1.00e+00 1.00e+00h  1
@@ -1628,18 +1636,18 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 34
 Number of Lagrangian Hessian evaluations             = 33
-Total seconds in IPOPT                               = 5.360
+Total seconds in IPOPT                               = 5.322
 
 EXIT: Optimal Solution Found.
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |  33.67ms (196.91us)  23.57ms (137.85us)       171
-       nlp_g  | 119.85ms (700.87us)  81.93ms (479.14us)       171
-    nlp_grad  | 101.57ms ( 25.39ms)   6.37ms (  1.59ms)         4
-  nlp_grad_f  |  82.33ms (467.77us)  46.82ms (266.00us)       176
-  nlp_hess_l  | 459.97ms (  2.77ms)  28.70ms (172.90us)       166
-   nlp_jac_g  | 257.68ms (  1.46ms) 150.13ms (853.01us)       176
-       total  |  48.42 s ( 48.42 s)   5.36 s (  5.36 s)         1
-Year: 5, time: 5.374591112136841
+       nlp_f  |  35.82ms (209.47us)  24.96ms (145.95us)       171
+       nlp_g  | 124.29ms (726.82us)  85.97ms (502.74us)       171
+    nlp_grad  | 109.13ms ( 27.28ms)   6.96ms (  1.74ms)         4
+  nlp_grad_f  |  82.31ms (467.66us)  46.10ms (261.96us)       176
+  nlp_hess_l  | 435.75ms (  2.62ms)  27.34ms (164.70us)       166
+   nlp_jac_g  | 257.18ms (  1.46ms) 149.00ms (846.58us)       176
+       total  |  48.34 s ( 48.34 s)   5.33 s (  5.33 s)         1
+Year: 5, time: 5.337689161300659
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
@@ -1676,26 +1684,22 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
   10  6.7356934e+03 9.65e+01 9.43e-02  -2.5 5.33e+04    -  9.74e-01 1.00e+00f  1
   11  7.3360151e+03 2.10e+01 2.83e-08  -2.5 2.49e+04    -  1.00e+00 1.00e+00h  1
-  12  6.5634432e+03 3.65e+00 2.83e-08  -2.5 1.04e+04    -  1.00e+00 1.00e+00h  1
-  13  6.5642008e+03 2.19e-01 2.83e-08  -2.5 2.54e+03    -  1.00e+00 1.00e+00h  1
-  14  6.5641967e+03 1.01e-03 2.83e-08  -2.5 1.73e+02    -  1.00e+00 1.00e+00h  1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  15 -6.3598523e+02 2.57e+00 5.10e-02  -3.8 8.73e+03    -  8.78e-01 9.96e-01f  1
-  16 -6.8350694e+02 4.78e-01 1.50e-09  -3.8 3.75e+03    -  1.00e+00 1.00e+00h  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  12  6.5634432e+03 3.65e+00 2.83e-08  -2.5 1.04e+04    -  1.00e+00 1.00e+00h  1
 Exception of type: IpoptException in file &quot;Unknown File&quot; at line -1:
  Exception message: Unknown Exception caught in Ipopt
       solver  :   t_proc      (avg)   t_wall      (avg)    n_eval
-       nlp_f  |  38.04ms (202.35us)  25.86ms (137.55us)       188
-       nlp_g  | 134.68ms (716.38us)  89.79ms (477.63us)       188
-    nlp_grad  | 126.15ms ( 25.23ms)   7.90ms (  1.58ms)         5
-  nlp_grad_f  |  94.59ms (487.56us)  51.53ms (265.63us)       194
-  nlp_hess_l  | 503.59ms (  2.75ms)  31.43ms (171.76us)       183
-   nlp_jac_g  | 294.58ms (  1.52ms) 164.39ms (847.38us)       194
-       total  |  24.99 s ( 24.99 s)   2.79 s (  2.79 s)         1
+       nlp_f  |  39.51ms (214.72us)  26.69ms (145.08us)       184
+       nlp_g  | 137.26ms (745.98us)  92.04ms (500.22us)       184
+    nlp_grad  | 135.09ms ( 27.02ms)   8.58ms (  1.72ms)         5
+  nlp_grad_f  |  93.60ms (492.64us)  49.68ms (261.50us)       190
+  nlp_hess_l  | 467.88ms (  2.61ms)  29.35ms (163.97us)       179
+   nlp_jac_g  | 291.50ms (  1.53ms) 159.96ms (841.88us)       190
+       total  |  19.19 s ( 19.19 s)   2.20 s (  2.20 s)         1
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CasADi - 2024-01-17 11:15:02 WARNING(&quot;KeyboardInterruptException&quot;) [.../casadi/interfaces/ipopt/ipopt_nlp.cpp:132]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CasADi - 2024-02-26 10:28:23 WARNING(&quot;KeyboardInterruptException&quot;) [.../casadi/interfaces/ipopt/ipopt_nlp.cpp:132]
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1864,22 +1868,13 @@ Exception of type: IpoptException in file &quot;Unknown File&quot; at line -1:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="HMC.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="HMC.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Uncertainty in parameters</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

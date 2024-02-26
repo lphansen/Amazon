@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Uncertainty in agricultural price" href="models/MPC.html" />
+    <link rel="next" title="Data calibration" href="calibration/calibration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,14 +175,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="models/MPC.html">Uncertainty in agricultural price</a></li>
-
-
-
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="calibration/calibration.html">Data calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models/Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models/HMC.html">Uncertainty in parameters</a></li>
 
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="models/MPC.html">Uncertainty in agricultural price</a></li>
 
 
 
@@ -381,10 +382,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -398,18 +397,19 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <p>This website provides a series of online texts for <em>Carbon prices and forest preservation over space and time in the Brazilian Amazon</em> by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
-<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h1>
-<ol class="arabic simple">
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
 <li><p><a class="reference internal" href="#"><span class="doc std std-doc">Introduction</span></a></p></li>
-<li><p><span class="xref myst">Model</span></p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="models/MPC.html"><span class="doc std std-doc">Uncertainty in agricultural price</span></a></p></li>
+<li><p><a class="reference internal" href="calibration/calibration.html"><span class="doc std std-doc">Data calibration</span></a></p></li>
+<li><p><a class="reference internal" href="models/Deterministic.html"><span class="doc std std-doc">Results without stochasticity or ambiguity aversion</span></a></p></li>
 <li><p><a class="reference internal" href="models/HMC.html"><span class="doc std std-doc">Uncertainty in parameters</span></a></p></li>
-</ol>
+<li><p><a class="reference internal" href="models/MPC.html"><span class="doc std std-doc">Uncertainty in agricultural price</span></a></p>
+ <!-- 1. [Uncertainty in agricultural price](models/MPC.ipynb) -->
 </li>
 </ol>
+<br>
+The paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>.</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -445,11 +445,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="models/MPC.html"
+       href="calibration/calibration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Uncertainty in agricultural price</p>
+        <p class="prev-next-title">Data calibration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -469,10 +469,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
