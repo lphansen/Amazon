@@ -161,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/mfr.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../_static/mfr.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -692,60 +692,9 @@ This program contains Ipopt, a library for large-scale nonlinear optimization.
  Ipopt is released as open source code under the Eclipse Public License (EPL).
          For more information visit https://github.com/coin-or/Ipopt
 ******************************************************************************
-
-prepare simulations
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation 0
-Execution time: 0.28789329528808594 seconds
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:11062,</span> in <span class="ni">DM.toarray</span><span class="nt">(self, simplify)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11061</span> <span class="k">if</span> <span class="n">simplify</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">11062</span>   <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_scalar</span><span class="p">():</span>
-<span class="g g-Whitespace">  </span><span class="mi">11063</span>     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:4580,</span> in <span class="ni">GenDM.is_scalar</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4559</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4560</span><span class="sd">   [INTERNAL] </span>
-<span class="g g-Whitespace">   </span><span class="mi">4561</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4578</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">4579</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">4580</span> <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">GenDM_is_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="ne">NotImplementedError</span>: Wrong number or type of arguments for function &#39;GenDM_is_scalar&#39;.
-  <span class="n">Prototype</span><span class="p">:</span>
-<span class="n">is_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">bool</span><span class="p">)</span>
-  <span class="n">You</span> <span class="n">have</span><span class="p">:</span> <span class="s1">&#39;(DM)&#39;</span>
-
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">SystemError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="n">ω</span> <span class="o">=</span>   <span class="p">(</span><span class="n">γ_list_prime</span><span class="o">.</span><span class="n">T</span><span class="o">@</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">z̄_comp</span><span class="o">.</span><span class="n">T</span><span class="o">-</span> <span class="n">α</span><span class="o">*</span><span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span><span class="n">γ_list_prime</span><span class="o">.</span><span class="n">T</span><span class="nd">@sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Up</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span><span class="p">(</span> <span class="p">(((</span><span class="mi">1</span><span class="o">-</span><span class="n">α</span><span class="p">)</span><span class="o">**</span><span class="n">Adym</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">*</span><span class="n">X_zero_list</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>  <span class="o">+</span><span class="p">(</span><span class="n">Bdym</span><span class="nd">@ω</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">122</span> <span class="n">objective_value</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Ua</span><span class="p">)</span><span class="o">*</span> <span class="n">ζ</span><span class="o">/</span><span class="mi">2</span> <span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>               <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">pf</span><span class="o">*</span><span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span> 
-<span class="g g-Whitespace">    </span><span class="mi">124</span>                                        <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">X_dym_list</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>               <span class="o">-</span> <span class="n">sum2</span><span class="p">(</span><span class="n">ds_vect</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="p">((</span><span class="n">p2</span><span class="o">*</span><span class="n">θ_list</span> <span class="o">-</span> <span class="n">pf</span><span class="o">*</span><span class="n">κ</span> <span class="p">)</span><span class="nd">@sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,:]</span> <span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="n">fγ̄</span> <span class="o">=</span>    <span class="o">-</span><span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">γ_list_prime</span> <span class="o">-</span> <span class="n">γ_list_mean_posterior</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">cov_list</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">γ_list_prime</span> <span class="o">-</span> <span class="n">γ_list_mean_posterior</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="n">N_star</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">ξ</span> <span class="o">*</span> <span class="n">objective_value</span>    <span class="o">+</span> <span class="n">fγ̄</span>
-
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:50275,</span> in <span class="ni">OptiSol.value</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">  </span><span class="mi">50139</span> <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;casadi::native_DM&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">  </span><span class="mi">50140</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">  </span><span class="mi">50141</span><span class="sd">       [INTERNAL] </span>
-<span class="g g-Whitespace">  </span><span class="mi">50142</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">  </span><span class="mi">50273</span><span class="sd"> </span>
-<span class="g g-Whitespace">  </span><span class="mi">50274</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">&gt; </span><span class="mi">50275</span>     <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">OptiSol_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="ne">SystemError</span>: &lt;built-in function OptiSol_value&gt; returned a result with an error set
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CasADi - 2024-02-26 14:29:43 WARNING(&quot;KeyboardInterruptException&quot;) [.../casadi/interfaces/ipopt/ipopt_nlp.cpp:132]
 </pre></div>
 </div>
 </div>
