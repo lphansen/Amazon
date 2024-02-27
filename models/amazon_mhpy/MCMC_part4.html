@@ -179,15 +179,8 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../calibration/calibration.html">Data calibration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../HMC.html">Uncertainty in parameters</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../HMC.html">Uncertainty in parameter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MPC.html">Uncertainty in agricultural price</a></li>
-
-
-
 </ul>
 
     </div>
@@ -1155,34 +1148,152 @@ This program contains Ipopt, a library for large-scale nonlinear optimization.
 ******************************************************************************
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CasADi - 2024-02-26 14:30:27 WARNING(&quot;KeyboardInterruptException&quot;) [.../casadi/interfaces/ipopt/ipopt_nlp.cpp:132]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================
+Started Sampling
+=====================================================
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:9255,</span> in <span class="ni">DM.&lt;lambda&gt;</span><span class="nt">(self, name, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">9254</span>     <span class="n">__swig_setmethods__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">_s</span><span class="p">,</span> <span class="s1">&#39;__swig_setmethods__&#39;</span><span class="p">,</span> <span class="p">{}))</span>
+<span class="ne">-&gt; </span><span class="mi">9255</span> <span class="fm">__setattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_swig_setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">DM</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">9256</span> <span class="n">__swig_getmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">SystemError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
 <span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
 
 <span class="nn">Input In [7],</span> in <span class="ni">main</span><span class="nt">(norm_fac, delta_t, alpha, kappa, pf, pa, xi, zeta, max_iter, tol, T, N, sample_size, mode_as_solution, final_sample_size)</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x0_vals: &quot;</span><span class="p">,</span> <span class="n">x0_vals</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;casadi.vertcat(site_z_vals,np.sum(x0_vals),1): &quot;</span><span class="p">,</span> <span class="n">casadi</span><span class="o">.</span><span class="n">vertcat</span><span class="p">(</span><span class="n">site_z_vals</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x0_vals</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">214</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">opti</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="n">_DEBUG</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sol.value(X)&quot;</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="c1"># Create MCMC sampler &amp; sample, then calculate diagnostics</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="n">sampler</span> <span class="o">=</span> <span class="n">create_hmc_sampler</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">size</span><span class="o">=</span><span class="n">gamma_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">log_density</span><span class="o">=</span><span class="n">log_density</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="n">constraint_test</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">262</span> <span class="n">gamma_post_samples</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="n">sample_size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">initial_state</span><span class="o">=</span><span class="n">gamma_vals</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="n">gamma_post_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">gamma_post_samples</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="c1"># Update ensemble/tracker</span>
 
-<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:47783,</span> in <span class="ni">Opti.solve</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">  </span><span class="mi">47763</span> <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;casadi::OptiSol&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">  </span><span class="mi">47764</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">  </span><span class="mi">47765</span><span class="sd">       [INTERNAL] </span>
-<span class="g g-Whitespace">  </span><span class="mi">47766</span><span class="sd"> </span>
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:545,</span> in <span class="ni">HMCSampler.sample</span><span class="nt">(self, sample_size, verbose, initial_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span><span class="sd">     Generate and return a sample of size `sample_size`.</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span><span class="sd">     This method returns a list with each entry representing a sample point from the underlying distribution</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">545</span>     <span class="n">hmc_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_HMC_sampling</span><span class="p">(</span><span class="n">sample_size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="n">initial_state</span><span class="p">,</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="k">return</span> <span class="n">hmc_results</span><span class="p">[</span><span class="s1">&#39;collected_ensemble&#39;</span><span class="p">]</span>
+
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:891,</span> in <span class="ni">HMCSampler.start_HMC_sampling</span><span class="nt">(self, sample_size, initial_state, randomize_step_size, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span> <span class="n">current_momentum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass_matrix_sqrt_matvec</span><span class="p">(</span><span class="n">current_momentum</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span> <span class="c1"># Advance the current state and momentum to propose a new pair:</span>
+<span class="ne">--&gt; </span><span class="mi">891</span> <span class="n">proposed_momentum</span><span class="p">,</span> <span class="n">proposed_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_symplectic_integration</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">momentum</span><span class="o">=</span><span class="n">current_momentum</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="n">state</span><span class="o">=</span><span class="n">current_state</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>     <span class="n">num_steps</span><span class="o">=</span><span class="n">hamiltonian_num_steps</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>     <span class="n">step_size</span><span class="o">=</span><span class="n">hamiltonian_step_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span>     <span class="n">randomize_step_size</span><span class="o">=</span><span class="n">randomize_step_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>     <span class="n">symplectic_integrator</span><span class="o">=</span><span class="n">symplectic_integrator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span> <span class="c1"># print(&quot;proposed_momentum, proposed_state&quot;, proposed_momentum, proposed_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span> 
+<span class="g g-Whitespace">    </span><span class="mi">902</span> <span class="c1">## MH step (Accept/Reject) proposed (momentum, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span> <span class="c1"># Calculate acceptance proabability</span>
+<span class="g g-Whitespace">    </span><span class="mi">904</span> <span class="c1"># Total energy (Hamiltonian) of the extended pair (proposed_momentum,</span>
+<span class="g g-Whitespace">    </span><span class="mi">905</span> <span class="c1"># Here, we evaluate the kernel of the posterior at both the current and the proposed state proposed_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">906</span> <span class="n">current_energy</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_Hamiltonian</span><span class="p">(</span><span class="n">momentum</span><span class="o">=</span><span class="n">current_momentum</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">current_state</span><span class="p">)</span>
+
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:774,</span> in <span class="ni">HMCSampler.apply_symplectic_integration</span><span class="nt">(self, momentum, state, step_size, num_steps, randomize_step_size, symplectic_integrator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span> <span class="n">proposed_state</span> <span class="o">=</span> <span class="n">current_state</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass_matrix_inv_matvec</span><span class="p">(</span><span class="n">current_momentum</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">771</span> <span class="c1"># print(&quot;1: proposed state&quot;, proposed_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">772</span> 
+<span class="g g-Whitespace">    </span><span class="mi">773</span> <span class="c1"># Update momentum</span>
+<span class="ne">--&gt; </span><span class="mi">774</span> <span class="n">grad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">potential_energy_grad</span><span class="p">(</span><span class="n">proposed_state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">775</span> <span class="n">proposed_momentum</span> <span class="o">=</span> <span class="n">current_momentum</span> <span class="o">-</span> <span class="n">h</span> <span class="o">*</span> <span class="n">grad</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span> <span class="c1"># print(&quot;&lt;: proposed momentum&quot;, proposed_momentum)</span>
+<span class="g g-Whitespace">    </span><span class="mi">777</span> 
+<span class="g g-Whitespace">    </span><span class="mi">778</span> <span class="c1"># Update state again</span>
+
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:653,</span> in <span class="ni">HMCSampler.potential_energy_grad</span><span class="nt">(self, state, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="c1"># raise ValueError</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="ne">--&gt; </span><span class="mi">653</span> <span class="k">return</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">log_density_grad</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:625,</span> in <span class="ni">HMCSampler.log_density_grad</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span> <span class="k">def</span> <span class="nf">log_density_grad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span><span class="sd">     Evaluate the gradient of the logarithm of the target unscaled posterior density function</span>
+<span class="g g-Whitespace">    </span><span class="mi">624</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">625</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_LOG_DENSITY_GRAD</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nn">File /project/lhansen/HMC_book/Amazon/models/amazon_mhpy/mcmc/mcmc_sampling.py:363,</span> in <span class="ni">HMCSampler.__create_func_grad.&lt;locals&gt;.func_grad</span><span class="nt">(x, fd_eps, fd_central)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">grad</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">e</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">e</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">fd_eps</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">363</span>         <span class="n">grad</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">e</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">fd_eps</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">return</span> <span class="n">grad</span>
+
+<span class="nn">Input In [7],</span> in <span class="ni">main.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(gamma_val)</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sol.value(Um)&quot;</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Um</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="c1">## Start Sampling</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="c1"># Update signature of log density evaluator</span>
+<span class="ne">--&gt; </span><span class="mi">225</span> <span class="n">log_density</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">gamma_val</span><span class="p">:</span> <span class="n">log_density_function</span><span class="p">(</span><span class="n">gamma_val</span><span class="o">=</span><span class="n">gamma_val</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>                                                      <span class="n">gamma_vals_mean</span><span class="o">=</span><span class="n">gamma_vals_mean</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>                                                      <span class="n">theta_vals</span><span class="o">=</span><span class="n">theta_vals</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>                                                      <span class="n">site_precisions</span><span class="o">=</span><span class="n">site_precisions</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>                                                      <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>                                                      <span class="n">sol</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>                                                      <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span>                                                      <span class="n">Ua</span><span class="o">=</span><span class="n">Ua</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>                                                      <span class="n">Up</span><span class="o">=</span><span class="n">Up</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>                                                      <span class="n">zbar_2017</span><span class="o">=</span><span class="n">zbar_2017</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>                                                      <span class="n">forestArea_2017_ha</span><span class="o">=</span><span class="n">forestArea_2017_ha</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>                                                      <span class="n">norm_fac</span><span class="o">=</span><span class="n">norm_fac</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>                                                      <span class="n">alpha_p_Adym</span><span class="o">=</span><span class="n">alpha_p_Adym</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>                                                      <span class="n">Bdym</span><span class="o">=</span><span class="n">Bdym</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>                                                      <span class="n">leng</span><span class="o">=</span><span class="n">leng</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>                                                      <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>                                                      <span class="n">ds_vect</span><span class="o">=</span><span class="n">ds_vect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>                                                      <span class="n">zeta</span><span class="o">=</span><span class="n">zeta</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>                                                      <span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>                                                      <span class="n">kappa</span><span class="o">=</span><span class="n">kappa</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>                                                      <span class="n">pa</span><span class="o">=</span><span class="n">pa</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>                                                      <span class="n">pf</span><span class="o">=</span><span class="n">pf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>                                                      <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="c1"># Create MCMC sampler &amp; sample, then calculate diagnostics</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="n">sampler</span> <span class="o">=</span> <span class="n">create_hmc_sampler</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">size</span><span class="o">=</span><span class="n">gamma_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">log_density</span><span class="o">=</span><span class="n">log_density</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="n">constraint_test</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="p">)</span>
+
+<span class="nn">Input In [6],</span> in <span class="ni">log_density_function</span><span class="nt">(gamma_val, gamma_vals_mean, theta_vals, site_precisions, alpha, sol, X, Ua, Up, zbar_2017, forestArea_2017_ha, norm_fac, alpha_p_Adym, Bdym, leng, T, ds_vect, zeta, xi, kappa, pa, pf)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="n">scl</span> <span class="o">=</span> <span class="n">pa</span> <span class="o">*</span> <span class="n">theta_vals</span> <span class="o">-</span> <span class="n">pf</span> <span class="o">*</span> <span class="n">kappa</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="n">z_shifted_X</span> <span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scl</span>
+<span class="ne">---&gt; </span><span class="mi">52</span> <span class="n">term_1</span> <span class="o">=</span> <span class="o">-</span> <span class="n">casadi</span><span class="o">.</span><span class="n">sum2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="n">T</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">sol</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">Ua</span><span class="p">)</span> <span class="o">*</span> <span class="n">zeta</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">term_2</span> <span class="o">=</span> <span class="n">casadi</span><span class="o">.</span><span class="n">sum2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="n">T</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="n">pf</span> <span class="o">*</span> <span class="p">(</span><span class="n">X_dym</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="p">]</span> <span class="o">-</span> <span class="n">X_dym</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="n">term_3</span> <span class="o">=</span> <span class="n">casadi</span><span class="o">.</span><span class="n">sum2</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ds_vect</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="n">casadi</span><span class="o">.</span><span class="n">sum1</span><span class="p">(</span><span class="n">z_shifted_X</span><span class="p">))</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/casadi/casadi.py:34411,</span> in <span class="ni">sum2</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">  </span><span class="mi">34387</span> <span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;casadi::Matrix&lt; casadi::SXElem &gt;&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">  </span><span class="mi">34388</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">  </span><span class="mi">34389</span><span class="sd">       Return a column-wise summation of elements.</span>
+<span class="g g-Whitespace">  </span><span class="mi">34390</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">  </span><span class="mi">47781</span><span class="sd"> </span>
-<span class="g g-Whitespace">  </span><span class="mi">47782</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">&gt; </span><span class="mi">47783</span>     <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">Opti_solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">34409</span><span class="sd"> </span>
+<span class="g g-Whitespace">  </span><span class="mi">34410</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">&gt; </span><span class="mi">34411</span>     <span class="k">return</span> <span class="n">_casadi</span><span class="o">.</span><span class="n">sum2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
-<span class="ne">RuntimeError</span>: Error in Opti::solve [OptiNode] at .../casadi/core/optistack.cpp:157:
-<span class="o">.../</span><span class="n">casadi</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">optistack_internal</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">998</span><span class="p">:</span> <span class="n">Assertion</span> <span class="s2">&quot;return_success(accept_limit)&quot;</span> <span class="n">failed</span><span class="p">:</span>
-<span class="n">Solver</span> <span class="n">failed</span><span class="o">.</span> <span class="n">You</span> <span class="n">may</span> <span class="n">use</span> <span class="n">opti</span><span class="o">.</span><span class="n">debug</span><span class="o">.</span><span class="n">value</span> <span class="n">to</span> <span class="n">investigate</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">values</span> <span class="n">of</span> <span class="n">variables</span><span class="o">.</span> <span class="n">return_status</span> <span class="ow">is</span> <span class="s1">&#39;NonIpopt_Exception_Thrown&#39;</span>
+<span class="ne">SystemError</span>: &lt;built-in function sum2&gt; returned a result with an error set
 </pre></div>
 </div>
 </div>
