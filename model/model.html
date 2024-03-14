@@ -58,11 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'model/model';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Parameter uncertainty" href="../uncertainty/uncertainty.html" />
-    <link rel="prev" title="Related Literature" href="../introduction/literature.html" />
+    <link rel="prev" title="Related Substantive Literature" href="../literature/literature.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +177,28 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/literature.html">Related Literature</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="current nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../literature/literature.html">Related Substantive Literature</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Model</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../uncertainty/uncertainty.html">Parameter uncertainty</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Calibration</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Productivity measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../results/Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../results/HMC.html">Uncertainty in parameter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../results/MPC.html">Uncertainty in agricultural price</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../results/results.html">Results</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../results/shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/HMC.html">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/MPC.html">Results with stochastic variation in agricultural prices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion/conclusion.html">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -251,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/model/model.ipynb" target="_blank"
+      <li><a href="../_sources/model/model.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +263,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -347,8 +349,196 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="model">
+  <section class="tex2jax_ignore mathjax_ignore" id="model">
 <span id="sec-model"></span><h1>Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h1>
+<hr style="height:4px; background-color:black; border:none;">
+<br>
+<p>We pose the problem of a fictitious social planner who considers the
+trade-off between using land for agriculture and nurturing or preserving
+forests that function as carbon sinks. This planner internalizes the
+externalities resulting from deforestation. The planner’s problem is
+dynamic with explicit heterogeneity across regions in the Amazon. Guided
+by empirical measurements, the regions have two important sources of
+heterogeneity: i) agricultural productivity and ii) ability to absorb
+atmospheric carbon.</p>
+<p>Let <span class="math notranslate nohighlight">\(i\)</span> denote a site index for <span class="math notranslate nohighlight">\(i=1,2,...,I\)</span> where <span class="math notranslate nohighlight">\(I\)</span> is the total
+number of sites and <span class="math notranslate nohighlight">\(t \in [0,T]\)</span> is the point in time. We use
+superscripts to denote sites and subscripts to denote dates. We adopt
+the notational convention that uppercase letters depict the actual state
+and lowercase letters the potential state realizations. At date <span class="math notranslate nohighlight">\(t,\)</span>
+<br></p>
+<p><span class="math notranslate nohighlight">\(\begin{array}{llll}
+Z_t &amp;  \mathrel{\overset{\mathrm{def}}{=}}&amp; (Z_t^1, Z_t^2, ..., Z_t^I) &amp; \textrm{ vector of area used for agriculture expressed in hectares} \cr
+X_t &amp; \mathrel{\overset{\mathrm{def}}{=}}&amp; (X_t^1, X_t^2, ..., X_t^I) &amp; \textrm{ vector of carbon captured expressed in Mg CO2e (CO2 equivalent)  } \cr
+A_t &amp; \mathrel{\overset{\mathrm{def}}{=}}&amp; (A_t^1, A_t^2, ..., A_t^I) &amp; \textrm{ vector of agricultural output} 
+\end{array}\)</span>
+<br></p>
+<p>We use the notation
+<span class="math notranslate nohighlight">\(Z \mathrel{\overset{\mathrm{def}}{=}}\left\{Z_t: 0 \le t \le T\right\}\)</span>
+to denote the corresponding process that evolves over time, and
+similarly for other states and controls. In our base model, the single
+aggregate state variable is <span class="math notranslate nohighlight">\(P^a_t,\)</span> an index of cattle prices in Brazil
+expressed in 2017 US dollars.<a class="footnote-reference brackets" href="#id6" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>The state vector <span class="math notranslate nohighlight">\(Z_t\)</span> is subject to an instant-by-instant and
+coordinate-by-coordinate constraint:</p>
+<p><span class="math notranslate nohighlight">\(\begin{gather*}
+0 \le Z_t^i \le {\bar z}^i
+\end{gather*}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\({\bar z}^i\)</span> is the amount of land in the Amazon biome available
+for agriculture at site <span class="math notranslate nohighlight">\(i\)</span>.<a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> Let <span class="math notranslate nohighlight">\({\dot Z}_t\)</span> be the time derivative
+of <span class="math notranslate nohighlight">\(Z\)</span> at date <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>The evolution of <span class="math notranslate nohighlight">\(X^i\)</span> introduces an important asymmetry into our
+problem. We write a “linear” version of this problem by introducing two
+site-specific, scalar, non-negative control variables for our fictitious
+planner, <span class="math notranslate nohighlight">\(U_t^i\)</span> and <span class="math notranslate nohighlight">\(V_t^i\)</span>, that distinguish positive from negative
+movements in the derivative of <span class="math notranslate nohighlight">\(Z_t^i:\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-z">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-z" title="Link to this equation">#</a></span>\[
+\dot Z_t^i = U_t^i - V_t^i \]</div>
+<p>The site-specific state variable process
+<span class="math notranslate nohighlight">\(X^i\)</span> evolves as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-x">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-x" title="Link to this equation">#</a></span>\[
+{\dot X}_t^i  = - \gamma^i U^i_t - \alpha \left[ X_t^i - \gamma^i  \left( {{\bar z}^i - Z_t^i }  \right) \right] \]</div>
+<p>where the parameters satisfy: <span class="math notranslate nohighlight">\(\gamma^i &gt; 0, \alpha &gt;0,\)</span> for
+<span class="math notranslate nohighlight">\(i=1,2,..., I.\)</span> The first term on the right side of
+<a class="reference internal" href="#equation-eq-x">(2)</a> connects
+deforestation to a loss in captured carbon. The site-specific parameter
+<span class="math notranslate nohighlight">\(\gamma^i&gt; 0\)</span> denotes the density of CO2e that is present in a primary
+forest in site <span class="math notranslate nohighlight">\(i\)</span>.<a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> The next term expresses the growth in captured
+CO2e, when the size of the forest in site <span class="math notranslate nohighlight">\(i\)</span> is held constant. The
+mean-reversion coefficient <span class="math notranslate nohighlight">\(\alpha\)</span> guarantees that if one lets the
+forest grow undisturbed in a deforested area, it would reach
+<span class="math notranslate nohighlight">\(100 [1 - \exp(-\alpha100 )]\%\)</span> of the maximal captured CO2e in 100
+years as in <span id="id4">Heinrich <em>et al.</em> [<a class="reference internal" href="../reference.html#id33" title="Viola HA Heinrich, Ricardo Dalagnol, Henrique LG Cassol, Thais M Rosan, Catherine Torres de Almeida, Celso HL Silva Junior, Wesley A Campanharo, Joanna I House, Stephen Sitch, Tristram C Hales, and others. Large carbon sink potential of secondary forests in the brazilian amazon to mitigate climate change. Nature communications, 12(1):1–11, 2021.">2021</a>]</span>. In our case, we choose <span class="math notranslate nohighlight">\(\alpha\)</span> such
+that <span class="math notranslate nohighlight">\(100[1 - \exp(-\alpha100)]= 99\%\)</span>. Notice that, holding constant
+the deforested area, the amount of carbon in a site converges to
+<span class="math notranslate nohighlight">\(\gamma^i\)</span> per hectare of remaining forest. In Remark
+<a class="reference internal" href="#rem:cs"><span class="xref myst">3</span></a>{reference-type=”ref” reference=”rem:cs”}, we argue that at
+the optimum, one of the controls is always zero, which introduces
+additional binding constraints into the analysis. We write this
+constraint as: <span class="math notranslate nohighlight">\(U^i_tV^i_t=0\)</span>.</p>
+<p>We model cattle output as proportional to the land allocated to cattle
+farming,</p>
+<div class="math notranslate nohighlight" id="equation-eq-vofag">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-vofag" title="Link to this equation">#</a></span>\[A_t^i = \theta^i Z_t^i \]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta^i\)</span>
+is a site-specific productivity parameter.</p>
+<p>All of the locations contribute to emissions via the capture of carbon
+and emissions that result because of agricultural activity with a net
+impact given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-e">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-e" title="Link to this equation">#</a></span>\[\kappa \sum_{i=1}^I Z^i_t -  \sum_{i=1}^I \dot X_t^i, \]</div>
+<p>where parameter <span class="math notranslate nohighlight">\(\kappa\)</span> captures the emissions that result because of
+cattle farming.<a class="footnote-reference brackets" href="#id9" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> We include a cost of adjustment to changes in the
+use of land with contributions from each site. It is measured by</p>
+<div class="math notranslate nohighlight">
+\[\frac \zeta 2 \left [\sum_{i=1}^I \left(U_t^i + V_t^i \right)\right]^2.\]</div>
+<p>Importantly, the adjustment cost depends on the aggregate change in land
+use.</p>
+<p>The price process <span class="math notranslate nohighlight">\(P^a\)</span> for the agricultural output evolves exogenously
+as an <span class="math notranslate nohighlight">\(n\)</span>-state Markov chain in continuous time with time-invariant
+transitions. This process has an infinitesimal generator represented as
+an intensity matrix <span class="math notranslate nohighlight">\({\mathbb M}\)</span> with non-negative entries off-diagonal
+entries <span class="math notranslate nohighlight">\({\sf m}_{\ell\ell'} \ge 0\)</span> for <span class="math notranslate nohighlight">\(\ell' \ne \ell\)</span> and diagonal
+entries</p>
+<div class="math notranslate nohighlight">
+\[{\sf m}_{\ell \ell} = - \sum_{\ell' = 1, \ell' \ne \ell}^n {\sf m}_{\ell \ell'} .\]</div>
+<p>The implied transition probability matrix over an interval of time
+<span class="math notranslate nohighlight">\(\tau\)</span> is <span class="math notranslate nohighlight">\(\exp\left( \tau {\mathbb M} \right)\)</span> computed using a matrix
+counterpart to a power series.</p>
+<p>Since many carbon trading schemes are based on emissions, we assume that
+the planner takes as given a price for carbon emissions <span class="math notranslate nohighlight">\(P^e,\)</span> the
+initial price for agriculture and the Markov process that describes the
+future evolution of the price <span class="math notranslate nohighlight">\(P^a_t\)</span> for cattle and maximizes</p>
+<div class="math notranslate nohighlight" id="equation-eq-pogo">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-pogo" title="Link to this equation">#</a></span>\[
+     \mathbb E\left\{ \int_0^\infty \exp(-\delta t) \left[-P^e  \left (\kappa\sum_{i=1}^I Z^i_{t}- \sum_{i=1}^I \dot X^i_t \right)+  P^a_t  \sum_{i=1}^I \theta^i Z^i_{t}-\frac \zeta 2 \left (\sum_{i=1}^I (U_t^i + V_t^i) \right)^2 \right ] dt\right\}\]</div>
+<p>subject to equations <a class="reference internal" href="#equation-eq-z">(1)</a>-<a class="reference internal" href="#equation-eq-x">(2)</a>, and the control restrictions:</p>
+<div class="math notranslate nohighlight">
+\[U_t^i \ge 0, \hspace{1cm} V_t^i \ge 0 \hspace{1cm} t \ge 0.\]</div>
+<p>where
+<span class="math notranslate nohighlight">\(\delta\)</span> is the subjective discount rate. The exogenously specified
+emissions price, <span class="math notranslate nohighlight">\(P^e,\)</span> is an input into the analysis that allows us to
+explore how costly it will be to make important changes in deforestation
+outcomes in Brazil. Its magnitude reflects the sum of the marginal value
+attributed by the planner to emission and any monetary transfers
+obtained from others, such as sales in carbon emission markets. In the
+computations that follow, we take this price to be fixed over time, but
+in future work we intend <span class="math notranslate nohighlight">\(P^e\)</span> to fluctuate over time.</p>
+<p><strong>Remark 1</strong>. <em>The objective function
+<a class="reference internal" href="#equation-eq-pogo">(5)</a> values
+agricultural output by the value of sales, thus assuming that inputs to
+production have no alternative use. This choice is dictated by a lack of
+data on the cost of attracting or redeploying agricultural inputs, but
+it biases the results in favor of agricultural use.</em></p>
+<p><strong>Remark 2</strong>. <em>The only explicit interaction across sites in objective
+function <a class="reference internal" href="#equation-eq-pogo">(5)</a>
+occurs through the adjustment costs. This interaction is intended to be
+the result of a less than perfectly elastic supply of resources needed
+for changing land use at the level of the whole Amazon. Additionally,
+sites are spatially related by their similarity in productivities for
+alternative ways to use the land. A more complex model would introduce
+interactions across sites via non-linearities in the valuation of
+agricultural output and/or emissions, an extension worthy of exploration
+in future work.</em></p>
+<p><strong>Remark 3</strong>. <em>To show that the controls <span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t\)</span> satisfy the
+complementary slackness condition <span class="math notranslate nohighlight">\(U^i_tV^i_t=0\)</span> for each pair <span class="math notranslate nohighlight">\((i,t),\)</span>
+it is easier to consider a discrete-time model. The proof for the
+analogous result for the continuous-time case goes through by taking
+limits. Suppose you take a point where the optimal trajectory involves
+<span class="math notranslate nohighlight">\(\min\{U^i_t, V^i_t\}&gt;\Delta&gt;0.\)</span> If the planner lowers both controls by
+<span class="math notranslate nohighlight">\(\Delta,\)</span> then at time <span class="math notranslate nohighlight">\(t\)</span>, one obtains an increase of <span class="math notranslate nohighlight">\(\Delta\)</span> in
+<span class="math notranslate nohighlight">\(X^i_t\)</span> and lower emissions <span class="math notranslate nohighlight">\(\gamma^i \Delta\)</span>. Equation
+<a class="reference internal" href="#equation-eq-x">(2)</a> implies that
+<span class="math notranslate nohighlight">\(X^i_t\)</span> would have a lower drift and converge over time to the
+stationary solution. This in turn implies that the <em>sum</em> of future
+emissions would increase by <span class="math notranslate nohighlight">\(\gamma^i \Delta.\)</span> However since the rate of
+discount is positive, the value of the problem would increase. Thus, an
+optimal solution cannot involve simultaneously positive values for
+<span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t.\)</span></em></p>
+<p><strong>Remark 4</strong>. <em>Optimization problem
+<a class="reference internal" href="#equation-eq-pogo">(5)</a> does not
+involve the stocks of (extended) carbon in the atmosphere generated by
+activities in the Amazon biome. However, given emission trajectories
+from the optimal solution, one could use geo-science inputs to inform
+the mapping of emissions from the Brazilian Amazon and elsewhere into
+carbon in the atmosphere to compute the impact on the evolution of
+carbon stocks. This would require a much more comprehensive model that
+is beyond the scope of this particular exercise.</em></p>
+<br>
+<hr style="height:4px; background-color:black; border:none;">
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>We choose cattle prices because, in recent years, more than 85% of
+deforested land is dedicated to cattle grazing - soybean, the
+largest crop in the region, accounts for about 8% of the farming
+land (Mapbiomas - www.mapbiomas.org).</p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>For calibration of this and the other parameters see Section
+<a class="reference internal" href="../calibration/calibration.html#sec-cal"><span class="std std-ref">[sec:cal]</span></a>{reference-type=”ref” reference=”sec:cal”}</p>
+</aside>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">4</a><span class="fn-bracket">]</span></span>
+<p>For simplicity, equation <a class="reference internal" href="#equation-eq-x">(2)</a>{reference-type=”eqref”
+reference=”eq:x”} assumes that all deforestation occurs in primary
+forest, what is not far from what has been observed in the Brazilian
+Amazon.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>About 75 percent of emissions from agricultural activity in the
+Amazon is the result of the natural digestive process of cattle.
+Another approximately 21 percent is from soil management. Thus for
+simplicity we assume that cattle herd per hectare does not vary and
+that productivity variations come mostly from transportation costs
+and carcass weights.</p>
+</aside>
+</aside>
 </section>
 
     <script type="text/x-thebe-config">
@@ -382,12 +572,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../introduction/literature.html"
+       href="../literature/literature.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Related Literature</p>
+        <p class="prev-next-title">Related Substantive Literature</p>
       </div>
     </a>
     <a class="right-next"

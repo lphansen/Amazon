@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Results with stochastic variation in agricultural prices &#8212; Amazon project</title>
+    <title>Solution with parameter ambiguity aversion &#8212; Amazon project</title>
   
   
   
@@ -60,11 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'results/MPC';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solution/parameter';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conclusions" href="../conclusion/conclusion.html" />
-    <link rel="prev" title="Results with robustness to parameter uncertainty" href="HMC.html" />
+    <link rel="next" title="Solution with price stochasticity under ambiguity neutrality" href="price.html" />
+    <link rel="prev" title="Solution with parameter ambiguity neutrality" href="neutrality.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,17 +183,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../model/model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../uncertainty/uncertainty.html">Parameter uncertainty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Productivity measurement</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="solution.html">Solving the maximization problem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="results.html">Results</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="shadow_price.html">Shadow prices under business-as-usual</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HMC.html">Results with robustness to parameter uncertainty</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Results with stochastic variation in agricultural prices</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../results/results.html">Results</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../results/shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/HMC.html">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/MPC.html">Results with stochastic variation in agricultural prices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../conclusion/conclusion.html">Conclusions</a></li>
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/results/MPC.md" target="_blank"
+      <li><a href="../_sources/solution/parameter.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Results with stochastic variation in agricultural prices</h1>
+    <h1>Solution with parameter ambiguity aversion</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -349,207 +349,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="results-with-stochastic-variation-in-agricultural-prices">
-<h1>Results with stochastic variation in agricultural prices<a class="headerlink" href="#results-with-stochastic-variation-in-agricultural-prices" title="Link to this heading">#</a></h1>
+  <section id="solution-with-parameter-ambiguity-aversion">
+<span id="sec-pu"></span><h1>Solution with parameter ambiguity aversion<a class="headerlink" href="#solution-with-parameter-ambiguity-aversion" title="Link to this heading">#</a></h1>
 <hr style="height:4px; background-color:black; border:none;">
 <br>
-<p>For our final set of results, we explore implications allowing for an
-explicit randomness in the agricultural price process. We generate these
-results using the MPC method described previously. To keep things
-tractable, we have the social planner assume a two state Markov process
-for the price process. We obtained the inputs into this specification by
-estimating a hidden-state Markov process with Gaussian noise as we
-describe in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a>. Of course, this is a rather substantial
-reduction in the price stochastic structure of agricultural prices, but
-it allows to engage in an initial explore of price randomness in a
-tractable way. Under the two-state Markov chain, there are two price
-realizations: <span class="math notranslate nohighlight">\(p^a = \$35.7, \$44.3.\)</span> The implied annual transition
-probabilities for staying put in each state are: .71 for the low state
-and .83 for the high state.<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> From Table
-<a class="reference internal" href="shadow_price.html#tab-shadow-price"><span class="std std-ref">Business-as-usual prices</span></a> we see only a small, and not necessarily
-very meaningful, drop in the business-as-usual price ($6.9 instead of
-$7.1) once we introduce fluctuations in agricultural prices.<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
-<p>Table
-<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-mpc"><span class="std std-ref">Present-value decomposition with stochastic agricultural prices</span></a> presents our
-results for present values decompositions. In addition to reporting
-three quantiles, for comparison we include results imposing constant
-agricultural prices equal to the mean under the implied stationary
-distribution. The notable outcomes are as follows. First, the variation
-while evident for the business-as-usual case (<span class="math notranslate nohighlight">\(b = \$0\)</span>) is much less
-consequential when <span class="math notranslate nohighlight">\(b = \$15\)</span> and <span class="math notranslate nohighlight">\(b = \$25\)</span> for the overall planner
-value. It is proportionately similar for the agricultural contribution
-to the value for all three choices of <span class="math notranslate nohighlight">\(b\)</span>. Second, imposing the mean as
-a constant price gives quite an accurate approximation to the median
-response. In this sense, the stochastic specification for agricultural
-prices only has modest impact on our results. Finally, Table
-<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-mpc"><span class="std std-ref">Present-value decomposition with stochastic agricultural prices</span></a> in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> exhibits the transfer costs and again these
-show only a modest impact of the presence uncertainty.</p>
-<table class="table" id="tab-valueobjectivedecomposition-78sites-mpc">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Present-value decomposition with stochastic agricultural prices</span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-mpc" title="Link to this table">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>agricultural output value</p></th>
-<th class="head"><p>net Transfers</p></th>
-<th class="head"><p>forest Services</p></th>
-<th class="head"><p>adjustment Costs</p></th>
-<th class="head"><p>planner Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
-<td><p>stochastic</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>b = $0</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>10%</p></td>
-<td><p>3.19</p></td>
-<td><p>0.00</p></td>
-<td><p>-1.07</p></td>
-<td><p>0.06</p></td>
-<td><p>2.10</p></td>
-</tr>
-<tr class="row-odd"><td><p>50%</p></td>
-<td><p>3.30</p></td>
-<td><p>0.00</p></td>
-<td><p>-1.05</p></td>
-<td><p>0.06</p></td>
-<td><p>2.19</p></td>
-</tr>
-<tr class="row-even"><td><p>90%</p></td>
-<td><p>3.39</p></td>
-<td><p>0.00</p></td>
-<td><p>-1.03</p></td>
-<td><p>0.06</p></td>
-<td><p>2.27</p></td>
-</tr>
-<tr class="row-odd"><td><p>b = $15</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>10%</p></td>
-<td><p>0.24</p></td>
-<td><p>1.99</p></td>
-<td><p>0.92</p></td>
-<td><p>0.19</p></td>
-<td><p>2.97</p></td>
-</tr>
-<tr class="row-odd"><td><p>50%</p></td>
-<td><p>0.26</p></td>
-<td><p>2.00</p></td>
-<td><p>0.92</p></td>
-<td><p>0.19</p></td>
-<td><p>2.99</p></td>
-</tr>
-<tr class="row-even"><td><p>90%</p></td>
-<td><p>0.27</p></td>
-<td><p>2.00</p></td>
-<td><p>0.92</p></td>
-<td><p>0.19</p></td>
-<td><p>3.00</p></td>
-</tr>
-<tr class="row-odd"><td><p>b = $25</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>10%</p></td>
-<td><p>0.16</p></td>
-<td><p>3.48</p></td>
-<td><p>0.96</p></td>
-<td><p>0.27</p></td>
-<td><p>4.33</p></td>
-</tr>
-<tr class="row-odd"><td><p>50%</p></td>
-<td><p>0.18</p></td>
-<td><p>3.48</p></td>
-<td><p>0.96</p></td>
-<td><p>0.28</p></td>
-<td><p>4.34</p></td>
-</tr>
-<tr class="row-even"><td><p>90%</p></td>
-<td><p>0.19</p></td>
-<td><p>3.48</p></td>
-<td><p>0.96</p></td>
-<td><p>0.28</p></td>
-<td><p>4.35</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
-<td><p>$41.1</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>b = 0</p></td>
-<td><p>3.31</p></td>
-<td><p>0.00</p></td>
-<td><p>-1.10</p></td>
-<td><p>0.06</p></td>
-<td><p>2.14</p></td>
-</tr>
-<tr class="row-odd"><td><p>b = 15</p></td>
-<td><p>0.26</p></td>
-<td><p>2.02</p></td>
-<td><p>0.95</p></td>
-<td><p>0.17</p></td>
-<td><p>3.06</p></td>
-</tr>
-<tr class="row-even"><td><p>b = 25</p></td>
-<td><p>0.17</p></td>
-<td><p>3.54</p></td>
-<td><p>1.00</p></td>
-<td><p>0.26</p></td>
-<td><p>4.45</p></td>
-</tr>
-</tbody>
-</table>
-<br>
-<br>
-<p><strong>Remark 1</strong>. <em>One possible way to amplify the models impact of making
-agricultural prices stochastic is to introduce specification uncertainty
-into the analysis. <span id="id3">Anderson <em>et al.</em> [<a class="reference internal" href="../reference.html#id2" title="Evan W Anderson, Lars Peter Hansen, and Thomas J Sargent. A quartet of semigroups for model specification, robustness,prices of risk, and model detection. Journal of the European Economic Association, 1:68-123, 2003. doi:10.4324/9780203358061.">2003</a>]</span> propose a recursive way to make this
-adjustment by using a relative entropy divergence to form penalties that
-limit the potential misspecifications that are explored by the planner.
-Thus the MPC approach could potentially be extended to incorporate this
-extension, opening the door to greater adjustments for uncertainty.</em></p>
+<p>For solving the robustly optimal problem numerically, we take an
+iterative approach, supported by the Min-max Theorem. Specifically, we
+proceed as follows:</p>
+<p>i)  Given a <span class="math notranslate nohighlight">\(g\)</span>, we solve the maximization problem for a candidate <span class="math notranslate nohighlight">\(d.\)</span>
+We ignore the relative entropy penalty term in this solution.</p>
+<p>ii) For a given <span class="math notranslate nohighlight">\({ d}\)</span>, we solve
+the minimization problem with the relative entropy penalization to
+obtain a new candidate for <span class="math notranslate nohighlight">\(g^*.\)</span></p>
+<p>iii) We repeat the steps until we achieve convergence.</p>
+<p>Our computations in step ii) will exploit the quasi-analytical formula for
+<span class="math notranslate nohighlight">\(g^*\)</span> given in <a class="reference internal" href="../uncertainty/uncertainty.html#equation-minimizer">(7)</a>. We take as given a decision process, <span class="math notranslate nohighlight">\(d\)</span>, and
+evaluate the discounted objective to obtain the numerator for
+<a class="reference internal" href="../uncertainty/uncertainty.html#equation-minimizer">(7)</a>. The denominator, however, must be computed
+numerically. Here we use a Monte Carlo method that was originally
+developed for computing Bayesian posteriors. This method is based on
+Hamiltonian dynamics and is often more computationally efficient for
+high-dimensional problems than the familiar Metropolis-Hastings method.
+See, for instance, <span id="id1">Neal and others [<a class="reference internal" href="../reference.html#id49" title="Radford M Neal and others. Mcmc using hamiltonian dynamics. Handbook of markov chain monte carlo, 2(11):2, 2011.">2011</a>]</span> and <span id="id2">Carpenter <em>et al.</em> [<a class="reference internal" href="../reference.html#id50" title="Bob Carpenter, Andrew Gelman, Matthew D Hoffman, Daniel Lee, Ben Goodrich, Michael Betancourt, Marcus A Brubaker, Jiqiang Guo, Peter Li, and Allen Riddell. Stan: a probabilistic programming language. Journal of statistical software, 2017.">2017</a>]</span>, with software
+support given by <span id="id3">Stan Development Team [<a class="reference internal" href="../reference.html#id60" title="Stan Development Team. Stan Modeling Language Users Guide and Reference Manual. 2023. Version 2.33. URL: http://mc-stan.org/ 13.">2023</a>]</span>.<a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> See Appendix
+<a class="reference internal" href="../appendix/appendix.html#sec-appendixd"><span class="std std-ref">D</span></a> for
+more details.</p>
 <br>
 <hr style="height:4px; background-color:black; border:none;">
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
-<p>Appendix <a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> gives results for a second estimation of
-the hidden-state Markov process in which Gaussian shock variances
-are constrained to be the same. In this case, both realized states
-are lower and most of the time is spent in the higher of the two
-states.</p>
-</aside>
 <aside class="footnote brackets" id="id5" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
-<p>To construct the business-as-usual price for emissions when the
-agricultural prices are stochastic, we used the smoothed
-probabilities reported in left panel of Figure
-[15] in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> to assign the discrete states in our
-computations. While we used a probability .5 threshold for this
-assignment, many of the probabilities are actually close to zero or
-one.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>From a mathematical standpoint, this calculation is equivalent to
+computing a Bayesian posterior where <span class="math notranslate nohighlight">\(- \frac 1 \xi f(d, \beta)\)</span>
+plays the role of a log-likelihood function and <span class="math notranslate nohighlight">\(\pi\)</span> plays the role
+of a prior. As noted in Remark
+<a class="reference internal" href="../uncertainty/uncertainty.html#conjugate"><span class="std std-ref">4.3</span></a>, for programming simplicity, we worked
+with an augmented parameter space when computing the distribution of
+interest.</p>
 </aside>
 </aside>
 </section>
@@ -567,7 +404,7 @@ one.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./results"
+            path: "./solution"
         },
         predefinedOutput: true
     }
@@ -585,20 +422,20 @@ one.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="HMC.html"
+       href="neutrality.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Results with robustness to parameter uncertainty</p>
+        <p class="prev-next-title">Solution with parameter ambiguity neutrality</p>
       </div>
     </a>
     <a class="right-next"
-       href="../conclusion/conclusion.html"
+       href="price.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conclusions</p>
+        <p class="prev-next-title">Solution with price stochasticity under ambiguity neutrality</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

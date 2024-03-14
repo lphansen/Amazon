@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'uncertainty/uncertainty';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,28 +177,28 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/literature.html">Related Literature</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../literature/literature.html">Related Substantive Literature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model.html">Model</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty</span></p>
-<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Parameter uncertainty</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Calibration</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Productivity measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../results/Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../results/HMC.html">Uncertainty in parameter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../results/MPC.html">Uncertainty in agricultural price</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../results/results.html">Results</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../results/shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/HMC.html">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/MPC.html">Results with stochastic variation in agricultural prices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion/conclusion.html">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -251,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/uncertainty/uncertainty.ipynb" target="_blank"
+      <li><a href="../_sources/uncertainty/uncertainty.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +263,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -347,8 +349,215 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="parameter-uncertainty">
+  <section class="tex2jax_ignore mathjax_ignore" id="parameter-uncertainty">
 <span id="sec-uncertainty"></span><h1>Parameter uncertainty<a class="headerlink" href="#parameter-uncertainty" title="Link to this heading">#</a></h1>
+<hr style="height:4px; background-color:black; border:none;">
+<br>
+<p>We treat parameter uncertainty probabilistically by starting with a
+baseline subjective prior over the parameters. We form this baseline
+“prior” conditioned on available data. Rather than assuming a full
+commitment to this baseline distribution, we allow for some skepticism
+in by exploring sensitivity to distributional changes. We limit the
+scope of the sensitivity analysis by penalizing deviations from the
+baseline prior using a relative entropy or Kullback-Leibler measure of
+divergence. This divergence is well known to have convenient
+mathematical and conceptual implications. We implement this sensitivity
+analysis by converting our one-person maximization problem into a
+two-player game where the sensitivity analysis is conducted via
+minimization. This delivers a form of ambiguity aversion consistent with
+two alternative representations of ambiguity aversion: smooth ambiguity
+and variational preferences.<a class="footnote-reference brackets" href="#id6" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>Our model is dynamic and Markovian. As such, it could be formulated from
+the vantage point of an initial period or recursively. Even in the
+absence of parameter uncertainty, we find it convenient computationally
+to solve it from the perspective of an initial date. This makes it a
+“static problem.” We adopt this same static perspective to explore the
+consequences of uncertainty. In contrast to the single-agent decision
+theory, this has conceptual implications beyond just computational
+considerations as the minimization is performed as well at the initial
+date. In effect, we treat the two-player formulation as a static max-min
+game where, as we noted, the minimizing player is used as a formal
+device to explore the sensitivity to changes in the distribution over
+parameters used in optimization.</p>
+<p>We implement a static formulation of robustness to parameter uncertainty
+as follows. For each site, we consider the parameter pair
+<span class="math notranslate nohighlight">\((\gamma^i, \theta^i)\)</span> for <span class="math notranslate nohighlight">\(i=1,2,...,I.\)</span> Let <span class="math notranslate nohighlight">\(\varphi\)</span> denote full
+parameter vector including all sites and hence of dimension
+<span class="math notranslate nohighlight">\(2 \times I.\)</span> We use a regression approach to construct baseline
+estimates of the site-specific productivities given site attributes.
+Each site may intersect multiple municipalities, and we write <span class="math notranslate nohighlight">\(M^i\)</span> for
+the set of municipalities that overlap site <span class="math notranslate nohighlight">\(i\)</span>. We construct
+site-specific productivities using</p>
+<div class="math notranslate nohighlight" id="equation-productivity-construct">
+<span class="eqno">(6)<a class="headerlink" href="#equation-productivity-construct" title="Link to this equation">#</a></span>\[
+ \begin{bmatrix} \gamma^i \cr \theta^i \end{bmatrix}
+ = \begin{bmatrix} \sum_{m \in M^i} w_m^i \exp\left(  \beta_\gamma \cdot R_\gamma^m \right) \cr  \frac 1 {P^A_{2017}}\sum_{m \in M^i} w_m^i \exp\left( \beta_\theta \cdot R_\theta^m \right) \end{bmatrix}.\]</div>
+<p>In this regression, <span class="math notranslate nohighlight">\(R_\gamma^m\)</span> is a vector of geographical variables
+used to construct baseline estimates for the carbon-absorption
+productivity for municipality, <span class="math notranslate nohighlight">\(m\)</span>. Similarly, <span class="math notranslate nohighlight">\(R_\theta^m\)</span> is a vector
+of such variables used to construct baseline estimates for the value of
+agricultural output per hectare for the same municipality. <span class="math notranslate nohighlight">\(w_m^i\)</span> is an
+area-based weight of the importance of municipality <span class="math notranslate nohighlight">\(m\)</span> in site <span class="math notranslate nohighlight">\(i,\)</span> and
+<span class="math notranslate nohighlight">\(P^A_{2017}\)</span> is the price of cattle in 2017.</p>
+<p>Uncertainty in the composite regression parameter vector,
+<span class="math notranslate nohighlight">\(\beta' \mathrel{\overset{\mathrm{def}}{=}}({\beta_\gamma}', {\beta_\theta}'),\)</span>
+induces uncertainty in the site-specific productivities,
+<span class="math notranslate nohighlight">\((\gamma^i, \theta^i)\)</span> for <span class="math notranslate nohighlight">\(i = 1,2,...,I.\)</span> The underlying dimension of
+the uncertainty is given by the number of the unknown regression
+parameters, which is substantially less than <span class="math notranslate nohighlight">\(2 \times I.\)</span> This
+reduction turns out to be important for implementation. We use a
+regression method because we do not have direct evidence for each of the
+site-specific productivities. Our productivity data are available at
+different resolutions than the sites within our model. For these
+reasons, we use attributes as right-hand side variables in the
+regression and feed in site-specific attributes. Moreover, we use the
+regression approach to fill in missing observations. Since the dependent
+variables in the regressions are expressed in terms of logarithms, we
+exponentiate the predictions implied by regressions.</p>
+<p>We use historical evidence on land-use productivity to estimate the two
+regression equations as functions of attributes. We impose a familiar
+and convenient conjugate prior to produce a Bayesian posterior <span class="math notranslate nohighlight">\(\pi\)</span>,
+for the <span class="math notranslate nohighlight">\(\beta'\)</span>s. See, for instance, <span id="id2">Raiffa <em>et al.</em> [<a class="reference internal" href="../reference.html#id3" title="Howard Raiffa, Robert Schlaifer, and others. Applied statistical decision theory. Wiley, 1961.">1961</a>]</span>. The unknown regression
+coefficients are presumed to be normally distributed conditioned on the
+regression-error variances and the regression-error variance are posited
+to have an inverse gamma distribution. We use quasi-analytical formulas
+to deduce posterior distributions for the regression predictions that we
+use as baseline probability distributions for the site-specific
+productivities.<a class="footnote-reference brackets" href="#id12" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> While the baseline distributions <span class="math notranslate nohighlight">\(\pi\)</span> constructed
+in this matter are “posterior” from the perspective of our regression
+analysis, they play the role of a “prior” for the social planner acting
+conditioned on data used in the regression analysis.<a class="footnote-reference brackets" href="#id13" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
+<p>Our measure of divergence used to explore sensitivity restricts the
+alternative probabilities to be absolutely continuous with respect to
+the baseline distribution. With this restriction, it suffices to focus
+on alternative distributions to the baseline specification for the
+regression coefficients. This simplifies substantially the numerical
+computations.</p>
+<p><strong>Remark 1</strong>. <em>An interesting extension could include a probabilistic
+specification of heterogeneity in the productivity parameters not
+captured by the regression formulation. This would add to the
+computational burden as the sensitivity analysis would be over a
+substantially larger space and would require a plausible probability
+specification of the unobserved heterogeneity.</em></p>
+<p>Given the vector of regression parameters, <span class="math notranslate nohighlight">\(\beta,\)</span> in a set,
+<span class="math notranslate nohighlight">\({\mathcal B},\)</span> we write <span class="math notranslate nohighlight">\(f(d, \beta)\)</span> for the discounted utility
+obtained from a sequence of decisions <span class="math notranslate nohighlight">\(d\)</span> with implied productivity
+parameters given by formula
+<a class="reference internal" href="#equation-productivity-construct">(6)</a>. We abstract from uncertainty in
+this calculation, but this could also be incorporated into the analysis.
+We use a familiar relative entropy (or Kullback-Leibler) divergence
+measure to capture ambiguity about the parameter distribution given by</p>
+<div class="math notranslate nohighlight">
+\[\int_{\mathcal B} \log g(\beta) g(\beta) d \pi( \beta) \ge 0,\]</div>
+<p>where
+<span class="math notranslate nohighlight">\(g\)</span> satisfies <span class="math notranslate nohighlight">\(\int g(\beta)  d\pi(\beta )= 1.\)</span> Notice that the
+non-negative (relative) density, <span class="math notranslate nohighlight">\(g,\)</span> implies an alternative probability
+distribution given by <span class="math notranslate nohighlight">\(g(\beta) d\pi(\beta).\)</span> Preferences over
+alternative decision sequences are given by:</p>
+<div class="math notranslate nohighlight">
+\[\min_{g \ge 0, \int  g d\pi = 1} \int_{\mathcal B} \left[ f(d, \beta)  + \xi \log g(\beta)\right] g(\beta) d\pi(\beta),\]</div>
+<p>for a penalty parameter <span class="math notranslate nohighlight">\(\xi &gt; 0.\)</span> For <span class="math notranslate nohighlight">\(\xi\)</span> arbitrarily large, these
+preferences are well approximated by expected utility preferences using
+the baseline distribution <span class="math notranslate nohighlight">\(\pi.\)</span></p>
+<p>These preferences are recognizable as a special case of what are called
+variational preferences for a static decision problem. The minimization
+problem has a well-known quasi-analytical solution:</p>
+<div class="math notranslate nohighlight" id="equation-minimizer">
+<span class="eqno">(7)<a class="headerlink" href="#equation-minimizer" title="Link to this equation">#</a></span>\[
+g^*(\beta) = \frac { \exp\left[ - \frac 1 \xi  f(d, \beta) \right]} {
+\int_{\mathcal B} \exp\left[ - \frac 1 \xi  f(d, \beta) \right] d \pi(\beta)}\]</div>
+<p>with a minimized objective:</p>
+<div class="math notranslate nohighlight" id="equation-minimized-objective">
+<span class="eqno">(8)<a class="headerlink" href="#equation-minimized-objective" title="Link to this equation">#</a></span>\[
+-\xi  \log \int_{\mathcal B} \exp\left[ - \frac 1 \xi  f(d, \beta) \right] d \pi(\beta).\]</div>
+<p>The minimizing <span class="math notranslate nohighlight">\(g\)</span> given in
+<a class="reference internal" href="#equation-minimized-objective">(8)</a> induces an “exponential tilt” of the
+probabilities towards lower discounted utilities. The magnitude of <span class="math notranslate nohighlight">\(\xi\)</span>
+determines the strength of this tilt. We shall refer to limiting
+<span class="math notranslate nohighlight">\(\xi=\infty\)</span> case as <em>ambiguity neutrality</em>. For this limit, the
+decision problem uses the familiar expected utility objective:</p>
+<div class="math notranslate nohighlight">
+\[\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta).\]</div>
+<p><strong>Remark 2</strong>. <em>The minimized objective given by
+<a class="reference internal" href="#equation-minimized-objective">(8)</a> is a special case of a smooth ambiguity
+objective, first suggested by <span id="id5">Klibanoff <em>et al.</em> [<a class="reference internal" href="../reference.html#id4" title="Peter Klibanoff, Massimo Marinacci, and Sujoy Mukerji. A smooth model of decision making under uncertainty. Econometrica, 73:1849-1892, 2005.">2005</a>]</span>. They
+deduced a rationale for an ambiguity adjustment represented using a
+concave function distinct from the one used for expressing risk
+aversion. While they take such a concave adjustment to be a starting
+point, we deduce a logarithmic-exponential representation from a
+starting point motivated by robustness. Thus their axiomatic motivation
+is different from the distributional robustness that interests us.</em></p>
+<p id="conjugate"><strong>Remark 3</strong>. <em>As posed, the minimization is over the marginal posterior
+for the regression coefficients. With relative entropy divergence, we
+may equivalently solve the minimization problem using the relative
+entropy divergence over the conditional posterior distribution for the
+regression coefficients and the marginal posterior for the
+regression-error variances. We use this observation in our actual
+calculations to simplify our algorithmic implementation.</em></p>
+<p>Given the parameter ambiguity adjustment, the implied decision problem
+is a two-player zero-sum game. If we constraint the decision process <span class="math notranslate nohighlight">\(d\)</span>
+to a convex set <span class="math notranslate nohighlight">\({\mathcal D}.\)</span></p>
+<p id="prob-primal"><strong>Problem 4</strong>.</p>
+<div class="math notranslate nohighlight">
+\[\max_{d \in {\mathcal D}} \min_{g \ge 0, \int g d\pi = 1}   \int_{\mathcal B} f({ d},  { \beta} )   g(\beta) d\pi(\beta) 
++ \xi \int_{\mathcal B} \log g(\beta ) g({\beta}) d\pi(\beta) .\]</div>
+<p>For conceptual reasons, we switch order of maximization and
+minimization.</p>
+<p id="prob-reverse"><strong>Problem 5</strong>.</p>
+<div class="math notranslate nohighlight">
+\[\min_{g \ge 0 , \int g d\pi = 1} \max_{ d \in {\mathcal D}}  \int_{\mathcal B} f({ d},  { \beta} )   g({\beta }) d\pi(\beta ) 
++ \xi \int \log g(\beta ) g({ \beta }) d\pi( \beta ) .\]</div>
+<p>Under quite general conditions we may invoke the Max-min Theorem and
+claim that the objective for Problems
+<a class="reference internal" href="#prob-primal">4</a> and
+<a class="reference internal" href="#prob-reverse">5</a> will
+be same and the minimizing <span class="math notranslate nohighlight">\(g\)</span> evaluated at the maximized <span class="math notranslate nohighlight">\(d\)</span> for the
+Problem <a class="reference internal" href="#prob-primal">4</a>
+will agree with the minimizing <span class="math notranslate nohighlight">\(g\)</span> from Problem
+<a class="reference internal" href="#prob-reverse">5</a>.
+Similarly, the optimized decision processes will agree.</p>
+<p>Consider the inner maximization for Problem
+<a class="reference internal" href="#prob-reverse">5</a>:</p>
+<div class="math notranslate nohighlight">
+\[\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta)\]</div>
+<p>where we are free to drop the relative entropy penalty as it does not
+depend on the decision process <span class="math notranslate nohighlight">\({ d}\)</span>. Provided that this inner problem
+has a solution for the outer <span class="math notranslate nohighlight">\(g\)</span> minimization, the planner is maximizing
+against this particular (penalized) “worst-case probability.” This
+computation is of interest as a way to interpret the consequences of any
+given choice of the penalty parameter <span class="math notranslate nohighlight">\(\xi\)</span>. Following a common practice
+for robust Bayesian methods, we find it revealing to explore alternative
+choices of <span class="math notranslate nohighlight">\(\xi\)</span> and deduce their implications for the implied
+worst-case probabilities.</p>
+<br>
+<hr style="height:4px; background-color:black; border:none;">
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>See <span id="id7">Klibanoff <em>et al.</em> [<a class="reference internal" href="../reference.html#id4" title="Peter Klibanoff, Massimo Marinacci, and Sujoy Mukerji. A smooth model of decision making under uncertainty. Econometrica, 73:1849-1892, 2005.">2005</a>]</span> for an initial axiomatic
+foundation for smooth ambiguity and
+<span id="id8">Maccheroni <em>et al.</em> [<a class="reference internal" href="../reference.html#id58" title="Fabio Maccheroni, Massimo Marinacci, and Aldo Rustichini. Ambiguity aversion, robustness, and the variational representation of preferences. Econometrica, 74:1447-1498, 2006. doi:10.1111/j.1468-0262.2006.00716.x.">2006</a>]</span> for an axiomatic foundation
+for variational preferences. <span id="id9">Maccheroni <em>et al.</em> [<a class="reference internal" href="../reference.html#id58" title="Fabio Maccheroni, Massimo Marinacci, and Aldo Rustichini. Ambiguity aversion, robustness, and the variational representation of preferences. Econometrica, 74:1447-1498, 2006. doi:10.1111/j.1468-0262.2006.00716.x.">2006</a>]</span>
+used <span id="id10">Hansen and Sargent [<a class="reference internal" href="../reference.html#id56" title="Lars Peter Hansen and Thomas J Sargent. Robust control and model uncertainty. The American Economic Review, 91:60-66, 5 2001.">2001</a>]</span>’s application of relative entropy divergence as
+motivation for their work. See <span id="id11">Hansen and Sargent [<a class="reference internal" href="../reference.html#id57" title="Lars Peter Hansen and Thomas J Sargent. Risk, ambiguity, and misspecification: decision theory, robust control, and statisitics. Journal of Applied Econometrics, online:1-31, 10 2023.">2023</a>]</span> for a recent
+analysis relating both preference formulations to statistical
+decision theory and robust control theory by embracing a different
+axiomatic perspective.</p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>See Appendix
+<a class="reference internal" href="#appen:baseline"><span class="xref myst">[appen:baseline]</span></a>{reference-type=”ref”
+reference=”appen:baseline”} for details</p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Our static formulation of the two-player decision problem does not
+allow for the possibility of dynamic learning going forward. We
+abstract from this for computational tractability.</p>
+</aside>
+</aside>
 </section>
 
     <script type="text/x-thebe-config">

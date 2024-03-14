@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Background" href="introduction/background.html" />
+    <link rel="next" title="Introduction" href="introduction/introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,28 +174,28 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction/background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction/literature.html">Related Literature</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="literature/literature.html">Related Substantive Literature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model/model.html">Model</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="uncertainty/uncertainty.html">Parameter uncertainty</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Calibration</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="calibration/calibration.html">Productivity measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="results/Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="results/HMC.html">Uncertainty in parameter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="results/MPC.html">Uncertainty in agricultural price</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="results/results.html">Results</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="results/shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results/Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results/HMC.html">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results/MPC.html">Results with stochastic variation in agricultural prices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion/conclusion.html">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -377,39 +377,43 @@ a significant amount of greenhouse gases in the next 30 years. Our analysis
 pinpoints tropical forest management as an important contributor to climate
 change mitigation.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/biome.png"><img alt="fishy" class="bg-primary mb-1 align-center" src="_images/biome.png" style="width: 700px;" /></a>
+<!-- 1. [Introduction]()
+    - [Background](introduction/background.ipynb)
+    - [Related Substantive Literature](introduction/literature.ipynb)
+2. [Model](model/model.ipynb)
+3. [Parameter uncertainty](uncertainty/uncertainty.ipynb)
+4. [Productivity measurement](calibration/calibration.ipynb)
+5. [Results]() 
+    - [without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
+    - [with robustness to parameter uncertainty](results/HMC.ipynb)
+    - [with stochastic variation in agricultural prices](results/MPC.ipynb) -->
 </section>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p><a class="reference internal" href="#"><span class="xref myst">Introduction</span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="introduction/background.html"><span class="std std-doc">Background</span></a></p></li>
-<li><p><a class="reference internal" href="introduction/literature.html"><span class="std std-doc">Related Substantive Literature</span></a></p></li>
-</ul>
-</li>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="introduction/introduction.html"><span class="std std-doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="literature/literature.html"><span class="std std-doc">Related Substantive Literature</span></a></p></li>
 <li><p><a class="reference internal" href="model/model.html"><span class="std std-doc">Model</span></a></p></li>
 <li><p><a class="reference internal" href="uncertainty/uncertainty.html"><span class="std std-doc">Parameter uncertainty</span></a></p></li>
 <li><p><a class="reference internal" href="calibration/calibration.html"><span class="std std-doc">Productivity measurement</span></a></p></li>
-<li><p><a class="reference internal" href="#"><span class="xref myst">Results</span></a></p>
+<li><p><a class="reference internal" href="#solution.md"><span class="xref myst">Solving the maximization problem</span></a></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="results/Deterministic.html"><span class="std std-doc">without stochasticity or ambiguity aversion</span></a></p></li>
-<li><p><a class="reference internal" href="results/HMC.html"><span class="std std-doc">with robustness to parameter uncertainty</span></a></p></li>
-<li><p><a class="reference internal" href="results/MPC.html"><span class="std std-doc">with stochastic variation in agricultural prices</span></a></p></li>
+<li><p><a class="reference internal" href="solution/neutrality.html"><span class="std std-doc">Solution with parameter ambiguity neutrality</span></a></p></li>
+<li><p><a class="reference internal" href="solution/parameter.html"><span class="std std-doc">Solution with parameter ambiguity aversion</span></a></p></li>
+<li><p><a class="reference internal" href="solution/price.html"><span class="std std-doc">Solution with price stochasticity under ambiguity neutrality</span></a></p></li>
 </ul>
- <!-- 5. [Uncertainty in parameters](models/HMC.ipynb)
- 6. [Uncertainty in agricultural price](models/MPC.ipynb) -->
- <!-- 1. [Uncertainty in agricultural price](models/MPC.ipynb) -->
 </li>
+<li><p><a class="reference internal" href="results/results.html"><span class="std std-doc">Results</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="results/shadow_price.html"><span class="std std-doc">Shadow prices under business-as-usual</span></a></p></li>
+<li><p><a class="reference internal" href="results/Deterministic.html"><span class="std std-doc">Results for case without stochasticity or ambiguity aversion</span></a></p></li>
+<li><p><a class="reference internal" href="results/HMC.html"><span class="std std-doc">Results with robustness to parameter uncertainty</span></a></p></li>
+<li><p><a class="reference internal" href="results/MPC.html"><span class="std std-doc">Results with stochastic variation in agricultural prices</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="conclusion/conclusion.html"><span class="std std-doc">Conclusions</span></a></p></li>
 </ol>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -445,11 +449,11 @@ change mitigation.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="introduction/background.html"
+       href="introduction/introduction.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Background</p>
+        <p class="prev-next-title">Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

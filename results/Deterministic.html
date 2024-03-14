@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The case without stochasticity or ambiguity aversion &#8212; Amazon project</title>
+    <title>Results for case without stochasticity or ambiguity aversion &#8212; Amazon project</title>
   
   
   
@@ -58,11 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'results/Deterministic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Uncertainty in parameter" href="HMC.html" />
-    <link rel="prev" title="Productivity measurement" href="../calibration/calibration.html" />
+    <link rel="next" title="Results with robustness to parameter uncertainty" href="HMC.html" />
+    <link rel="prev" title="Shadow prices under business-as-usual" href="shadow_price.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +177,28 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/literature.html">Related Literature</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../literature/literature.html">Related Substantive Literature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model.html">Model</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../uncertainty/uncertainty.html">Parameter uncertainty</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Calibration</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Productivity measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HMC.html">Uncertainty in parameter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MPC.html">Uncertainty in agricultural price</a></li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="results.html">Results</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HMC.html">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MPC.html">Results with stochastic variation in agricultural prices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion/conclusion.html">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -251,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/results/Deterministic.ipynb" target="_blank"
+      <li><a href="../_sources/results/Deterministic.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +263,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -333,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The case without stochasticity or ambiguity aversion</h1>
+    <h1>Results for case without stochasticity or ambiguity aversion</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,8 +349,322 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="the-case-without-stochasticity-or-ambiguity-aversion">
-<span id="sec-results"></span><h1>The case without stochasticity or ambiguity aversion<a class="headerlink" href="#the-case-without-stochasticity-or-ambiguity-aversion" title="Link to this heading">#</a></h1>
+  <section id="results-for-case-without-stochasticity-or-ambiguity-aversion">
+<h1>Results for case without stochasticity or ambiguity aversion<a class="headerlink" href="#results-for-case-without-stochasticity-or-ambiguity-aversion" title="Link to this heading">#</a></h1>
+<hr style="height:4px; background-color:black; border:none;">
+<br>
+<p>In this section, we discuss results for a model with a constant price
+for cattle that equals the average price in the stationary distribution
+for the estimated 2-state Markov chain ($41.10). We first discuss
+results for 1043 sites, and then include results for 78 sites for
+comparison.</p>
+<p>As Figure <a class="reference internal" href="#fig-zshare1000-det"><span class="std std-ref">5</span></a> shows, with “business-as-usual” (
+<span class="math notranslate nohighlight">\(P^e=P^{ee} = \$7.6\)</span>), the optimal choice involves an increase in the
+agricultural area from 15% to around 25% of the biome. This increase may
+actually cause sufficient deforestation for the hydrological cycle of
+the Amazon to degrade to the point of being unable to support rain
+forest ecosystems (<span id="id1">Lovejoy and Nobre [<a class="reference internal" href="../reference.html#id25" title="Thomas E Lovejoy and Carlos Nobre. Amazon tipping point. Science Advances, 4(2):eaat2340, 2018.">2018</a>]</span>). The predicted trajectories are much
+different with an additional per ton payment to the planner of $10,
+$15, $20 or $25. Figure <a class="reference internal" href="#transfer-payment">6</a> reports the trajectories over time of the
+transfer payments for <span class="math notranslate nohighlight">\(b = \$15\)</span> and <span class="math notranslate nohighlight">\(b = \$25\)</span>. The peak payments occur
+after about 12 years for both values of <span class="math notranslate nohighlight">\(b\)</span>. As expected the transfer
+payments for <span class="math notranslate nohighlight">\(b=\$25\)</span> are much larger that the corresponding payments
+for <span class="math notranslate nohighlight">\(b=\$10.\)</span></p>
+<br>
+<p id="fig-zshare1000-det"><a class="reference internal" href="../_images/plotPrediction_zShare_1043Sites_det.png"><img alt="Drawing" src="../_images/plotPrediction_zShare_1043Sites_det.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/plotPrediction_x_1043Sites_det.png"><img alt="Drawing" src="../_images/plotPrediction_x_1043Sites_det.png" style="width: 300px;" /></a>
+<br>
+<span style="padding-left: 80px;"> Fig 5: Agricultural area and carbon stock evolution</p>
+<br>
+<a class="bg-primary reference internal image-reference" href="../_images/plot_net_transfer.png" id="transfer-payment"><img alt="fishy" class="bg-primary" id="transfer-payment" src="../_images/plot_net_transfer.png" style="width: 300px;" /></a>
+<p>Fig 6: Evolution of transfer payments for two choices of
+<span class="math notranslate nohighlight">\(b\)</span></p>
+<p>As we now show, these transfer payments result in a substantial decrease
+in agricultural area and a corresponding increase in forested area. The
+first five rows of Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-1043sites-det"><span class="std std-ref">Present-value decomposition - 1043 sites</span></a> give the
+discounted value to the planner of a commitment to receive <span class="math notranslate nohighlight">\(b\)</span> of net
+transfers for each ton captured of <span class="math notranslate nohighlight">\(CO_2,\)</span> when <span class="math notranslate nohighlight">\(P^a\)</span> is the stationary
+price. It also gives a decomposition of this present value to
+interpretable components. Among these components, “forest services” are
+measured at the implied Brazilian shadow price for business-as-usual.
+The net transfers to Brazil are reported separately. Even transfers of
+$10 per ton are enough to compensate the losses of agricultural output,
+but the largest contributor to the gains is the increase in forest
+services. The larger transfer of $25 per ton of net captured <span class="math notranslate nohighlight">\(CO_2\)</span>
+almost doubles the value for the planner - a net gain of $226 billion.
+This net gain is composed of a loss of $354 billion in the value of
+cattle output,<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> which is more than compensated by $352 billion in
+transfers and $246 billion in forest services. Adjustment costs are a
+small part of the story.</p>
+<table class="table" id="tab-valueobjectivedecomposition-1043sites-det">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Present-value decomposition - 1043 sites</span><a class="headerlink" href="#tab-valueobjectivedecomposition-1043sites-det" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P^e\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p>agricultural  output value</p></th>
+<th class="head"><p>net  transfers</p></th>
+<th class="head"><p>forest services</p></th>
+<th class="head"><p>adjustment Costs</p></th>
+<th class="head"><p>planner value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>($)</p></td>
+<td><p>($)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7.6</p></td>
+<td><p>0</p></td>
+<td><p>3.73</p></td>
+<td><p>0.00</p></td>
+<td><p>-1.39</p></td>
+<td><p>0.08</p></td>
+<td><p>2.26</p></td>
+</tr>
+<tr class="row-even"><td><p>17.6</p></td>
+<td><p>10</p></td>
+<td><p>0.58</p></td>
+<td><p>1.17</p></td>
+<td><p>0.89</p></td>
+<td><p>0.12</p></td>
+<td><p>2.52</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.6</p></td>
+<td><p>15</p></td>
+<td><p>0.33</p></td>
+<td><p>1.98</p></td>
+<td><p>1.00</p></td>
+<td><p>0.18</p></td>
+<td><p>3.14</p></td>
+</tr>
+<tr class="row-even"><td><p>27.6</p></td>
+<td><p>20</p></td>
+<td><p>0.24</p></td>
+<td><p>2.76</p></td>
+<td><p>1.05</p></td>
+<td><p>0.23</p></td>
+<td><p>3.82</p></td>
+</tr>
+<tr class="row-odd"><td><p>32.6</p></td>
+<td><p>25</p></td>
+<td><p>0.19</p></td>
+<td><p>3.53</p></td>
+<td><p>1.07</p></td>
+<td><p>0.27</p></td>
+<td><p>4.52</p></td>
+</tr>
+</tbody>
+</table>
+<p>Table
+<a class="reference internal" href="#tab-transfercost-1043sites-det"><span class="std std-ref">Transfer costs - 1043 sites</span></a> displays the total effect of
+transfers per ton of net <span class="math notranslate nohighlight">\(CO_2\)</span> captured in years 15 and 30. For the
+business-as-usual carbon price, the planner chooses deforestation that
+induces carbon emissions of about 12 and 18 billion tons per year in 15
+and 30 years, respectively. This table uses this baseline in featuring
+the “effective cost.” We calculated this as the ratio of discounted net
+transfers to the difference between the net carbon captured and the
+corresponding baseline value when <span class="math notranslate nohighlight">\(b = 0.\)</span> With transfers of, say,
+$15/ton, optimal management induces capture of about 6.6 billion tons
+by year 15 and an additional 7.2 billion tons by year 30. The effective
+costs are about $4.5 and $4.9, considerably less than the per ton
+subsidies captured by the <span class="math notranslate nohighlight">\(b\)</span>’s. With transfers of $25/ton, there are
+modest increases in the captured carbon with effective prices that are
+almost double, but still about one third the transfer payments per ton.
+Thus, the results in Table
+<a class="reference internal" href="#tab-transfercost-1043sites-det"><span class="std std-ref">Transfer costs - 1043 sites</span></a> illustrate the gains from
+trade in instituting a contract that pays Brazil per net ton of CO<span class="math notranslate nohighlight">\(_2\)</span>
+captured.</p>
+<table class="table" id="tab-transfercost-1043sites-det">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Transfer costs - 1043 sites</span><a class="headerlink" href="#tab-transfercost-1043sites-det" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>15 years</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>30 years</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^e\)</span></p></td>
+<td><p>b</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+</tr>
+<tr class="row-odd"><td><p>($)</p></td>
+<td><p>($)</p></td>
+<td><p>(billion tons of CO2e)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ per ton of CO2e)</p></td>
+<td><p>(billion tons of CO2e)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ per ton of CO2e)</p></td>
+</tr>
+<tr class="row-even"><td><p>7.6</p></td>
+<td><p>0</p></td>
+<td><p>-12.04</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-17.66</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p>17.6</p></td>
+<td><p>10</p></td>
+<td><p>5.20</p></td>
+<td><p>0.44</p></td>
+<td><p>2.53</p></td>
+<td><p>11.67</p></td>
+<td><p>0.86</p></td>
+<td><p>2.93</p></td>
+</tr>
+<tr class="row-even"><td><p>22.6</p></td>
+<td><p>15</p></td>
+<td><p>6.66</p></td>
+<td><p>0.84</p></td>
+<td><p>4.50</p></td>
+<td><p>13.85</p></td>
+<td><p>1.55</p></td>
+<td><p>4.92</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.6</p></td>
+<td><p>20</p></td>
+<td><p>7.58</p></td>
+<td><p>1.28</p></td>
+<td><p>6.53</p></td>
+<td><p>14.62</p></td>
+<td><p>2.21</p></td>
+<td><p>6.85</p></td>
+</tr>
+<tr class="row-even"><td><p>32.6</p></td>
+<td><p>25</p></td>
+<td><p>8.16</p></td>
+<td><p>1.73</p></td>
+<td><p>8.56</p></td>
+<td><p>15.00</p></td>
+<td><p>2.86</p></td>
+<td><p>8.75</p></td>
+</tr>
+</tbody>
+</table>
+<p>Figure <a class="reference internal" href="#fig-maps1000-det">7</a> exhibits the initial distribution of land
+allocation over 30 years for <span class="math notranslate nohighlight">\(b\)</span> = $0, $10, and $25. It shows that
+for the case of transfers that exceed $10 per ton of net emissions, the
+area of the biome that is occupied by cattle farming after 30 years
+would be substantially reduced in comparison to the 2017 allocation.
+This is in sharp contrast to what transpires in the <span class="math notranslate nohighlight">\(b=0\)</span>
+business-as-usual specification in which agricultural production becomes
+quite intense in the lower right sites.</p>
+<a class="bg-primary reference internal image-reference" href="../_images/map_z0z30GammaTheta_1043Sites_allPrices_det.png" id="fig-maps1000-det"><img alt="fishy" class="bg-primary" id="fig-maps1000-det" src="../_images/map_z0z30GammaTheta_1043Sites_allPrices_det.png" style="width: 800px;" /></a>
+<p><span style="padding-left: 220px;">Fig 7: Agricultural area changes after 30
+years.</p>
+<p>Figure <a class="reference internal" href="#fig-mapzdecades1000sites-det"><span class="std std-ref">8</span></a> provides a more complete
+spatial dynamic characterization for transfers of $15/ton. In the
+optimal solution, much of the change in land occupation occurs within
+the first 15 years. Appendix
+<a class="reference internal" href="#appendixA"><span class="xref myst">A</span></a> shows how much this process slows down for
+higher choices of the adjustment cost.</p>
+<table class="table" id="tab-valueobjectivedecomposition-78sites-det">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Present-value decomposition - 78 sites</span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-det" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P^e\)</span></p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>agricultural  output value</p></th>
+<th class="head"><p>net  transfers</p></th>
+<th class="head"><p>forest services</p></th>
+<th class="head"><p>adjustment Costs</p></th>
+<th class="head"><p>planner value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>($)</p></td>
+<td><p>($)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7.1</p></td>
+<td><p>0</p></td>
+<td><p>3.31</p></td>
+<td><p>0.00</p></td>
+<td><p>-1.10</p></td>
+<td><p>0.06</p></td>
+<td><p>2.14</p></td>
+</tr>
+<tr class="row-even"><td><p>17.1</p></td>
+<td><p>10</p></td>
+<td><p>0.43</p></td>
+<td><p>1.23</p></td>
+<td><p>0.87</p></td>
+<td><p>0.12</p></td>
+<td><p>2.42</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.1</p></td>
+<td><p>15</p></td>
+<td><p>0.26</p></td>
+<td><p>2.02</p></td>
+<td><p>0.95</p></td>
+<td><p>0.17</p></td>
+<td><p>3.06</p></td>
+</tr>
+<tr class="row-even"><td><p>27.1</p></td>
+<td><p>20</p></td>
+<td><p>0.21</p></td>
+<td><p>2.79</p></td>
+<td><p>0.99</p></td>
+<td><p>0.23</p></td>
+<td><p>3.75</p></td>
+</tr>
+<tr class="row-odd"><td><p>32.1</p></td>
+<td><p>25</p></td>
+<td><p>0.17</p></td>
+<td><p>3.54</p></td>
+<td><p>1.00</p></td>
+<td><p>0.26</p></td>
+<td><p>4.45</p></td>
+</tr>
+</tbody>
+</table>
+<a class="bg-primary reference internal image-reference" href="../_images/map_zDecades_1043Sites_pe22.6_det.png" id="fig-mapzdecades1000sites-det"><img alt="fishy" class="bg-primary" id="fig-mapzdecades1000sites-det" src="../_images/map_zDecades_1043Sites_pe22.6_det.png" style="width: 800px;" /></a>
+<p><span style="padding-left: 220px;">Fig 8: Agricultural area evolution over
+time.</p>
+<p>Our computations with parameter uncertainty and agricultural price
+stochasticity use a coarser grid with 78 sites. Before exploring those
+results, Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-det"><span class="std std-ref">Present-value decomposition - 78 sites</span></a> shows what
+happens to the present-value decomposition if we only reduce the
+resolution. Overall, the findings are quite similar for the two
+resolutions. Since some of the highly productive refined sites for
+either agriculture or carbon absorption have been aggregated with other
+less productive sites, the planner’s options are more limited. As a
+consequence, there are small reductions in agricultural output values
+and in the magnitudes of the forest services. This can be seen by
+comparing the respective columns of Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-det"><span class="std std-ref">Present-value decomposition - 78 sites</span></a> with those in
+Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-1043sites-det"><span class="std std-ref">Present-value decomposition - 1043 sites</span></a>.</p>
+<br>
+<hr style="height:4px; background-color:black; border:none;">
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Recall, however, that we use a measure of full output as value
+added. Thus, we have exaggerated the loss of agricultural output.</p>
+</aside>
+</aside>
 </section>
 
     <script type="text/x-thebe-config">
@@ -382,12 +698,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../calibration/calibration.html"
+       href="shadow_price.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Productivity measurement</p>
+        <p class="prev-next-title">Shadow prices under business-as-usual</p>
       </div>
     </a>
     <a class="right-next"
@@ -395,7 +711,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Uncertainty in parameter</p>
+        <p class="prev-next-title">Results with robustness to parameter uncertainty</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

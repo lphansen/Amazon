@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Uncertainty in parameter &#8212; Amazon project</title>
+    <title>Results with robustness to parameter uncertainty &#8212; Amazon project</title>
   
   
   
@@ -58,11 +58,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'results/HMC';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Uncertainty in agricultural price" href="MPC.html" />
-    <link rel="prev" title="The case without stochasticity or ambiguity aversion" href="Deterministic.html" />
+    <link rel="next" title="Results with stochastic variation in agricultural prices" href="MPC.html" />
+    <link rel="prev" title="Results for case without stochasticity or ambiguity aversion" href="Deterministic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +177,28 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../introduction/background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/literature.html">Related Literature</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../literature/literature.html">Related Substantive Literature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model.html">Model</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../uncertainty/uncertainty.html">Parameter uncertainty</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Calibration</span></p>
-<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../calibration/calibration.html">Productivity measurement</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Results</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Deterministic.html">The case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Uncertainty in parameter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MPC.html">Uncertainty in agricultural price</a></li>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="results.html">Results</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="shadow_price.html">Shadow prices under business-as-usual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Results with robustness to parameter uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MPC.html">Results with stochastic variation in agricultural prices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conclusion/conclusion.html">Conclusions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/appendix.html">Appendix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference.html">Reference</a></li>
 </ul>
 
     </div>
@@ -251,7 +253,7 @@
       
       
       
-      <li><a href="../_sources/results/HMC.ipynb" target="_blank"
+      <li><a href="../_sources/results/HMC.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +263,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -333,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Uncertainty in parameter</h1>
+    <h1>Results with robustness to parameter uncertainty</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,8 +349,279 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="uncertainty-in-parameter">
-<h1>Uncertainty in parameter<a class="headerlink" href="#uncertainty-in-parameter" title="Link to this heading">#</a></h1>
+  <section id="results-with-robustness-to-parameter-uncertainty">
+<h1>Results with robustness to parameter uncertainty<a class="headerlink" href="#results-with-robustness-to-parameter-uncertainty" title="Link to this heading">#</a></h1>
+<hr style="height:4px; background-color:black; border:none;">
+<br>
+<p>In this section, we present results when the planner is uncertain about
+cattle productivity and CO<span class="math notranslate nohighlight">\(_2\)</span> capture potential. While it is revealing
+to perform robustness calculations for several values of <span class="math notranslate nohighlight">\(\xi\)</span>, here we
+report results only for <span class="math notranslate nohighlight">\(\xi = \infty\)</span> and <span class="math notranslate nohighlight">\(\xi=1.\)</span> We refer to the
+former as ‘ambiguity neutral’ and the latter as ‘ambiguity averse.’ We
+report results for other values of <span class="math notranslate nohighlight">\(\xi\)</span> in the appendix
+<a class="reference internal" href="#appendixA"><span class="xref myst">A.11</span></a>. The implied ambiguity adjustments to the
+probabilities help us gauge the plausibility of different values of
+<span class="math notranslate nohighlight">\(\xi.\)</span> The calculated shadow price, as reported in Table
+<a class="reference internal" href="shadow_price.html#tab-shadow-price"><span class="std std-ref">Business-as-usual prices</span></a>, is $7.1/ton under ambiguity neutrality
+and a considerably lower value of $5.3/ton under ambiguity aversion.
+The shadow price reduction under ambiguity aversion compensates for the
+slower destruction of the forests when there is ambiguity in the
+agricultural productivities for the various sites.</p>
+<p>Figure [9](#fig:Ambiguity adjustment) shows the baseline and
+ambiguity-adjusted distributions for parameters <span class="math notranslate nohighlight">\(\gamma\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>
+when <span class="math notranslate nohighlight">\(b=0\)</span> and <span class="math notranslate nohighlight">\(b=15.\)</span> We display results for the two sites with largest
+divergence between the baseline probability distributions and the
+ambiguity-adjusted counterparts for sake of illustration.<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> When
+looking across all sites, the adjustments are very heterogeneous; and
+for some sites there is very little difference between the two
+distributions.</p>
+<p>Under the business-as-usual benchmark, the adjustments are more
+pronounced for the <span class="math notranslate nohighlight">\(\theta\)</span> distributions than for the <span class="math notranslate nohighlight">\(\gamma\)</span>
+distributions. In other words, it is the uncertainty about agricultural
+productivity that the social planner finds to be most concerning since
+the planner is not incentivized to preserve the rain forest without
+transfer payments.<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> The uncertainty adjustment to the probabilities
+are substantially different when <span class="math notranslate nohighlight">\(b=15.\)</span> Now the adjustments are more
+pronounced for the <span class="math notranslate nohighlight">\(\gamma\)</span> probability distributions because
+reforestation becomes a more prominent ambition for the planner.</p>
+<br>
+<p id="fig-ambiguity-adjustment"><a class="reference internal" href="../_images/theta_distribution_71.png"><img alt="Drawing" src="../_images/theta_distribution_71.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_71.png"><img alt="Drawing" src="../_images/gamma_distribution_71.png" style="width: 300px;" /></a>
+<a class="reference internal" href="../_images/theta_distribution_74.png"><img alt="Drawing" src="../_images/theta_distribution_74.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_74.png"><img alt="Drawing" src="../_images/gamma_distribution_74.png" style="width: 300px;" /></a>
+<br>
+<span style="padding-left: 80px;"> Fig 9: Baseline and ambiguity adjusted densities for b = 0 and b = 15</p>
+<p>Some sites are deforested, and some sites are reforested by the planner
+in the absence of external transfer payments. Figures
+<a class="reference internal" href="#fig-map-hmc-b0-at-price-neutral">10</a>,
+<a class="reference internal" href="#map-hmc-b0">12</a>, and
+<a class="reference internal" href="#map-hmc-b15">13</a> show the
+years in which one of the two controls is maximal for the individual
+sites. Recall that <span class="math notranslate nohighlight">\(U_t^i &gt; 0\)</span> is when site <span class="math notranslate nohighlight">\(i\)</span> is being deforested, and
+<span class="math notranslate nohighlight">\(V_t^i&gt;0\)</span> when the site <span class="math notranslate nohighlight">\(i\)</span> is being reforested. Only one of these can
+be strictly positive at any date <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Figure <a class="reference internal" href="#fig-map-hmc-b0-at-price-neutral"><span class="std std-ref">10</span></a> compares what happens when
+<span class="math notranslate nohighlight">\(b=0\)</span> under ambiguity aversion, using the same business-as-usual carbon
+emission price as we used under ambiguity neutrality. As examples, the
+two sites featured in Figure
+[9](#fig:Ambiguity adjustment) are shaded in. For instance, for
+site 71, the change in land allocation moves from year fifteen to one in
+which there is no change in land allocation over the time span of 50
+years. For site 74 the change is from year three under ambiguity
+neutrality to year six under ambiguity aversion. The delay is because
+the planner is particularly skeptical of the baseline distribution for
+the site-specific agricultural productivity as displayed in Figure
+[9](#fig:Ambiguity adjustment). More generally, Figure
+<a class="reference internal" href="#map-hmc-b0">12</a> shows how
+the delays in deforestation and accelerations of reforestation for all
+of the 78 sites under ambiguity aversion, in the absence of transfer
+payments. Overall, the ambiguity aversion decreases substantially the
+land allocated to agriculture as is evident from Figure
+<a class="reference internal" href="#aggz-hmc-at-price-neutrality">11</a>.</p>
+<p id="fig-map-hmc-b0-at-price-neutral"><a class="reference internal" href="../_images/map_78site_det_spike_b0_same_price_neutral.png"><img alt="Drawing" src="../_images/map_78site_det_spike_b0_same_price_neutral.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/map_78site_unc_spike_b0_same_price_neutral.png"><img alt="Drawing" src="../_images/map_78site_unc_spike_b0_same_price_neutral.png" style="width: 300px;" /></a></p>
+<br>
+Fig 10: Spatial allocation comparison for <span
+class="math inline"><em>b</em> = 0</span> for common <span
+class="math inline"><em>P</em><sup><em>e</em><em>e</em></sup> = $7.1</span>.
+<span> Green</span> number in a site is the year of maximal rate of
+reforestation. <span>Red</span> number in a site is the year of maximal
+deforestation. Sites 71 and 74 are shaded. Ambiguity neutral left, ambiguity averse right.
+<br>
+<a class="bg-primary reference internal image-reference" href="../_images/aggregate_percentage_Z_b0_same_price_neutral.png" id="aggz-hmc-at-price-neutrality"><img alt="fishy" class="bg-primary" id="aggz-hmc-at-price-neutrality" src="../_images/aggregate_percentage_Z_b0_same_price_neutral.png" style="width: 600px;" /></a>
+<p>Fig 11: Evolution of agricultural area under ambiguity neutrality and
+ambiguity aversion for <span class="math notranslate nohighlight">\(b=0\)</span> at a common business-as-usual carbon price,
+<span class="math notranslate nohighlight">\(P^{ee} = 7.1.\)</span></p>
+<p>The previous results hold the business-as-usual price fixed as we
+introduce ambiguity aversion. As we know from Table
+<a class="reference internal" href="shadow_price.html#tab-shadow-price"><span class="std std-ref">Business-as-usual prices</span></a>, this price decreases endogenously when we
+impose ambiguity aversion from <span class="math notranslate nohighlight">\(7.1\)</span> to <span class="math notranslate nohighlight">\(5.3.\)</span> Not surprisingly, this
+has a big impact on both the spatial-dynamic land allocation as we show
+in Figure <a class="reference internal" href="#map-hmc-b0">12</a>.
+While ambiguity aversion still shifts the dates of the maximal
+responses, it now does so in a much more muted way than in Figure
+<a class="reference internal" href="#fig-map-hmc-b0-at-price-neutral"><span class="std std-ref">10</span></a>.</p>
+<p id="map-hmc-b0"><a class="reference internal" href="../_images/map_78site_det_spike_b0.png"><img alt="Drawing" src="../_images/map_78site_det_spike_b0.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/map_78site_det_spike_b0.png"><img alt="Drawing" src="../_images/map_78site_det_spike_b0.png" style="width: 300px;" /></a></p>
+<br>
+Fig 12: Spatial allocations for <span
+class="math inline"><em>b</em> = 0</span>, <span
+class="math inline"><em>P</em><sup><em>e</em><em>e</em></sup> = 7.1</span>
+for ambiguity neutral and <span
+class="math inline"><em>P</em><sup><em>e</em><em>e</em></sup> = 5.3</span>
+for ambiguity averse, the corresponding shadow prices. The <span>
+green</span> number in a site is the year in which the rate of
+reforestation is maximal. The <span> red</span> number in each site is
+the year in which deforestation is maximal. Sites 71 and 74 are
+shaded. Ambiguity neutral left, ambiguity averse right.
+<br>
+<br>
+<p>As shown in Figure <a class="reference internal" href="#map-hmc-b15">13</a>, when <span class="math notranslate nohighlight">\(b= 15\)</span>, there is only reforestation. The
+dates of maximal reforestation turn out show only limited sensitivity to
+the ambiguity aversion in this case. For instance, consider site 71,
+which we featured in the top panel of Figure
+[9](#fig:Ambiguity adjustment) and is shaded in Figure
+<a class="reference internal" href="#map-hmc-b15">13</a>. Under
+ambiguity neutrality, the planner’s peak reforesting takes place in year
+five; and under ambiguity aversion, this action is delayed until year
+seven. For site 74, the maximal response is delayed from year eighteen
+to year twenty-one. The source of these and other modest delays are due
+to uncertainty about carbon sequestration productivities.</p>
+<p id="map-hmc-b15"><a class="reference internal" href="../_images/map_78site_det_spike_b15.png"><img alt="Drawing" src="../_images/map_78site_det_spike_b15.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/map_78site_det_spike_b15.png"><img alt="Drawing" src="../_images/map_78site_det_spike_b15.png" style="width: 300px;" /></a></p>
+<br>
+Fig 13: Spatial allocation for <span
+class="math inline"><em>b</em> = 15,</span> using the corresponding
+shadow prices. The number in each site is the year in which
+reforestation in that site is maximal. Ambiguity neutral left, ambiguity averse right.
+<br>
+<br>
+<p>The left panel of Figure <a class="reference internal" href="#aggz-hmc">14</a> shows a notable contrast with Figure
+<a class="reference internal" href="#aggz-hmc-at-price-neutrality">11</a>. Resetting the
+business-as-usual price under ambiguity aversion has big impact on the
+aggregate land allocation dynamics when <span class="math notranslate nohighlight">\(b= \$0\)</span>. Consistent with the
+spatial dynamics reported in Figures
+<a class="reference internal" href="#map-hmc-b0">12</a> and
+<a class="reference internal" href="#map-hmc-b15">13</a>, Figure
+<a class="reference internal" href="#aggz-hmc">14</a> shows that
+once we adjust the business-as-usual price change, there is only a very
+modest impact in the aggregate land allocation with and without
+ambiguity aversion. This holds true for <span class="math notranslate nohighlight">\(b = \$15\)</span> as well.</p>
+<p id="aggz-hmc"><a class="reference internal" href="../_images/aggregate_percentage_Z_b0.png"><img alt="Drawing" src="../_images/aggregate_percentage_Z_b0.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/aggregate_percentage_Z_b15.png"><img alt="Drawing" src="../_images/aggregate_percentage_Z_b15.png" style="width: 300px;" /></a></p>
+<br>
+Fig 14: Evolution of agricultural area under ambiguity neutrality
+and ambiguity aversion, using the corresponding shadow prices.
+<br>
+<br>
+<p>Finally, we consider the present values under ambiguity aversion
+(<span class="math notranslate nohighlight">\(\xi = 1\)</span>) in comparison to ambiguity neutrality (<span class="math notranslate nohighlight">\(\xi = \infty)\)</span> in
+Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-hmc"><span class="std std-ref">Present-value decomposition - parameter ambiguity</span></a>. As should be
+expected, the ambiguity aversion induces smaller present values since
+they are computed with uncertainty adjusted probabilities. The
+specification of <span class="math notranslate nohighlight">\(b\)</span> determines either a net tax or subsidy depending on
+its magnitude. Over the range of transfers implied by <span class="math notranslate nohighlight">\(b\)</span>’s in excess of
+<span class="math notranslate nohighlight">\(\$10\)</span> per ton, the planner’s discounted objective increases and is
+greater than that for <span class="math notranslate nohighlight">\(b = \$0\)</span> under both ambiguity neutrality and
+ambiguity aversion. In this range, <span class="math notranslate nohighlight">\(\$b\)</span> functions as a net subsidy,
+implying that the planner would strictly prefer outcomes under these
+scenarios to the business-as-usual outcome.</p>
+<p>Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-hmc"><span class="std std-ref">Present-value decomposition - parameter ambiguity</span></a> also reports
+the discounted present value of agricultural output. For <span class="math notranslate nohighlight">\(b=0\)</span>, the drop
+in the present value contribution of agriculture is over twenty percent.
+This drop is consistent with the reduction in land allocated to
+agriculture under ambiguity aversion as reported in Figure
+<a class="reference internal" href="#aggz-hmc">14</a>. In addition,
+the ambiguity-adjusted probability densities provide a more conservative
+assessment of agricultural productivity than the baseline densities. For
+the other choices of <span class="math notranslate nohighlight">\(b\)</span> in Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-hmc"><span class="std std-ref">Present-value decomposition - parameter ambiguity</span></a>, the
+contributions are very small but increase under ambiguity aversion. The
+reason for the increase is that, under ambiguity aversion, the planner
+makes a more cautious assessment of the ability of the Brazilian rain
+forest to absorb carbon, leading to a very small increase in the land
+allocated to agriculture.</p>
+<table class="table" id="tab-valueobjectivedecomposition-78sites-hmc">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Present-value decomposition - parameter ambiguity</span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-hmc" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>agricultural output</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>planner  value</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b</p></td>
+<td><p>ambiguity</p></td>
+<td><p>ambiguity</p></td>
+<td><p>percent</p></td>
+<td><p>ambiguity</p></td>
+<td><p>ambiguity</p></td>
+<td><p>percent</p></td>
+</tr>
+<tr class="row-odd"><td><p>($)</p></td>
+<td><p>neutral</p></td>
+<td><p>aversion</p></td>
+<td><p>change</p></td>
+<td><p>neutral</p></td>
+<td><p>aversion</p></td>
+<td><p>change</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>3.31</p></td>
+<td><p>2.57</p></td>
+<td><p>-22.4</p></td>
+<td><p>2.14</p></td>
+<td><p>1.64</p></td>
+<td><p>-23.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>0.41</p></td>
+<td><p>0.55</p></td>
+<td><p>33.6</p></td>
+<td><p>2.41</p></td>
+<td><p>2.08</p></td>
+<td><p>-13.9</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>0.26</p></td>
+<td><p>0.30</p></td>
+<td><p>14.2</p></td>
+<td><p>3.06</p></td>
+<td><p>2.62</p></td>
+<td><p>-14.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>0.20</p></td>
+<td><p>0.23</p></td>
+<td><p>12.9</p></td>
+<td><p>3.75</p></td>
+<td><p>3.19</p></td>
+<td><p>-15.0</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>0.17</p></td>
+<td><p>0.19</p></td>
+<td><p>11.9</p></td>
+<td><p>4.45</p></td>
+<td><p>3.74</p></td>
+<td><p>-15.8</p></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p><strong>Remark 1</strong>. <em>In contrast to land allocation process, <span class="math notranslate nohighlight">\(Z,\)</span> with
+parameter ambiguity, the state vector process, <span class="math notranslate nohighlight">\(X\)</span>, of captured carbon
+is disguised to the planner, because initial conditions and the dynamics
+of carbon captured depend on the value of <span class="math notranslate nohighlight">\(\gamma.\)</span> This has
+ramification for policy since we presume transfer payments are based on
+carbon reduction. Under ambiguity aversion, our planner uses the
+ambiguity-adjusted probabilities to compute these payments. In <em>ad hoc</em>
+policy-making settings distinct from our fictitious planner formulation,
+one could imagine differences in perspective among providers and
+recipients of transfers opening the door to explicit consideration of
+differences in their aversion to uncertainty. Also, parameter
+uncertainty opens the door to explicit learning that we abstract from
+here. Rather than being purely passive, this learning could offer the
+potential for experimentation as a way to gain a better understanding of
+site-specific productivities.</em></p>
+<br>
+<hr style="height:4px; background-color:black; border:none;">
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<p>The sites were selected at the imposed business-as-usual price
+under ambiguity averse. See Figure
+[16] in Appendix
+<a class="reference internal" href="#appendixA"><span class="xref myst">A.10</span></a> for a map of the site locations.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">4</a><span class="fn-bracket">]</span></span>
+<p>Notice that the uncertainty adjusted <span class="math notranslate nohighlight">\(\gamma\)</span> distributions
+actually shift to the right when <span class="math notranslate nohighlight">\(b = \$0.\)</span></p>
+</aside>
+</aside>
 </section>
 
     <script type="text/x-thebe-config">
@@ -387,7 +660,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The case without stochasticity or ambiguity aversion</p>
+        <p class="prev-next-title">Results for case without stochasticity or ambiguity aversion</p>
       </div>
     </a>
     <a class="right-next"
@@ -395,7 +668,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Uncertainty in agricultural price</p>
+        <p class="prev-next-title">Results with stochastic variation in agricultural prices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
