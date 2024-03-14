@@ -3,10 +3,14 @@
 (sec:appendixA)=
 # Appendix
 
-(appen:data)=
-## Data construction 
+<hr style="height:4px; background-color:black; border:none;">
 
-### Total available area
+<br>
+
+(appen:data)=
+## A Data construction 
+
+### A.1 Total available area
 
 To compute $\bar z^i$, the amount of available area for the planner's
 choice (forest or cattle farming) in each site $i$, we first calculate
@@ -17,7 +21,7 @@ the fraction of 30m-pixels in site $i$ classified as agriculture
 $\bar z^i$ comprises the total site area, excluding areas such as
 rivers, roads, cities and etc.
 
-### Carbon absorption
+### A.2 Carbon absorption
 
 We first extract a random sample of 1.2M 30m-pixels and select 893,753
 pixels with no deforestation during 1985-2017, which we treat as primary
@@ -32,14 +36,14 @@ mass). In Appendix [C](#appen:baseline) we exposit how we use the data to obtain
 baseline distribution of the vector of site-specific carbon absorption
 productivities, $(\gamma^1, \dots, \gamma^I).$
 
-### Carbon depreciation
+### A.3 Carbon depreciation
 
 The parameter $\alpha$ is a carbon depreciation parameter, assumed to be
 constant across sites. It is set so that the 99% convergence time of the
 carbon accumulation process is 100 years (see {cite:t}`heinrich2021large`),
 that is $\alpha=1-(1-0.99)^{1/100}=.045$.
 
-### Emissions contributed by agriculture
+### A.4 Emissions contributed by agriculture
 
 The parameter $\kappa$ is calibrated using the agricultural net annual
 emission data at the state level available from the system SEEG.[^3] We
@@ -48,7 +52,7 @@ divided by the agricultural area from MapBiomas for all states within
 the Amazon biome, weighting by the area of each state overlap with the
 biome, from 1990 to 2019.
 
-### Cattle farming productivities
+### A.5 Cattle farming productivities
 
 Since almost $90\%$ of the historically deforested land in the Amazon
 biome that was used for agricultural activities in 2017 was used for
@@ -65,7 +69,7 @@ exposit how we derive a baseline distribution for the vector of
 site-specific cattle farming productivities,
 $(\theta^1, \dots, \theta^I).$
 
-### Discount rate ($\delta$) and adjustment costs cost ($\zeta$)
+### A.6 Discount rate ($\delta$) and adjustment costs cost ($\zeta$)
 
 We use the discount rate $\delta = 0.02$ and calibrate $\zeta=1.66e-4$
 using the difference in price between forested land and cleaned land and
@@ -77,7 +81,7 @@ compute a separate adjustment cost for decreasing (as opposed to
 increasing) deforestation, so we opted for symmetry.
 
 (app:initial_values)=
-### Initial values: $Z^i_0$, $X^i_0$ 
+### A.7 Initial values: $Z^i_0$, $X^i_0$ 
 
 The approach for computing the initial value for the agricultural area,
 $Z^i_0$, is similar to that used for the total available area
@@ -93,7 +97,7 @@ at the initial point is primary, which is compatible with equation
 [\[eq:x\]](#eq:x).
 
 (appen:agprice)=
-### Agricultural prices 
+### A.8 Agricultural prices 
 
 We use a data series on monthly deflated cattle prices (reference date
 01/2017),[^5] from 1995, the year in which the Real Plan stabilized the
@@ -194,8 +198,8 @@ differences between results are modest.
 | b = 25   | 0.17                      | 3.54          | 1.00            | 0.26             | 4.45          |
 ```
 
-(appen:transfer)
-### Transfer costs 
+(appen:transfer)=
+### A.9 Transfer costs 
 
 In this subsection we report in Table
 {ref}`tab:transferCost_78sites_hmc_y15` and Table
@@ -264,7 +268,7 @@ stochastic variation in agricultural prices.
 ```
 
 (appen:site_map)=
-### Catalog of the sites 
+### A.10 Catalog of the sites 
 
 Figure [16](#map-reference) lists the site numbers in the Amazon map as a
 reference.
@@ -277,14 +281,14 @@ reference.
 Fig 16: Locations of the different site numbers
 
 (alternative_xi)=
-### Alternative values of $\xi$ 
+### A.11 Alternative values of $\xi$ 
 
 In this section, we report results for parameter uncertainty with
 $\xi=2$. The calculated business as usual price is \$6.1. Table
 {ref}`tab:valueObjectiveDecomposition_78sites_hmc_alt_xi` shows
 the present values under $\xi=2$ in comparison to $\xi=\infty$. Figure
-[17](#fig:Ambiguity adjustment_b0) and Figure
-[18](#fig:Ambiguity adjustment_b15) shows the baseline and
+[17](#fig:Ambiguity_adjustment_b0) and Figure
+[18](#fig:Ambiguity_adjustment_b15) shows the baseline and
 ambiguity-adjusted distributions.
 
 
@@ -304,7 +308,7 @@ ambiguity-adjusted distributions.
 
 <br>
 
-(fig:Ambiguity adjustment_b0)=
+(fig:Ambiguity_adjustment_b0)=
 <img src="../aux_input/theta_distribution_71_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b0.png" alt="Drawing" width="300" style="display: inline;" />
 <img src="../aux_input/theta_distribution_74_b0.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b0.png" alt="Drawing" width="300" style="display: inline;" />
 <br>
@@ -313,14 +317,14 @@ ambiguity-adjusted distributions.
 
 <br>
 
-(fig:Ambiguity adjustment_b0)=
+(fig:Ambiguity_adjustment_b15)=
 <img src="../aux_input/theta_distribution_71_b15.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_71_b15.png" alt="Drawing" width="300" style="display: inline;" />
 <img src="../aux_input/theta_distribution_74_b15.png" alt="Drawing" width="300" style="display: inline;" /> <img src="../aux_input/gamma_distribution_74_b15.png" alt="Drawing" width="300" style="display: inline;" />
 <br>
 <span style="padding-left: 80px;"> Fig 18: Baseline and ambiguity adjusted densities for b = 15 
 
 (appen:discrete_model)
-## Model discretization 
+## B Model discretization 
 
 In order to obtain numerical solutions for the social planner problem,
 we solve the following discrete-time approximation, for a finite horizon
@@ -341,37 +345,48 @@ $$\begin{aligned}
     -\gamma^i U^i_t
     - \alpha \left[ X^i_t
     - \gamma^i ({\bar z}^i - Z^i_t)\right]
-    &\forall i=1,\dots I \text{ and } t=0,\dots, T \\[10pt]
-    Z^i_{t+1} &= Z^i_t + U^i_t - V^i_t
-    &\forall i=1,\dots I \text{ and } t=0,\dots,T \\[10pt]
+    &\forall i=1,\dots I \text{ and } t=0,\dots, T 
+\end{aligned}$$   (eq:discrete_model_x)
+    
+    
+$$ \begin{aligned}
+Z^i_{t+1} &= Z^i_t + U^i_t - V^i_t
+&\forall i=1,\dots I \text{ and } t=0,\dots,T 
+\end{aligned}$$ (eq:discrete_model_z)
+$$ \begin{aligned}
     U^i_t &\geq 0, \quad V^i_t \geq 0
     &\forall i=1,\dots I \text{ and } t=0,\dots,T
-\end{aligned}$$
+\end{aligned}$$ (eq:discrete_model_control)
 
 (appen:baseline)=
-## Benchmark distributions 
+## C Benchmark distributions 
 
 Equation
-[\[productivity_construct\]](#productivity_construct){reference-type="ref"
-reference="productivity_construct"} gave the formula for constructing
+[\[productivity_construct\]](#productivity_construct) gave the formula for constructing
 measurement of site-specific productivities from regression coefficients
 and measurements of municipality attributes. In what follows, we first
 outline the municipality regression models used for $\gamma$ and
 $\theta$, and then we describe the procedure that we used constructing
 baseline Bayesian posteriors for the regression coefficients.
 
-### $\theta's$
+### C.1 $\theta's$
 
 To construct a measurement of the $\theta$'s, we run the regression
 specification below with probabilistic output.[^7]
-$$\label{eq:betathetamuni}
-\log(\text{Slaughter value}) = R_\theta \beta_\theta + \epsilon_\theta$$
-where $$\begin{aligned}
+
+$$
+\log(\text{Slaughter value}) = R_\theta \beta_\theta + \epsilon_\theta$$ (eq:betathetamuni)
+
+where 
+
+$$\begin{aligned}
 R_\theta \beta_\theta \mathrel{\overset{\mathrm{def}}{=}}& \quad \beta_\theta^{0} + \beta_\theta^{1}(\operatorname{historical\_precip})
 + \beta_\theta^{2}(\operatorname{historical\_temp}) + \beta_\theta^{3}(\operatorname{historical\_temp^2})\cr & 
 \quad + \beta_\theta^{4}(\operatorname{lat}) + \beta_\theta^{5}(\operatorname{lat^2})  + 
  \beta_\theta^{6}\operatorname{\text{log}(cattleSlaughter\_farmGatePrice}) + \beta_\theta^{7}(\operatorname{distance})
-\end{aligned}$$ where slaughter value is the value of cattle sold per
+\end{aligned}$$ 
+
+where slaughter value is the value of cattle sold per
 hectare of pasture area in 2017 (USD/ha), precipitation and temperature
 are the average annual precipitation (mm) and temperature (degrees
 Celsius), respectively, for the period of 1970-2000
@@ -388,18 +403,22 @@ municipalities mostly reflect unobserved costs to bring cattle to
 stockyards and meat to markets such as proximity to roads or rivers,
 which are not fully controlled by our geographical variables.
 
-### $\gamma's$
+### C.2 $\gamma's$
 
 We calculate average of CO2 density (MG/ha) for each municipality and
 run the following regression:[^8]
+
 $$\operatorname{\text{log}(co2e\_ha)} = R_\gamma \beta_\gamma + \varepsilon_\gamma$$
-where $$\begin{aligned}
+
+where 
+
+$$\begin{aligned}
 R_\gamma \beta_\gamma \mathrel{\overset{\mathrm{def}}{=}}& \quad  \beta^\gamma_{0} + \beta^\gamma_{1}(\operatorname{\text{log}(historical\_precip}))
 + \beta^\gamma_{2}(\operatorname{\text{log}(historical\_temp}))  \cr & 
 \quad \beta^\gamma_{3}(\operatorname{\text{log}(lat)}) + \beta^\gamma_{4}(\operatorname{\text{log}(lon)}).
 \end{aligned}$$
 
-### Posterior estimation
+### C.3 Posterior estimation
 
 To estimate the benchmark posterior distribution $\pi$, we consider
 $\pi(\beta_\theta, \sigma^2_\theta)$ and
@@ -408,42 +427,70 @@ derivation of $\pi(\beta_\theta,  \sigma^2_\theta)$, with the derivation
 of $\pi(\beta_\gamma,\sigma^2_\gamma)$ following analogously.
 
 Using a weighted regression for the model given by
-[\[eq:betathetamuni\]](#eq:betathetamuni){reference-type="ref"
-reference="eq:betathetamuni"} with a Gaussian error term is equivalent
-to assuming: $$\label{eq:muni_likelihood}
-   Y_\theta  \;=\; R_\theta\beta_\theta + \varepsilon_\theta, \quad \varepsilon_\theta \sim \mathcal{N}(0,\, \sigma_\theta^2 W_\theta ^{-1}),$$
+[\[eq:betathetamuni\]](#eq:betathetamuni) with a Gaussian error term is equivalent
+to assuming: 
+
+$$
+   Y_\theta  \;=\; R_\theta\beta_\theta + \varepsilon_\theta, \quad \varepsilon_\theta \sim \mathcal{N}(0,\, \sigma_\theta^2 W_\theta ^{-1}),$$ (eq:muni_likelihood)
+
 where: $W_\theta$ is the diagonal matrix of weights. For the $\gamma$
 case, $W_\gamma = I.$
 
 We assume that the priors/posteriors for parameters
 $(\beta_\theta, \sigma_\theta^2)$ are the familiar conjugate form:
 
-$$\beta_\theta \;|\;  \sigma_\theta^2 \; \sim \; \mathcal{N}(m,\, \sigma_\theta^2 Q^{-1})$$
+$$\beta_\theta \;|\;  \sigma_\theta^2 \; \sim \; \mathcal{N}(m,\, \sigma_\theta^2 Q^{-1})$$ (eq:Posterior_beta)
 
-$$\sigma_\theta^2 \;\sim\; \textrm{Inv-Gamma}(a,\, b)$$ where
+$$\sigma_\theta^2 \;\sim\; \textrm{Inv-Gamma}(a,\, b)$$ (eq:Posterior_sigma)
+
+where
+
 $$\begin{aligned}
     Q & = R_\theta' W_\theta R_\theta + Q_0, \cr
     m & = Q^{-1} (R_\theta' W_\theta y_\theta + Q_0m_0), \cr
     a & = a_0+\frac{n}{2}, \cr
     b & = b_0+\frac{1}{2}(y_\theta' W_\theta y_\theta + m_0' Q_0 m_0- m'Qm),
-\end{aligned}$$ and $Q_0, m_0, a_0, b_0$ are prior inputs. We impose the
-familiar improper priors: $$\begin{aligned}
+\end{aligned}$$ 
+
+and $Q_0, m_0, a_0, b_0$ are prior inputs. We impose the
+familiar improper priors: 
+
+$$\begin{aligned}
     \begin{matrix} Q_0 = 0  & m_0 = 0 & a_0 = 0 & b_0 = 0 \end{matrix},
-\end{aligned}$$ which implies that the posteriors inputs are familiar
+\end{aligned}$$ 
+
+which implies that the posteriors inputs are familiar
 regression statistics. In the following tables, we present quantiles for
 the posterior distributions described above:
 
-[]{#tab:theta_estimation label="tab:theta_estimation"}
 
-[]{#tab:gamma_estimation label="tab:gamma_estimation"}
+```{table}  Quantiles for θ posterior estimation
+:name: tab:theta_estimation
+|      | $\beta_0^{	\theta}$ | $\beta_1^{\theta}$ | $\beta_2^{\theta}$ | $\beta_3^{\theta}$ | $\beta_4^{\theta}$ | $\beta_5^{\theta}$ | $\beta_6^{\theta}$ | $\beta_7^{\theta}$ |
+|------|-------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 10\% | 3.899             | -0.189             | 1.274              | -5.250             | 5.466              | -7.871             | 0.454              | -0.132             |
+| 50\% | 3.943             | -0.135             | 3.201              | -3.343             | 6.607              | -6.732             | 0.495              | -0.091             |
+| 90\% | 3.986             | -0.082             | 5.080              | -1.404             | 7.729              | -5.576             | 0.537              | -0.051             |
+
+```
+
+```{table}  Quantiles for γ posterior estimation
+:name: tab:gamma_estimation
+|      | $\beta_0^{\gamma}$ | $\beta_1^{\gamma}$ | $\beta_2^{\gamma}$ | $\beta_3^{\gamma}$ | $\beta_4^{\gamma}$ |
+|------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 10\% | 5.918              | 0.055              | -0.172             | 0.148              | -0.313             |
+| 50\% | 5.936              | 0.079              | -0.146             | 0.177              | -0.291             |
+| 90\% | 5.955              | 0.102              | -0.119             | 0.206              | -0.269             |
+```
+
+
 
 (sec:appendixD)=
-## Hamiltonian Monte Carlo {#sec:HMC}
+## D Hamiltonian Monte Carlo 
 
 As is standard in applications of MCMC, we use numerical simulation to
 compute the probability distribution induced by the density of
-[\[minimizer\]](#minimizer){reference-type="eqref"
-reference="minimizer"}. While we have partially analytic expression for
+[\[minimizer\]](#minimizer). While we have partially analytic expression for
 the numerator, the integration in the denominator is more problematic.
 This challenge is a typical starting point for MCMC computations.
 
@@ -452,34 +499,36 @@ coefficients, for numerical tractability we use the conditional normal
 inverse gamma specification in our computations, which includes the
 regression error variances. We then construct numerically the implied
 marginal distribution for the regression coefficients consistent with
-formula [\[minimizer\]](#minimizer){reference-type="eqref"
-reference="minimizer"}.
+formula [\[minimizer\]](#minimizer).
 
-This means that we sample from $$\begin{aligned}
-\label{eq:target_distribution}
+This means that we sample from 
+
+$$
 {\exp\left[ - {\frac 1 \xi } f(d,  \beta )\right]} d\pi(\beta_\theta, \sigma^2_\theta | R_\theta, y_\theta) d\pi(\beta_\gamma, \sigma^2_\gamma | R_\gamma, y_\gamma)
-\end{aligned}$$
+$$ (eq:target_distribution)
 
 If $\rho:=(\beta, \sigma^2),$ taking logs and multiplying by $-1$, we
 get the potential energy term $\mathcal{U}$:
 
 $$\begin{aligned}
-    \begin{split}
+
         \mathcal{U}(\rho) {} & = {\frac 1 \xi } f(d, \beta) 
         - \log d\pi(\beta_\theta, \sigma^2_\theta | R_\theta, y_\theta) - \log d\pi(\beta_\gamma, \sigma^2_\gamma | R_\gamma, y_\gamma)
-    \end{split} \\[10pt]
-    \begin{split}
+\end{aligned}$$ (eq:potential_energy_first)
+
+$$\begin{aligned}
         {} & = {\frac 1 \xi } f(d,  \beta) 
         - \log d\pi(\beta_\theta | \sigma_\theta^2, R_\theta, y_\theta)  - \log d\pi(\beta_\gamma | \sigma_\gamma^2, R_\gamma, y_\gamma) 
          \\
            & \qquad - \log d\pi(\sigma_\theta^2 | R_\theta, y_\theta) - \log d\pi(\sigma_\gamma^2 | R_\theta, y_\gamma)
-    \end{split}
-\end{aligned}$$ HMC relies on an auxiliary momentum vector $\omega$ of
+\end{aligned}$$ (eq:potential_energy_second)
+
+HMC relies on an auxiliary momentum vector $\omega$ of
 the same dimension as $\rho$, where $\omega \sim \mathcal{N}(0, M)$ and
 $M$ is a symmetric, positive-definite mass matrix. The Hamiltonian is
 then defined as:
 
-$$\mathcal{H}(\rho, \omega) :=  \mathcal{U}(\rho) + \frac{1}{2} \omega'M^{-1}\omega$$
+$$\mathcal{H}(\rho, \omega) :=  \mathcal{U}(\rho) + \frac{1}{2} \omega'M^{-1}\omega$$ (eq:Hamiltonian)
 
 The HMC algorithm then consists of:
 
@@ -493,10 +542,14 @@ The HMC algorithm then consists of:
     with step size $\epsilon$ and a number of steps $L$:
 
     $$\begin{aligned}
-                  \frac{d \rho}{d t}   & = \frac{\partial \mathcal{H}}{\partial \omega} \\[2pt]
+                  \frac{d \rho}{d t}   & = \frac{\partial \mathcal{H}}{\partial \omega} 
+        \end{aligned}$$ (eq:partial_state)
+
+    $$\begin{aligned}
                   \frac{d \omega}{d t} & = -\frac{\partial \mathcal{H}}{\partial \rho}
               
-    \end{aligned}$$
+    \end{aligned}$$ (eq:partial_momentum)
+
 
 4.  Perform a Metropolis test to accept or reject the state update
     $(\rho_{(1)}, \omega_{(1)}) \leftarrow (\tilde{\rho}_{(0)}, \tilde \omega_{(0)})$,
@@ -516,8 +569,7 @@ sampling $\rho$ as follows:
     updated parameters.
 
 3.  Sample $\{ \rho_{(s)} \}^{4000}_{s=1}$ from
-    [\[eq:target_distribution\]](#eq:target_distribution){reference-type="ref"
-    reference="eq:target_distribution"} by running HMC simultaneously
+    {eq}`eq:target_distribution` by running HMC simultaneously
     across 4 independent Markov chains, taking 1000 samples and 500
     burn-in samples per chain.
 
@@ -530,12 +582,11 @@ sampling $\rho$ as follows:
 5.  Repeat steps 2 -- 4 until
     $||\varphi_{(t+1)} - \varphi_{(t)} ||_{\infty} < 0.001$.
 
-### Computational implementation details
+### D.1 Computational implementation details
 
 To sample from
-[\[eq:target_distribution\]](#eq:target_distribution){reference-type="ref"
-reference="eq:target_distribution"}, we rely on the Stan software
-{cite:t}`carpenter2017; @standev2018stancore` for high-performance statistical
+{eq}`eq:target_distribution`, we rely on the Stan software
+{cite:t}`carpenter2017`, {cite:t}`standev2018stancore` for high-performance statistical
 computation. The Stan implementation for HMC makes a few adaptations to
 the algorithm described above to improve computation speed and sampling
 efficiency. We summarize these below:
@@ -547,7 +598,7 @@ efficiency. We summarize these below:
 -   Stan utilizes the No U-turn sampling (NUTS) variant of HMC, which
     adaptively determines the number of leapfrog steps $L$ at each
     iteration to avoid U-turns in the state trajectory
-    {cite:t}`JMLR:v15:hoffman14a; @betancourt2016identifying`.
+    {cite:t}`JMLR:v15:hoffman14a`, {cite:t}`betancourt2016identifying`.
 
 -   Stan determines the leapfrog step size $\epsilon$ using the dual
     averaging Nesterov algorithm {cite:t}`nesterov2009primal`.
@@ -558,7 +609,10 @@ efficiency. We summarize these below:
 
 -   Stan uses reverse-mode automatic differentiation to compute the
     Hamiltonian gradient.
-:::
+
+
+<br>
+<hr style="height:4px; background-color:black; border:none;">
 
 [^1]: We thank Pengyu Chen, Bin Cheng, Patricio Hernandez, João Pedro
     Vieira, Daniel (Samuel) Zhao for their expert research assistance
