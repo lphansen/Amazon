@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
@@ -58,11 +58,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendix/appendix';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reference" href="../reference.html" />
-    <link rel="prev" title="Conclusions" href="../conclusion/conclusion.html" />
+    <link rel="prev" title="Reference" href="../reference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -345,7 +346,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">D.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-construction">Data construction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-available-area">Total available area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-absorption">Carbon absorption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-depreciation">Carbon depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emissions-contributed-by-agriculture">Emissions contributed by agriculture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cattle-farming-productivities">Cattle farming productivities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discount-rate-delta-and-adjustment-costs-cost-zeta">Discount rate (<span class="math notranslate nohighlight">\(\delta\)</span>) and adjustment costs cost (<span class="math notranslate nohighlight">\(\zeta\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-values-z-i-0-x-i-0">Initial values: <span class="math notranslate nohighlight">\(Z^i_0\)</span>, <span class="math notranslate nohighlight">\(X^i_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agricultural-prices">Agricultural prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-costs">Transfer costs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalog-of-the-sites">Catalog of the sites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-values-of-xi">Alternative values of <span class="math notranslate nohighlight">\(\xi\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-discretization">Model discretization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-distributions">Benchmark distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-s"><span class="math notranslate nohighlight">\(\theta's\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-s"><span class="math notranslate nohighlight">\(\gamma's\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior-estimation">Posterior estimation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-implementation-details">Computational implementation details</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -359,8 +381,1017 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="appendix">
 <span id="sec-appendixa"></span><h1>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h1>
-<section id="d">
-<span id="sec-appendixd"></span><h2>D.<a class="headerlink" href="#d" title="Link to this heading">#</a></h2>
+<section id="data-construction">
+<span id="appen-data"></span><h2>Data construction<a class="headerlink" href="#data-construction" title="Link to this heading">#</a></h2>
+<section id="total-available-area">
+<h3>Total available area<a class="headerlink" href="#total-available-area" title="Link to this heading">#</a></h3>
+<p>To compute <span class="math notranslate nohighlight">\(\bar z^i\)</span>, the amount of available area for the planner’s
+choice (forest or cattle farming) in each site <span class="math notranslate nohighlight">\(i\)</span>, we first calculate
+the fraction of 30m-pixels in site <span class="math notranslate nohighlight">\(i\)</span> classified as agriculture
+(crops + pastures) or forests in MapBiomas 2017
+<span id="id1">Souza Jr <em>et al.</em> [<a class="reference internal" href="../reference.html#id66" title="Carlos M Souza Jr, Julia Z. Shimbo, Marcos R Rosa, Leandro L Parente, Ane A. Alencar, Bernardo FT Rudorff, Heinrich Hasenack, Marcelo Matsumoto, Laerte G. Ferreira, Pedro WM Souza-Filho, and others. Reconstructing three decades of land use and land cover changes in brazilian biomes with landsat archive and earth engine. Remote Sensing, 12(17):2735, 2020.">2020</a>]</span>. We then multiply this fraction by the area
+(within the biome) of the site, to obtain a measure in hectares. Notice
+<span class="math notranslate nohighlight">\(\bar z^i\)</span> comprises the total site area, excluding areas such as
+rivers, roads, cities and etc.</p>
+</section>
+<section id="carbon-absorption">
+<h3>Carbon absorption<a class="headerlink" href="#carbon-absorption" title="Link to this heading">#</a></h3>
+<p>We first extract a random sample of 1.2M 30m-pixels and select 893,753
+pixels with no deforestation during 1985-2017, which we treat as primary
+forests as of 2017. We add <em>above ground</em> biomass density data for the
+year 2017 from ESA Biomass<a class="footnote-reference brackets" href="#id18" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. The biomass data also comes in a grid
+format with <span class="math notranslate nohighlight">\(\sim\)</span> 100m resolution, so we spatially
+match it to our sample. The original data is measured in biomass density
+(Mg per ha) but we convert it to carbon per hectare, by dividing by 2
+(carbon is approximately 50% of the biomass), and then obtain CO2
+equivalent by multiplying by 44 and dividing by 12 (based on atomic
+mass). In Appendix <a class="reference internal" href="#appen-baseline">C</a> we exposit how we use the data to obtain a
+baseline distribution of the vector of site-specific carbon absorption
+productivities, <span class="math notranslate nohighlight">\((\gamma^1, \dots, \gamma^I).\)</span></p>
+</section>
+<section id="carbon-depreciation">
+<h3>Carbon depreciation<a class="headerlink" href="#carbon-depreciation" title="Link to this heading">#</a></h3>
+<p>The parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is a carbon depreciation parameter, assumed to be
+constant across sites. It is set so that the 99% convergence time of the
+carbon accumulation process is 100 years (see <span id="id3">Heinrich <em>et al.</em> [<a class="reference internal" href="../reference.html#id33" title="Viola HA Heinrich, Ricardo Dalagnol, Henrique LG Cassol, Thais M Rosan, Catherine Torres de Almeida, Celso HL Silva Junior, Wesley A Campanharo, Joanna I House, Stephen Sitch, Tristram C Hales, and others. Large carbon sink potential of secondary forests in the brazilian amazon to mitigate climate change. Nature communications, 12(1):1–11, 2021.">2021</a>]</span>),
+that is <span class="math notranslate nohighlight">\(\alpha=1-(1-0.99)^{1/100}=.045\)</span>.</p>
+</section>
+<section id="emissions-contributed-by-agriculture">
+<h3>Emissions contributed by agriculture<a class="headerlink" href="#emissions-contributed-by-agriculture" title="Link to this heading">#</a></h3>
+<p>The parameter <span class="math notranslate nohighlight">\(\kappa\)</span> is calibrated using the agricultural net annual
+emission data at the state level available from the system SEEG.<a class="footnote-reference brackets" href="#id20" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> We
+use <span class="math notranslate nohighlight">\(\kappa=2.0942,\)</span> which is the average of agricultural net emission
+divided by the agricultural area from MapBiomas for all states within
+the Amazon biome, weighting by the area of each state overlap with the
+biome, from 1990 to 2019.</p>
+</section>
+<section id="cattle-farming-productivities">
+<h3>Cattle farming productivities<a class="headerlink" href="#cattle-farming-productivities" title="Link to this heading">#</a></h3>
+<p>Since almost <span class="math notranslate nohighlight">\(90\%\)</span> of the historically deforested land in the Amazon
+biome that was used for agricultural activities in 2017 was used for
+pasture, we focus on the productivity of cattle farming for each site.
+Since we do not have measurements concerning the cost of attracting or
+redeploying variable inputs to the cattle farming sector, we focus on
+revenue per hectare. This choice leads to an overvaluation of the
+contribution of cattle farming in the Amazon to the Brazilian
+economy.<a class="footnote-reference brackets" href="#id21" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> We consider the value of cattle sold for slaughter per
+hectare of pastureland at the municipal level, from the 2017
+Agricultural Census <span id="id6">IBGE [<a class="reference internal" href="../reference.html#id63" title="IBGE. Censo agropecuário: tabelas 6882, 6911. 2017. URL: https://sidra.ibge.gov.br.">2017</a>]</span>. In Appendix
+<a class="reference internal" href="#appen-baseline">C</a> we
+exposit how we derive a baseline distribution for the vector of
+site-specific cattle farming productivities,
+<span class="math notranslate nohighlight">\((\theta^1, \dots, \theta^I).\)</span></p>
+</section>
+<section id="discount-rate-delta-and-adjustment-costs-cost-zeta">
+<h3>Discount rate (<span class="math notranslate nohighlight">\(\delta\)</span>) and adjustment costs cost (<span class="math notranslate nohighlight">\(\zeta\)</span>)<a class="headerlink" href="#discount-rate-delta-and-adjustment-costs-cost-zeta" title="Link to this heading">#</a></h3>
+<p>We use the discount rate <span class="math notranslate nohighlight">\(\delta = 0.02\)</span> and calibrate <span class="math notranslate nohighlight">\(\zeta=1.66e-4\)</span>
+using the difference in price between forested land and cleaned land and
+the amount of annual deforestation that occurred from 2008 to 2017 based
+on <span id="id7">Araujo <em>et al.</em> [<a class="reference internal" href="../reference.html#id34" title="Rafael Araujo, Francisco Costa, and Marcelo Sant'Anna. Efficient forestation in the brazilian amazon: evidence from a dynamic model. 2022.">2022</a>]</span>. Notice that the difference in price should
+reflect both the cost of deforestation and any value of wood obtained in
+the process. Unfortunately, we did not have data that would allow us to
+compute a separate adjustment cost for decreasing (as opposed to
+increasing) deforestation, so we opted for symmetry.</p>
+</section>
+<section id="initial-values-z-i-0-x-i-0">
+<span id="app-initial-values"></span><h3>Initial values: <span class="math notranslate nohighlight">\(Z^i_0\)</span>, <span class="math notranslate nohighlight">\(X^i_0\)</span><a class="headerlink" href="#initial-values-z-i-0-x-i-0" title="Link to this heading">#</a></h3>
+<p>The approach for computing the initial value for the agricultural area,
+<span class="math notranslate nohighlight">\(Z^i_0\)</span>, is similar to that used for the total available area
+<span class="math notranslate nohighlight">\(\bar Z^i\)</span>. The only difference is that we focus only on the fraction of
+pixels classified as agriculture (crops + pastures) in 2017 before
+multiplying by the site’s area in order to obtain a measure in hectares.</p>
+<p>The initial value for the carbon stored in the forests <span class="math notranslate nohighlight">\(X^i_0\)</span> is
+assumed to be given by <span class="math notranslate nohighlight">\(X^i_0=\gamma^i (\bar{Z}^i - Z^i_0)\)</span>, i.e., the
+carbon stock per hectare of forest times the forest area. Notice that
+<span class="math notranslate nohighlight">\(X^i_0\)</span> is measured in CO2e (Mg). Notice that we assume that all forest
+at the initial point is primary, which is compatible with equation
+<a class="reference internal" href="../model/model.html#equation-eq-x">(2)</a>.</p>
+</section>
+<section id="agricultural-prices">
+<span id="appen-agprice"></span><h3>Agricultural prices<a class="headerlink" href="#agricultural-prices" title="Link to this heading">#</a></h3>
+<p>We use a data series on monthly deflated cattle prices (reference date
+01/2017),<a class="footnote-reference brackets" href="#id22" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> from 1995, the year in which the Real Plan stabilized the
+Brazilian currency, until 2017.</p>
+<p>For the model inputs, we fit a two-state Markov process as a hidden
+state Markov chain with with Gaussian noise. We estimated two versions
+of this model using the <strong>hmmlearn</strong> package in python. This package
+provides a collection of software tools for analyzing Hidden State
+Markov Models. In estimation, the hidden states were initialized in the
+implied stationary distribution of the transition probabilities through
+an iterative process. The implied calibration we used for results
+reported in the main body of the paper allowed for the normally
+distributed variances to be different depending on the state. We also
+considered a specification in which the variances are the same. The
+state realizations and transition probabilities for the two
+specifications are given in Table
+<a class="reference internal" href="#tab-hidden-markov-model"><span class="std std-ref">Estimates for the hidden-state Markov models</span></a>.</p>
+<table class="table" id="tab-hidden-markov-model">
+<caption><span class="caption-text">Estimates for the hidden-state Markov models</span><a class="headerlink" href="#tab-hidden-markov-model" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>distinct</p></th>
+<th class="head"><p>variances</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>a common</p></th>
+<th class="head"><p>variance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>low  price</p></td>
+<td><p>high price</p></td>
+<td><p></p></td>
+<td><p>low price</p></td>
+<td><p>high price</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>35.71</p></td>
+<td><p>44.26</p></td>
+<td><p></p></td>
+<td><p>32.44</p></td>
+<td><p>42.78</p></td>
+</tr>
+<tr class="row-even"><td><p>s.d.</p></td>
+<td><p>0.105</p></td>
+<td><p>0.075</p></td>
+<td><p></p></td>
+<td><p>0.088</p></td>
+<td><p>0.088</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>transition probabilities</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>low</p></td>
+<td><p>high</p></td>
+<td><p></p></td>
+<td><p>low</p></td>
+<td><p>high</p></td>
+</tr>
+<tr class="row-odd"><td><p>low</p></td>
+<td><p>0.706</p></td>
+<td><p>0.294</p></td>
+<td><p></p></td>
+<td><p>0.766</p></td>
+<td><p>0.234</p></td>
+</tr>
+<tr class="row-even"><td><p>high</p></td>
+<td><p>0.171</p></td>
+<td><p>0.829</p></td>
+<td><p></p></td>
+<td><p>0.046</p></td>
+<td><p>0.954</p></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<p>The smoothed probabilities for both models are given in Figure
+<a class="reference internal" href="#fig-smoothedprobabilities">15</a>. The more constrained estimation
+picks lower values for both states but assumes the process spends most
+of its time the higher of the two state.</p>
+<p id="fig-smoothedprobabilities"><a class="reference internal" href="../_images/smoothed_prob_m2_uncon.png"><img alt="Drawing" src="../_images/smoothed_prob_m2_uncon.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/smoothed_prob_m3_constrained.png"><img alt="Drawing" src="../_images/smoothed_prob_m3_constrained.png" style="width: 300px;" /></a>
+<br>
+<span style="padding-left: 80px;"> Fig 15: Smoothed probabilities for the two hidden state Markov chain
+models</p>
+<p>Table <a class="reference internal" href="#tab-information-criteria"><span class="std std-ref">Likelihood ratios and information criteria</span></a> reports the likelihoods and AIC and BIC
+model selection diagnostics for both models. The AIC criterion picks the
+less constrained of the two models and the BIC criterion just the
+opposite.</p>
+<table class="table" id="tab-information-criteria">
+<caption><span class="caption-text">Likelihood ratios and information criteria</span><a class="headerlink" href="#tab-information-criteria" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>distinct variances</p></th>
+<th class="head"><p>common variance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>log likelihood</p></td>
+<td><p>270.16</p></td>
+<td><p>268.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>aic</p></td>
+<td><p>-528.32</p></td>
+<td><p>-526.08</p></td>
+</tr>
+<tr class="row-even"><td><p>bic</p></td>
+<td><p>-502.97</p></td>
+<td><p>-504.36</p></td>
+</tr>
+</tbody>
+</table>
+<p>In Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-mpc-constrained"><span class="std std-ref">Present-value decomposition with stochastic agricultural prices</span></a>, we
+report the counterpart to Table
+<a class="reference internal" href="../results/MPC.html#tab-valueobjectivedecomposition-78sites-mpc"><span class="std std-ref">Present-value decomposition with stochastic agricultural prices</span></a> constructed
+using the implied calibration the same variances for each state. The
+differences between results are modest.</p>
+<table class="table" id="tab-valueobjectivedecomposition-78sites-mpc-constrained">
+<caption><span class="caption-text">Present-value decomposition with stochastic agricultural prices</span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-mpc-constrained" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>agricultural output value</p></th>
+<th class="head"><p>net Transfers</p></th>
+<th class="head"><p>forest Services</p></th>
+<th class="head"><p>adjustment Costs</p></th>
+<th class="head"><p>planner Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
+<td><p>stochastic</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>b = $0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>3.22</p></td>
+<td><p>0.00</p></td>
+<td><p>-1.01</p></td>
+<td><p>0.05</p></td>
+<td><p>2.19</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>3.34</p></td>
+<td><p>0.00</p></td>
+<td><p>-1.00</p></td>
+<td><p>0.05</p></td>
+<td><p>2.29</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>3.43</p></td>
+<td><p>0.00</p></td>
+<td><p>-0.97</p></td>
+<td><p>0.05</p></td>
+<td><p>2.37</p></td>
+</tr>
+<tr class="row-odd"><td><p>b = $15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>0.24</p></td>
+<td><p>2.00</p></td>
+<td><p>0.84</p></td>
+<td><p>0.19</p></td>
+<td><p>2.89</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>0.26</p></td>
+<td><p>2.00</p></td>
+<td><p>0.84</p></td>
+<td><p>0.19</p></td>
+<td><p>2.91</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>0.26</p></td>
+<td><p>2.00</p></td>
+<td><p>0.84</p></td>
+<td><p>0.19</p></td>
+<td><p>2.91</p></td>
+</tr>
+<tr class="row-odd"><td><p>b = $25</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>0.16</p></td>
+<td><p>3.48</p></td>
+<td><p>0.96</p></td>
+<td><p>0.27</p></td>
+<td><p>4.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>0.18</p></td>
+<td><p>3.48</p></td>
+<td><p>0.96</p></td>
+<td><p>0.28</p></td>
+<td><p>4.34</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>0.19</p></td>
+<td><p>3.48</p></td>
+<td><p>0.96</p></td>
+<td><p>0.28</p></td>
+<td><p>4.35</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
+<td><p>$41.1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>b = 0</p></td>
+<td><p>3.31</p></td>
+<td><p>0.00</p></td>
+<td><p>-1.10</p></td>
+<td><p>0.06</p></td>
+<td><p>2.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>b = 15</p></td>
+<td><p>0.26</p></td>
+<td><p>2.02</p></td>
+<td><p>0.95</p></td>
+<td><p>0.17</p></td>
+<td><p>3.06</p></td>
+</tr>
+<tr class="row-even"><td><p>b = 25</p></td>
+<td><p>0.17</p></td>
+<td><p>3.54</p></td>
+<td><p>1.00</p></td>
+<td><p>0.26</p></td>
+<td><p>4.45</p></td>
+</tr>
+</tbody>
+</table>
+<p>(appen:transfer)</p>
+</section>
+<section id="transfer-costs">
+<h3>Transfer costs<a class="headerlink" href="#transfer-costs" title="Link to this heading">#</a></h3>
+<p>In this subsection we report in Table
+<a class="reference internal" href="#tab-transfercost-78sites-hmc-y15"><span class="std std-ref">Transfer costs under ambiguity - 15 years</span></a> and Table
+<a class="reference internal" href="#tab-transfercost-78sites-hmc-y30"><span class="std std-ref">Transfer costs under ambiguity - 30 years</span></a> transfer costs under
+ambiguity aversion and Table
+<a class="reference internal" href="#tab-transfercost-78sites-mpc"><span class="std std-ref">Transfer costs with stochastic agricultural prices</span></a> transfer costs under
+stochastic variation in agricultural prices.</p>
+<table class="table" id="tab-transfercost-78sites-hmc-y15">
+<caption><span class="caption-text">Transfer costs under ambiguity - 15 years</span><a class="headerlink" href="#tab-transfercost-78sites-hmc-y15" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>ambiguity neutral</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>ambiguity aversion</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>-9.89</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-9.59</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>5.17</p></td>
+<td><p>0.43</p></td>
+<td><p>2.87</p></td>
+<td><p>4.24</p></td>
+<td><p>0.35</p></td>
+<td><p>2.55</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>6.69</p></td>
+<td><p>0.84</p></td>
+<td><p>5.08</p></td>
+<td><p>5.63</p></td>
+<td><p>0.70</p></td>
+<td><p>4.65</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>7.65</p></td>
+<td><p>1.29</p></td>
+<td><p>7.36</p></td>
+<td><p>6.47</p></td>
+<td><p>1.08</p></td>
+<td><p>6.77</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>8.21</p></td>
+<td><p>1.74</p></td>
+<td><p>9.60</p></td>
+<td><p>6.97</p></td>
+<td><p>1.47</p></td>
+<td><p>8.88</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="tab-transfercost-78sites-hmc-y30">
+<caption><span class="caption-text">Transfer costs under ambiguity - 30 years</span><a class="headerlink" href="#tab-transfercost-78sites-hmc-y30" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>ambiguity neutral</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>ambiguity aversion</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>-15.25</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-15.08</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>11.91</p></td>
+<td><p>0.87</p></td>
+<td><p>3.21</p></td>
+<td><p>10.18</p></td>
+<td><p>0.74</p></td>
+<td><p>2.93</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>14.10</p></td>
+<td><p>1.57</p></td>
+<td><p>5.37</p></td>
+<td><p>12.57</p></td>
+<td><p>1.39</p></td>
+<td><p>5.03</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>14.75</p></td>
+<td><p>2.23</p></td>
+<td><p>7.43</p></td>
+<td><p>13.15</p></td>
+<td><p>1.97</p></td>
+<td><p>6.97</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>15.08</p></td>
+<td><p>2.87</p></td>
+<td><p>9.47</p></td>
+<td><p>13.29</p></td>
+<td><p>2.51</p></td>
+<td><p>8.86</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="tab-transfercost-78sites-mpc">
+<caption><span class="caption-text">Transfer costs with stochastic agricultural prices</span><a class="headerlink" href="#tab-transfercost-78sites-mpc" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>15 years</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>30 years</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+<td><p>net captured emissions</p></td>
+<td><p>discounted net transfers</p></td>
+<td><p>discounted effective cost</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>(billion tons of CO2e)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ per ton of CO2e)</p></td>
+<td><p>(billion tons of CO2e)</p></td>
+<td><p>($ <span class="math notranslate nohighlight">\( 10^{11}\)</span>)</p></td>
+<td><p>($ per ton of CO2e)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
+<td><p>stochastic</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>b=$0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>-9.28</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-14.41</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>-8.52</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-13.79</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>-7.82</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-13.33</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p>b=$15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>6.22</p></td>
+<td><p>0.77</p></td>
+<td><p>4.91</p></td>
+<td><p>13.89</p></td>
+<td><p>1.53</p></td>
+<td><p>5.41</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>6.25</p></td>
+<td><p>0.77</p></td>
+<td><p>5.21</p></td>
+<td><p>13.91</p></td>
+<td><p>1.53</p></td>
+<td><p>5.53</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>6.29</p></td>
+<td><p>0.78</p></td>
+<td><p>5.43</p></td>
+<td><p>13.94</p></td>
+<td><p>1.54</p></td>
+<td><p>5.62</p></td>
+</tr>
+<tr class="row-odd"><td><p>b=$25</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>10%</p></td>
+<td><p>7.61</p></td>
+<td><p>1.59</p></td>
+<td><p>9.27</p></td>
+<td><p>14.78</p></td>
+<td><p>2.78</p></td>
+<td><p>9.49</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>7.63</p></td>
+<td><p>1.60</p></td>
+<td><p>9.78</p></td>
+<td><p>14.79</p></td>
+<td><p>2.78</p></td>
+<td><p>9.70</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>7.65</p></td>
+<td><p>1.60</p></td>
+<td><p>10.14</p></td>
+<td><p>14.81</p></td>
+<td><p>2.78</p></td>
+<td><p>9.86</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^a\)</span> =</p></td>
+<td><p>$41.1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>b=0</p></td>
+<td><p>-9.89</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+<td><p>-15.25</p></td>
+<td><p>0.00</p></td>
+<td><p>NaN</p></td>
+</tr>
+<tr class="row-odd"><td><p>b=15</p></td>
+<td><p>6.69</p></td>
+<td><p>0.84</p></td>
+<td><p>5.08</p></td>
+<td><p>14.10</p></td>
+<td><p>1.57</p></td>
+<td><p>5.37</p></td>
+</tr>
+<tr class="row-even"><td><p>b=25</p></td>
+<td><p>8.21</p></td>
+<td><p>1.74</p></td>
+<td><p>9.60</p></td>
+<td><p>15.08</p></td>
+<td><p>2.87</p></td>
+<td><p>9.47</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="catalog-of-the-sites">
+<span id="appen-site-map"></span><h3>Catalog of the sites<a class="headerlink" href="#catalog-of-the-sites" title="Link to this heading">#</a></h3>
+<p>Figure <a class="reference internal" href="#map-reference">16</a> lists the site numbers in the Amazon map as a
+reference.</p>
+<br>
+<a class="bg-primary reference internal image-reference" href="../_images/map_reference_same_price.png" id="map-reference"><img alt="fishy" class="bg-primary" id="map-reference" src="../_images/map_reference_same_price.png" style="width: 300px;" /></a>
+<p>Fig 16: Locations of the different site numbers</p>
+</section>
+<section id="alternative-values-of-xi">
+<span id="alternative-xi"></span><h3>Alternative values of <span class="math notranslate nohighlight">\(\xi\)</span><a class="headerlink" href="#alternative-values-of-xi" title="Link to this heading">#</a></h3>
+<p>In this section, we report results for parameter uncertainty with
+<span class="math notranslate nohighlight">\(\xi=2\)</span>. The calculated business as usual price is $6.1. Table
+<a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-hmc-alt-xi"><span class="std std-ref">Present-value decomposition - parameter ambiguity \xi=2</span></a> shows
+the present values under <span class="math notranslate nohighlight">\(\xi=2\)</span> in comparison to <span class="math notranslate nohighlight">\(\xi=\infty\)</span>. Figure
+[17](#fig:Ambiguity adjustment_b0) and Figure
+[18](#fig:Ambiguity adjustment_b15) shows the baseline and
+ambiguity-adjusted distributions.</p>
+<table class="table" id="tab-valueobjectivedecomposition-78sites-hmc-alt-xi">
+<caption><span class="caption-text">Present-value decomposition - parameter ambiguity <span class="math notranslate nohighlight">\(\xi=2\)</span></span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-hmc-alt-xi" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>agricultural output</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>planner value</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>b</p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=\infty\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=\infty\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\xi=1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>3.31</p></td>
+<td><p>2.87</p></td>
+<td><p>2.57</p></td>
+<td><p>2.14</p></td>
+<td><p>1.86</p></td>
+<td><p>1.64</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>0.41</p></td>
+<td><p>0.50</p></td>
+<td><p>0.55</p></td>
+<td><p>2.41</p></td>
+<td><p>2.22</p></td>
+<td><p>2.08</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>0.26</p></td>
+<td><p>0.28</p></td>
+<td><p>0.30</p></td>
+<td><p>3.06</p></td>
+<td><p>2.81</p></td>
+<td><p>2.62</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>0.20</p></td>
+<td><p>0.22</p></td>
+<td><p>0.23</p></td>
+<td><p>3.75</p></td>
+<td><p>3.43</p></td>
+<td><p>3.19</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>0.17</p></td>
+<td><p>0.18</p></td>
+<td><p>0.19</p></td>
+<td><p>4.45</p></td>
+<td><p>4.06</p></td>
+<td><p>3.74</p></td>
+</tr>
+</tbody>
+</table>
+<br>
+<p id="fig-ambiguity-adjustment-b0"><a class="reference internal" href="../_images/theta_distribution_71_b0.png"><img alt="Drawing" src="../_images/theta_distribution_71_b0.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_71_b0.png"><img alt="Drawing" src="../_images/gamma_distribution_71_b0.png" style="width: 300px;" /></a>
+<a class="reference internal" href="../_images/theta_distribution_74_b0.png"><img alt="Drawing" src="../_images/theta_distribution_74_b0.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_74_b0.png"><img alt="Drawing" src="../_images/gamma_distribution_74_b0.png" style="width: 300px;" /></a>
+<br>
+<span style="padding-left: 80px;"> Fig 17: Baseline and ambiguity adjusted densities for b = 0</p>
+<br>
+<p id="id9"><a class="reference internal" href="../_images/theta_distribution_71_b15.png"><img alt="Drawing" src="../_images/theta_distribution_71_b15.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_71_b15.png"><img alt="Drawing" src="../_images/gamma_distribution_71_b15.png" style="width: 300px;" /></a>
+<a class="reference internal" href="../_images/theta_distribution_74_b15.png"><img alt="Drawing" src="../_images/theta_distribution_74_b15.png" style="width: 300px;" /></a> <a class="reference internal" href="../_images/gamma_distribution_74_b15.png"><img alt="Drawing" src="../_images/gamma_distribution_74_b15.png" style="width: 300px;" /></a>
+<br>
+<span style="padding-left: 80px;"> Fig 18: Baseline and ambiguity adjusted densities for b = 15</p>
+<p>(appen:discrete_model)</p>
+</section>
+</section>
+<section id="model-discretization">
+<h2>Model discretization<a class="headerlink" href="#model-discretization" title="Link to this heading">#</a></h2>
+<p>In order to obtain numerical solutions for the social planner problem,
+we solve the following discrete-time approximation, for a finite horizon
+of <span class="math notranslate nohighlight">\(T=200\)</span> years<a class="footnote-reference brackets" href="#id23" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-discrete-model">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-discrete-model" title="Link to this equation">#</a></span>\[
+\max_{\{U_t, V_t\}^T_{t=1}} \; \sum^{T}_{t=0} e^{-\delta t} 
+\left[
+-P^e   \sum^I_{i=1} \kappa Z^i_{t+1} - (X^i_{t+1} - X^i_{t})
++ P^a \sum^I_{i=1} \theta^i Z^i_{t+1} 
+- \frac{\zeta}{2} \left(\sum^I_{i=1} U^i_t + V^i_t\right)^2 \right],\]</div>
+<p>subject to the initial conditions in
+<a class="reference internal" href="#app-initial-values">A.7</a> and the constraints:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    X^i_{t+1} &amp;= X^i_t  
+    -\gamma^i U^i_t
+    - \alpha \left[ X^i_t
+    - \gamma^i ({\bar z}^i - Z^i_t)\right]
+    &amp;\forall i=1,\dots I \text{ and } t=0,\dots, T \\[10pt]
+    Z^i_{t+1} &amp;= Z^i_t + U^i_t - V^i_t
+    &amp;\forall i=1,\dots I \text{ and } t=0,\dots,T \\[10pt]
+    U^i_t &amp;\geq 0, \quad V^i_t \geq 0
+    &amp;\forall i=1,\dots I \text{ and } t=0,\dots,T
+\end{aligned}\end{split}\]</div>
+</section>
+<section id="benchmark-distributions">
+<span id="appen-baseline"></span><h2>Benchmark distributions<a class="headerlink" href="#benchmark-distributions" title="Link to this heading">#</a></h2>
+<p>Equation
+<a class="reference internal" href="../uncertainty/uncertainty.html#equation-productivity-construct">(6)</a>{reference-type=”ref”
+reference=”productivity_construct”} gave the formula for constructing
+measurement of site-specific productivities from regression coefficients
+and measurements of municipality attributes. In what follows, we first
+outline the municipality regression models used for <span class="math notranslate nohighlight">\(\gamma\)</span> and
+<span class="math notranslate nohighlight">\(\theta\)</span>, and then we describe the procedure that we used constructing
+baseline Bayesian posteriors for the regression coefficients.</p>
+<section id="theta-s">
+<h3><span class="math notranslate nohighlight">\(\theta's\)</span><a class="headerlink" href="#theta-s" title="Link to this heading">#</a></h3>
+<p>To construct a measurement of the <span class="math notranslate nohighlight">\(\theta\)</span>’s, we run the regression
+specification below with probabilistic output.<a class="footnote-reference brackets" href="#id24" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>
+$<span class="math notranslate nohighlight">\(\label{eq:betathetamuni}
+\log(\text{Slaughter value}) = R_\theta \beta_\theta + \epsilon_\theta\)</span><span class="math notranslate nohighlight">\(
+where \)</span>$\begin{aligned}
+R_\theta \beta_\theta \mathrel{\overset{\mathrm{def}}{=}}&amp; \quad \beta_\theta^{0} + \beta_\theta^{1}(\operatorname{historical_precip})</p>
+<ul class="simple">
+<li><p>\beta_\theta^{2}(\operatorname{historical_temp}) + \beta_\theta^{3}(\operatorname{historical_temp^2})\cr &amp;
+\quad + \beta_\theta^{4}(\operatorname{lat}) + \beta_\theta^{5}(\operatorname{lat^2})  +
+\beta_\theta^{6}\operatorname{\text{log}(cattleSlaughter_farmGatePrice}) + \beta_\theta^{7}(\operatorname{distance})
+\end{aligned}$$ where slaughter value is the value of cattle sold per
+hectare of pasture area in 2017 (USD/ha), precipitation and temperature
+are the average annual precipitation (mm) and temperature (degrees
+Celsius), respectively, for the period of 1970-2000
+<span id="id12">Fick and Hijmans [<a class="reference internal" href="../reference.html#id65" title="Stephen E Fick and Robert J Hijmans. Worldclim 2: new 1-km spatial resolution climate surfaces for global land areas. International journal of climatology, 37(12):4302–4315, 2017.">2017</a>]</span>, latitude is the geographical coordinates of the
+municipality centroids, farm gate price is the price of cattle slaughter
+<span id="id13">SEAB-PR [<a class="reference internal" href="../reference.html#id64" title="SEAB-PR. Preço médio - recebido pelo agricultor: boi gordo, arroz (em casca), cana-de-açúcar, milho, mandioca, 1990-2021. 2021. URL: http://www.ipeadata.gov.br.">2021</a>]</span>, and distance is measured the distance from the
+municipality to the state capital. Since the area dedicated to
+agriculture varies substantially across municipalities, we opted for
+weighting observations by the 2017 pasture area in each municipality.</p></li>
+</ul>
+<p>The inclusion of farm gate prices on the right side of this regression
+is reasonable because variations in farm gate prices across
+municipalities mostly reflect unobserved costs to bring cattle to
+stockyards and meat to markets such as proximity to roads or rivers,
+which are not fully controlled by our geographical variables.</p>
+</section>
+<section id="gamma-s">
+<h3><span class="math notranslate nohighlight">\(\gamma's\)</span><a class="headerlink" href="#gamma-s" title="Link to this heading">#</a></h3>
+<p>We calculate average of CO2 density (MG/ha) for each municipality and
+run the following regression:<a class="footnote-reference brackets" href="#id25" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>
+$<span class="math notranslate nohighlight">\(\operatorname{\text{log}(co2e\_ha)} = R_\gamma \beta_\gamma + \varepsilon_\gamma\)</span><span class="math notranslate nohighlight">\(
+where \)</span>$\begin{aligned}
+R_\gamma \beta_\gamma \mathrel{\overset{\mathrm{def}}{=}}&amp; \quad  \beta^\gamma_{0} + \beta^\gamma_{1}(\operatorname{\text{log}(historical_precip}))</p>
+<ul class="simple">
+<li><p>\beta^\gamma_{2}(\operatorname{\text{log}(historical_temp}))  \cr &amp;
+\quad \beta^\gamma_{3}(\operatorname{\text{log}(lat)}) + \beta^\gamma_{4}(\operatorname{\text{log}(lon)}).
+\end{aligned}$$</p></li>
+</ul>
+</section>
+<section id="posterior-estimation">
+<h3>Posterior estimation<a class="headerlink" href="#posterior-estimation" title="Link to this heading">#</a></h3>
+<p>To estimate the benchmark posterior distribution <span class="math notranslate nohighlight">\(\pi\)</span>, we consider
+<span class="math notranslate nohighlight">\(\pi(\beta_\theta, \sigma^2_\theta)\)</span> and
+<span class="math notranslate nohighlight">\(\pi(\beta_\gamma, \sigma^2_\gamma)\)</span> separately. Below, we present the
+derivation of <span class="math notranslate nohighlight">\(\pi(\beta_\theta,  \sigma^2_\theta)\)</span>, with the derivation
+of <span class="math notranslate nohighlight">\(\pi(\beta_\gamma,\sigma^2_\gamma)\)</span> following analogously.</p>
+<p>Using a weighted regression for the model given by
+<a class="reference internal" href="#eq:betathetamuni"><span class="xref myst">[eq:betathetamuni]</span></a>{reference-type=”ref”
+reference=”eq:betathetamuni”} with a Gaussian error term is equivalent
+to assuming: $<span class="math notranslate nohighlight">\(\label{eq:muni_likelihood}
+   Y_\theta  \;=\; R_\theta\beta_\theta + \varepsilon_\theta, \quad \varepsilon_\theta \sim \mathcal{N}(0,\, \sigma_\theta^2 W_\theta ^{-1}),\)</span><span class="math notranslate nohighlight">\(
+where: \)</span>W_\theta<span class="math notranslate nohighlight">\( is the diagonal matrix of weights. For the \)</span>\gamma<span class="math notranslate nohighlight">\(
+case, \)</span>W_\gamma = I.$</p>
+<p>We assume that the priors/posteriors for parameters
+<span class="math notranslate nohighlight">\((\beta_\theta, \sigma_\theta^2)\)</span> are the familiar conjugate form:</p>
+<div class="math notranslate nohighlight">
+\[\beta_\theta \;|\;  \sigma_\theta^2 \; \sim \; \mathcal{N}(m,\, \sigma_\theta^2 Q^{-1})\]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\sigma_\theta^2 \;\sim\; \textrm{Inv-Gamma}(a,\, b)$$ where
+$$\begin{aligned}
+    Q &amp; = R_\theta' W_\theta R_\theta + Q_0, \cr
+    m &amp; = Q^{-1} (R_\theta' W_\theta y_\theta + Q_0m_0), \cr
+    a &amp; = a_0+\frac{n}{2}, \cr
+    b &amp; = b_0+\frac{1}{2}(y_\theta' W_\theta y_\theta + m_0' Q_0 m_0- m'Qm),
+\end{aligned}$$ and $Q_0, m_0, a_0, b_0$ are prior inputs. We impose the
+familiar improper priors: $$\begin{aligned}
+    \begin{matrix} Q_0 = 0  &amp; m_0 = 0 &amp; a_0 = 0 &amp; b_0 = 0 \end{matrix},
+\end{aligned}$$ which implies that the posteriors inputs are familiar
+regression statistics. In the following tables, we present quantiles for
+the posterior distributions described above:\\[]{#tab:theta_estimation label=&quot;tab:theta_estimation&quot;}\\[]{#tab:gamma_estimation label=&quot;tab:gamma_estimation&quot;}\\(sec:appendixD)=
+## Hamiltonian Monte Carlo {#sec:HMC}\\As is standard in applications of MCMC, we use numerical simulation to
+compute the probability distribution induced by the density of
+[\[minimizer\]](#minimizer){reference-type=&quot;eqref&quot;
+reference=&quot;minimizer&quot;}. While we have partially analytic expression for
+the numerator, the integration in the denominator is more problematic.
+This challenge is a typical starting point for MCMC computations.\\Although we are interested in only the distribution for the regression
+coefficients, for numerical tractability we use the conditional normal
+inverse gamma specification in our computations, which includes the
+regression error variances. We then construct numerically the implied
+marginal distribution for the regression coefficients consistent with
+formula [\[minimizer\]](#minimizer){reference-type=&quot;eqref&quot;
+reference=&quot;minimizer&quot;}.\\This means that we sample from $$\begin{aligned}
+\label{eq:target_distribution}
+{\exp\left[ - {\frac 1 \xi } f(d,  \beta )\right]} d\pi(\beta_\theta, \sigma^2_\theta | R_\theta, y_\theta) d\pi(\beta_\gamma, \sigma^2_\gamma | R_\gamma, y_\gamma)
+\end{aligned}\end{aligned}\end{align} \]</div>
+<p>If <span class="math notranslate nohighlight">\(\rho:=(\beta, \sigma^2),\)</span> taking logs and multiplying by <span class="math notranslate nohighlight">\(-1\)</span>, we
+get the potential energy term <span class="math notranslate nohighlight">\(\mathcal{U}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\begin{aligned}
+    \begin{split}
+        \mathcal{U}(\rho) {} &amp; = {\frac 1 \xi } f(d, \beta) 
+        - \log d\pi(\beta_\theta, \sigma^2_\theta | R_\theta, y_\theta) - \log d\pi(\beta_\gamma, \sigma^2_\gamma | R_\gamma, y_\gamma)
+    \end{split} \\[10pt]
+    \begin{split}
+        {} &amp; = {\frac 1 \xi } f(d,  \beta) 
+        - \log d\pi(\beta_\theta | \sigma_\theta^2, R_\theta, y_\theta)  - \log d\pi(\beta_\gamma | \sigma_\gamma^2, R_\gamma, y_\gamma) 
+         \\
+           &amp; \qquad - \log d\pi(\sigma_\theta^2 | R_\theta, y_\theta) - \log d\pi(\sigma_\gamma^2 | R_\theta, y_\gamma)
+    \end{split}
+\end{aligned}$$ HMC relies on an auxiliary momentum vector $\omega$ of
+the same dimension as $\rho$, where $\omega \sim \mathcal{N}(0, M)$ and
+$M$ is a symmetric, positive-definite mass matrix. The Hamiltonian is
+then defined as:\end{split}\\$$\mathcal{H}(\rho, \omega) :=  \mathcal{U}(\rho) + \frac{1}{2} \omega'M^{-1}\omega\end{aligned}\end{align} \]</div>
+<p>The HMC algorithm then consists of:</p>
+<ol class="arabic">
+<li><p>Initialize <span class="math notranslate nohighlight">\(\rho_{(0)}\)</span>.</p></li>
+<li><p>Sample momentum <span class="math notranslate nohighlight">\(\omega_{(0)} \sim N(0,M)\)</span>.</p></li>
+<li><p>Generate a state proposal
+<span class="math notranslate nohighlight">\((\tilde{\rho}_{(0)}, \tilde \omega_{(0)})\)</span> by evolving its position
+according to Hamilton’s equations, using the leapfrog integrator
+with step size <span class="math notranslate nohighlight">\(\epsilon\)</span> and a number of steps <span class="math notranslate nohighlight">\(L\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+                  \frac{d \rho}{d t}   &amp; = \frac{\partial \mathcal{H}}{\partial \omega} \\[2pt]
+                  \frac{d \omega}{d t} &amp; = -\frac{\partial \mathcal{H}}{\partial \rho}
+              
+    \end{aligned}\end{split}\]</div>
+</li>
+<li><p>Perform a Metropolis test to accept or reject the state update
+<span class="math notranslate nohighlight">\((\rho_{(1)}, \omega_{(1)}) \leftarrow (\tilde{\rho}_{(0)}, \tilde \omega_{(0)})\)</span>,
+with the acceptance probability given by:</p>
+<div class="math notranslate nohighlight">
+\[\min \left\{1, \ \exp \left( \mathcal{H}(\rho_{(0)}, \omega_{(0)}) - \mathcal{H}(\tilde{\rho}_{(0)}, \tilde \omega_{(0)}) \right) \right\}\]</div>
+</li>
+<li><p>Repeat steps 2-4 until the desired number of samples is reached.</p></li>
+</ol>
+<p>We then iterate between solving the planner’s problem for <span class="math notranslate nohighlight">\(d\)</span> and
+sampling <span class="math notranslate nohighlight">\(\rho\)</span> as follows:</p>
+<ol class="arabic simple">
+<li><p>Initialize <span class="math notranslate nohighlight">\(\varphi_{(0)}\)</span> as the transformed mean of the baseline
+distribution <span class="math notranslate nohighlight">\(\pi\)</span>.</p></li>
+<li><p>Solve the planner’s problem for decision vector <span class="math notranslate nohighlight">\(d_{(0)}\)</span> using the
+updated parameters.</p></li>
+<li><p>Sample <span class="math notranslate nohighlight">\(\{ \rho_{(s)} \}^{4000}_{s=1}\)</span> from
+<a class="reference internal" href="#eq:target_distribution"><span class="xref myst">[eq:target_distribution]</span></a>{reference-type=”ref”
+reference=”eq:target_distribution”} by running HMC simultaneously
+across 4 independent Markov chains, taking 1000 samples and 500
+burn-in samples per chain.</p></li>
+<li><p>Transform samples <span class="math notranslate nohighlight">\(\{ \beta_{(s)} \}^{4000}_{s=1}\)</span> back into the
+<span class="math notranslate nohighlight">\(\varphi\)</span> space, compute <span class="math notranslate nohighlight">\(\bar{\varphi}\)</span> as the mean across samples,
+and update <span class="math notranslate nohighlight">\(\varphi\)</span> using
+<span class="math notranslate nohighlight">\(\varphi_{(t+1)} := w \bar{\varphi} + (1-w) \varphi_{(t)}\)</span>, with
+<span class="math notranslate nohighlight">\(w=0.25\)</span>.</p></li>
+<li><p>Repeat steps 2 – 4 until
+<span class="math notranslate nohighlight">\(||\varphi_{(t+1)} - \varphi_{(t)} ||_{\infty} &lt; 0.001\)</span>.</p></li>
+</ol>
+</section>
+<section id="computational-implementation-details">
+<h3>Computational implementation details<a class="headerlink" href="#computational-implementation-details" title="Link to this heading">#</a></h3>
+<p>To sample from
+<a class="reference internal" href="#eq:target_distribution"><span class="xref myst">[eq:target_distribution]</span></a>{reference-type=”ref”
+reference=”eq:target_distribution”}, we rely on the Stan software
+<span id="id15"></span> for high-performance statistical
+computation. The Stan implementation for HMC makes a few adaptations to
+the algorithm described above to improve computation speed and sampling
+efficiency. We summarize these below:</p>
+<ul class="simple">
+<li><p>To ensure convergence onto the stationary target distribution, Stan
+discards the pre-specified number of burn-in samples at the start of
+the sampling process.</p></li>
+<li><p>Stan utilizes the No U-turn sampling (NUTS) variant of HMC, which
+adaptively determines the number of leapfrog steps <span class="math notranslate nohighlight">\(L\)</span> at each
+iteration to avoid U-turns in the state trajectory
+<span id="id16"></span>.</p></li>
+<li><p>Stan determines the leapfrog step size <span class="math notranslate nohighlight">\(\epsilon\)</span> using the dual
+averaging Nesterov algorithm <span id="id17">Nesterov [<a class="reference internal" href="../reference.html#id55" title="Yurii Nesterov. Primal-dual subgradient methods for convex problems. Mathematical programming, 120(1):221–259, 2009.">2009</a>]</span>.</p></li>
+<li><p>By default, Stan utilizes a diagonal matrix for <span class="math notranslate nohighlight">\(M\)</span> which is
+estimated using the burn-in samples collected at the start of the
+algorithm.</p></li>
+<li><p>Stan uses reverse-mode automatic differentiation to compute the
+Hamiltonian gradient.
+:::</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><span id="id19">Santoro and Cartus [<a class="reference internal" href="../reference.html#id36" title="Maurizio Santoro and Oliver Cartus. Esa biomass climate change initiative (biomass_cci): global datasets of forest above-ground biomass for the years 2010, 2017 and 2018, v3. 2021. URL: https://catalogue.ceda.ac.uk/uuid/5f331c418e9f4935b8eb1b836f8a91b8, doi:10.5285/5F331C418E9F4935B8EB1B836F8A91B8.">2021</a>]</span></p>
+</aside>
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Sistema de Estimativas de Emissões e Remoções de Gases de Efeito
+Estufa. Available in http://seeg.eco.br/.</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
+<p>In contrast to other areas in Brazil, average value of slaughter
+per hectare of pasture in the Amazon, decreased between 2006 and
+2017, making it doubtful that future productivity will increase.</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">5</a><span class="fn-bracket">]</span></span>
+<p>Commodity prices from SEAB-PR. Secretaria da Agricultura e do
+Abastecimento do Estado do Paraná (SEAB-PR). 2021. “Preço Médio -
+Recebido pelo Agricultor: boi gordo, arroz (em casca),
+cana-de-açúcar, milho, mandioca, 1990-2021.” Secretaria da
+Agricultura e do Abastecimento do Estado do Paraná, Departamento de
+Economia Rural [publisher], Instituto de Pesquisa Econômica
+Aplicada, Ministério da Economia [distributor].
+http://www.ipeadata.gov.br (accessed February 22, 2021)</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">6</a><span class="fn-bracket">]</span></span>
+<p>Since period-payoff can be bounded by a constant, given the
+discount rates we use, the loss in precision for trajectories in the
+first 30 years, which is our period of interest, is small.</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">7</a><span class="fn-bracket">]</span></span>
+<p>We standardize the regressors prior to the posterior estimation.</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">8</a><span class="fn-bracket">]</span></span>
+<p>We again standardize the regressors.</p>
+</aside>
+</aside>
+</section>
 </section>
 </section>
 
@@ -395,22 +1426,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../conclusion/conclusion.html"
+       href="../reference.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Conclusions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../reference.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Reference</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -428,7 +1450,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">D.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-construction">Data construction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-available-area">Total available area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-absorption">Carbon absorption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbon-depreciation">Carbon depreciation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emissions-contributed-by-agriculture">Emissions contributed by agriculture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cattle-farming-productivities">Cattle farming productivities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discount-rate-delta-and-adjustment-costs-cost-zeta">Discount rate (<span class="math notranslate nohighlight">\(\delta\)</span>) and adjustment costs cost (<span class="math notranslate nohighlight">\(\zeta\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-values-z-i-0-x-i-0">Initial values: <span class="math notranslate nohighlight">\(Z^i_0\)</span>, <span class="math notranslate nohighlight">\(X^i_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agricultural-prices">Agricultural prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-costs">Transfer costs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catalog-of-the-sites">Catalog of the sites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-values-of-xi">Alternative values of <span class="math notranslate nohighlight">\(\xi\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-discretization">Model discretization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-distributions">Benchmark distributions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-s"><span class="math notranslate nohighlight">\(\theta's\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-s"><span class="math notranslate nohighlight">\(\gamma's\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posterior-estimation">Posterior estimation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-implementation-details">Computational implementation details</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
