@@ -32,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
   
@@ -360,7 +361,7 @@ tractable, we have the social planner assume a two state Markov process
 for the price process. We obtained the inputs into this specification by
 estimating a hidden-state Markov process with Gaussian noise as we
 describe in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a>. Of course, this is a rather substantial
+<a class="reference internal" href="../appendix/appendix.html#sec-appendixa"><span class="std std-ref">A.8</span></a>. Of course, this is a rather substantial
 reduction in the price stochastic structure of agricultural prices, but
 it allows to engage in an initial explore of price randomness in a
 tractable way. Under the two-state Markov chain, there are two price
@@ -384,8 +385,10 @@ a constant price gives quite an accurate approximation to the median
 response. In this sense, the stochastic specification for agricultural
 prices only has modest impact on our results. Finally, Table
 <a class="reference internal" href="#tab-valueobjectivedecomposition-78sites-mpc"><span class="std std-ref">Present-value decomposition with stochastic agricultural prices</span></a> in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> exhibits the transfer costs and again these
+<a class="reference internal" href="../appendix/appendix.html#sec-appendixa"><span class="std std-ref">A.8</span></a> exhibits the transfer costs and again these
 show only a modest impact of the presence uncertainty.</p>
+<div class="hint admonition">
+<p class="admonition-title">Table</p>
 <table class="table" id="tab-valueobjectivedecomposition-78sites-mpc">
 <caption><span class="caption-number">Table 6 </span><span class="caption-text">Present-value decomposition with stochastic agricultural prices</span><a class="headerlink" href="#tab-valueobjectivedecomposition-78sites-mpc" title="Link to this table">#</a></caption>
 <thead>
@@ -405,7 +408,7 @@ show only a modest impact of the presence uncertainty.</p>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>b = $0</p></td>
+<tr class="row-odd"><td><p>b=$0</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -433,7 +436,7 @@ show only a modest impact of the presence uncertainty.</p>
 <td><p>0.06</p></td>
 <td><p>2.27</p></td>
 </tr>
-<tr class="row-odd"><td><p>b = $15</p></td>
+<tr class="row-odd"><td><p>b=$15</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -461,7 +464,7 @@ show only a modest impact of the presence uncertainty.</p>
 <td><p>0.19</p></td>
 <td><p>3.00</p></td>
 </tr>
-<tr class="row-odd"><td><p>b = $25</p></td>
+<tr class="row-odd"><td><p>b=$25</p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -519,22 +522,27 @@ show only a modest impact of the presence uncertainty.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <br>
 <br>
-<p><strong>Remark 1</strong>. <em>One possible way to amplify the models impact of making
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 9 </span></p>
+<section class="remark-content" id="proof-content">
+<p>One possible way to amplify the models impact of making
 agricultural prices stochastic is to introduce specification uncertainty
 into the analysis. <span id="id3">Anderson <em>et al.</em> [<a class="reference internal" href="../reference.html#id2" title="Evan W Anderson, Lars Peter Hansen, and Thomas J Sargent. A quartet of semigroups for model specification, robustness,prices of risk, and model detection. Journal of the European Economic Association, 1:68-123, 2003. doi:10.4324/9780203358061.">2003</a>]</span> propose a recursive way to make this
 adjustment by using a relative entropy divergence to form penalties that
 limit the potential misspecifications that are explored by the planner.
 Thus the MPC approach could potentially be extended to incorporate this
-extension, opening the door to greater adjustments for uncertainty.</em></p>
-<br>
+extension, opening the door to greater adjustments for uncertainty.</p>
+</section>
+</div><br>
 <hr style="height:4px; background-color:black; border:none;">
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
-<p>Appendix <a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> gives results for a second estimation of
+<p>Appendix <a class="reference internal" href="../appendix/appendix.html#sec-appendixa"><span class="std std-ref">A.8</span></a> gives results for a second estimation of
 the hidden-state Markov process in which Gaussian shock variances
 are constrained to be the same. In this case, both realized states
 are lower and most of the time is spent in the higher of the two
@@ -546,7 +554,7 @@ states.</p>
 agricultural prices are stochastic, we used the smoothed
 probabilities reported in left panel of Figure
 [15] in Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">A.8</span></a> to assign the discrete states in our
+<a class="reference internal" href="../appendix/appendix.html#sec-appendixa"><span class="std std-ref">A.8</span></a> to assign the discrete states in our
 computations. While we used a probability .5 threshold for this
 assignment, many of the probabilities are actually close to zero or
 one.</p>

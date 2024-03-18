@@ -32,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
   
@@ -433,13 +434,17 @@ the baseline distribution. With this restriction, it suffices to focus
 on alternative distributions to the baseline specification for the
 regression coefficients. This simplifies substantially the numerical
 computations.</p>
-<p><strong>Remark 1</strong>. <em>An interesting extension could include a probabilistic
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>An interesting extension could include a probabilistic
 specification of heterogeneity in the productivity parameters not
 captured by the regression formulation. This would add to the
 computational burden as the sensitivity analysis would be over a
 substantially larger space and would require a plausible probability
-specification of the unobserved heterogeneity.</em></p>
-<p>Given the vector of regression parameters, <span class="math notranslate nohighlight">\(\beta,\)</span> in a set,
+specification of the unobserved heterogeneity.</p>
+</section>
+</div><p>Given the vector of regression parameters, <span class="math notranslate nohighlight">\(\beta,\)</span> in a set,
 <span class="math notranslate nohighlight">\({\mathcal B},\)</span> we write <span class="math notranslate nohighlight">\(f(d, \beta)\)</span> for the discounted utility
 obtained from a sequence of decisions <span class="math notranslate nohighlight">\(d\)</span> with implied productivity
 parameters given by formula
@@ -478,7 +483,10 @@ determines the strength of this tilt. We shall refer to limiting
 decision problem uses the familiar expected utility objective:</p>
 <div class="math notranslate nohighlight">
 \[\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta).\]</div>
-<p><strong>Remark 2</strong>. <em>The minimized objective given by
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 6 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The minimized objective given by
 <a class="reference internal" href="#equation-minimized-objective">(8)</a> is a special case of a smooth ambiguity
 objective, first suggested by <span id="id5">Klibanoff <em>et al.</em> [<a class="reference internal" href="../reference.html#id4" title="Peter Klibanoff, Massimo Marinacci, and Sujoy Mukerji. A smooth model of decision making under uncertainty. Econometrica, 73:1849-1892, 2005.">2005</a>]</span>. They
 deduced a rationale for an ambiguity adjustment represented using a
@@ -486,38 +494,44 @@ concave function distinct from the one used for expressing risk
 aversion. While they take such a concave adjustment to be a starting
 point, we deduce a logarithmic-exponential representation from a
 starting point motivated by robustness. Thus their axiomatic motivation
-is different from the distributional robustness that interests us.</em></p>
-<p id="conjugate"><strong>Remark 3</strong>. <em>As posed, the minimization is over the marginal posterior
+is different from the distributional robustness that interests us.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<span id="conjugate"></span><p class="admonition-title"><span class="caption-number">Remark 7 </span></p>
+<section class="remark-content" id="proof-content">
+<p>As posed, the minimization is over the marginal posterior
 for the regression coefficients. With relative entropy divergence, we
 may equivalently solve the minimization problem using the relative
 entropy divergence over the conditional posterior distribution for the
 regression coefficients and the marginal posterior for the
 regression-error variances. We use this observation in our actual
-calculations to simplify our algorithmic implementation.</em></p>
+calculations to simplify our algorithmic implementation.</p>
+</section>
+</div><br>
 <p>Given the parameter ambiguity adjustment, the implied decision problem
 is a two-player zero-sum game. If we constraint the decision process <span class="math notranslate nohighlight">\(d\)</span>
 to a convex set <span class="math notranslate nohighlight">\({\mathcal D}.\)</span></p>
-<p id="prob-primal"><strong>Problem 4</strong>.</p>
+<p id="prob-primal"><strong>Problem 1</strong></p>
 <div class="math notranslate nohighlight">
 \[\max_{d \in {\mathcal D}} \min_{g \ge 0, \int g d\pi = 1}   \int_{\mathcal B} f({ d},  { \beta} )   g(\beta) d\pi(\beta) 
 + \xi \int_{\mathcal B} \log g(\beta ) g({\beta}) d\pi(\beta) .\]</div>
 <p>For conceptual reasons, we switch order of maximization and
 minimization.</p>
-<p id="prob-reverse"><strong>Problem 5</strong>.</p>
+<p id="prob-reverse"><strong>Problem 2</strong></p>
 <div class="math notranslate nohighlight">
 \[\min_{g \ge 0 , \int g d\pi = 1} \max_{ d \in {\mathcal D}}  \int_{\mathcal B} f({ d},  { \beta} )   g({\beta }) d\pi(\beta ) 
 + \xi \int \log g(\beta ) g({ \beta }) d\pi( \beta ) .\]</div>
 <p>Under quite general conditions we may invoke the Max-min Theorem and
 claim that the objective for Problems
-<a class="reference internal" href="#prob-primal">4</a> and
-<a class="reference internal" href="#prob-reverse">5</a> will
+<a class="reference internal" href="#prob-primal">1</a> and
+<a class="reference internal" href="#prob-reverse">2</a> will
 be same and the minimizing <span class="math notranslate nohighlight">\(g\)</span> evaluated at the maximized <span class="math notranslate nohighlight">\(d\)</span> for the
-Problem <a class="reference internal" href="#prob-primal">4</a>
+Problem <a class="reference internal" href="#prob-primal">1</a>
 will agree with the minimizing <span class="math notranslate nohighlight">\(g\)</span> from Problem
-<a class="reference internal" href="#prob-reverse">5</a>.
+<a class="reference internal" href="#prob-reverse">2</a>.
 Similarly, the optimized decision processes will agree.</p>
 <p>Consider the inner maximization for Problem
-<a class="reference internal" href="#prob-reverse">5</a>:</p>
+<a class="reference internal" href="#prob-reverse">2</a>:</p>
 <div class="math notranslate nohighlight">
 \[\max_{\boldsymbol{d}}  \int_{\mathcal B} f({ d},  {\beta} )   g({\beta}) d\pi(\beta)\]</div>
 <p>where we are free to drop the relative entropy penalty as it does not
@@ -548,7 +562,7 @@ axiomatic perspective.</p>
 <aside class="footnote brackets" id="id12" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>See Appendix
-<a class="reference internal" href="#appendixA"><span class="xref myst">baseline distribution</span></a> for details</p>
+<a class="reference internal" href="../appendix/appendix.html#sec-appendixa"><span class="std std-ref">baseline distribution</span></a> for details</p>
 </aside>
 <aside class="footnote brackets" id="id13" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>

@@ -32,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
   
@@ -414,7 +415,7 @@ years as in <span id="id4">Heinrich <em>et al.</em> [<a class="reference interna
 that <span class="math notranslate nohighlight">\(100[1 - \exp(-\alpha100)]= 99\%\)</span>. Notice that, holding constant
 the deforested area, the amount of carbon in a site converges to
 <span class="math notranslate nohighlight">\(\gamma^i\)</span> per hectare of remaining forest. In Remark
-<a class="reference internal" href="#rem:cs"><span class="xref myst">3</span></a>{reference-type=”ref” reference=”rem:cs”}, we argue that at
+<a class="reference internal" href="#rem-cs">3</a>, we argue that at
 the optimum, one of the controls is always zero, which introduces
 additional binding constraints into the analysis. We write this
 constraint as: <span class="math notranslate nohighlight">\(U^i_tV^i_t=0\)</span>.</p>
@@ -466,13 +467,20 @@ attributed by the planner to emission and any monetary transfers
 obtained from others, such as sales in carbon emission markets. In the
 computations that follow, we take this price to be fixed over time, but
 in future work we intend <span class="math notranslate nohighlight">\(P^e\)</span> to fluctuate over time.</p>
-<p><strong>Remark 1</strong>. <em>The objective function
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The objective function
 <a class="reference internal" href="#equation-eq-pogo">(5)</a> values
 agricultural output by the value of sales, thus assuming that inputs to
 production have no alternative use. This choice is dictated by a lack of
 data on the cost of attracting or redeploying agricultural inputs, but
-it biases the results in favor of agricultural use.</em></p>
-<p><strong>Remark 2</strong>. <em>The only explicit interaction across sites in objective
+it biases the results in favor of agricultural use.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The only explicit interaction across sites in objective
 function <a class="reference internal" href="#equation-eq-pogo">(5)</a>
 occurs through the adjustment costs. This interaction is intended to be
 the result of a less than perfectly elastic supply of resources needed
@@ -481,8 +489,12 @@ sites are spatially related by their similarity in productivities for
 alternative ways to use the land. A more complex model would introduce
 interactions across sites via non-linearities in the valuation of
 agricultural output and/or emissions, an extension worthy of exploration
-in future work.</em></p>
-<p><strong>Remark 3</strong>. <em>To show that the controls <span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t\)</span> satisfy the
+in future work.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<span id="rem-cs"></span><p class="admonition-title"><span class="caption-number">Remark 3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>To show that the controls <span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t\)</span> satisfy the
 complementary slackness condition <span class="math notranslate nohighlight">\(U^i_tV^i_t=0\)</span> for each pair <span class="math notranslate nohighlight">\((i,t),\)</span>
 it is easier to consider a discrete-time model. The proof for the
 analogous result for the continuous-time case goes through by taking
@@ -496,8 +508,12 @@ stationary solution. This in turn implies that the <em>sum</em> of future
 emissions would increase by <span class="math notranslate nohighlight">\(\gamma^i \Delta.\)</span> However since the rate of
 discount is positive, the value of the problem would increase. Thus, an
 optimal solution cannot involve simultaneously positive values for
-<span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t.\)</span></em></p>
-<p><strong>Remark 4</strong>. <em>Optimization problem
+<span class="math notranslate nohighlight">\(U^i_t\)</span> and <span class="math notranslate nohighlight">\(V^i_t.\)</span></p>
+</section>
+</div><div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Optimization problem
 <a class="reference internal" href="#equation-eq-pogo">(5)</a> does not
 involve the stocks of (extended) carbon in the atmosphere generated by
 activities in the Amazon biome. However, given emission trajectories
@@ -505,8 +521,9 @@ from the optimal solution, one could use geo-science inputs to inform
 the mapping of emissions from the Brazilian Amazon and elsewhere into
 carbon in the atmosphere to compute the impact on the evolution of
 carbon stocks. This would require a much more comprehensive model that
-is beyond the scope of this particular exercise.</em></p>
-<br>
+is beyond the scope of this particular exercise.</p>
+</section>
+</div><br>
 <hr style="height:4px; background-color:black; border:none;">
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
