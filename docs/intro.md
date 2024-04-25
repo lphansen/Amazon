@@ -50,7 +50,7 @@ Evolution of the land allocation for Brazilian Amazon until Year 2050
     - [with robustness to parameter uncertainty](results/HMC.ipynb)
     - [with stochastic variation in agricultural prices](results/MPC.ipynb) -->
 
-## Table of contents
+<!-- ## Table of contents
 1. [Introduction](introduction/introduction.md)
 2. [Related Substantive Literature](literature/literature.md)
 3. [Model](model/model.md)
@@ -66,5 +66,5 @@ Evolution of the land allocation for Brazilian Amazon until Year 2050
     - [Results with robustness to parameter uncertainty](results/HMC.md)
     - [Results with stochastic variation in agricultural prices](results/MPC.md)
 8. [Conclusions](conclusion/conclusion.md)
-
+ -->
 
