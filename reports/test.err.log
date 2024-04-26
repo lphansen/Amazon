@@ -1,0 +1,164 @@
+Traceback (most recent call last):
+  File "/home/pengyu/.local/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/software/python-anaconda-2022.05-el8-x86_64/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import ipywidgets as widgets
+from IPython.display import display, HTML
+from IPython.display import display, Math, Latex
+root_folder='/project/lhansen/HMC_book/Amazon'
+os.chdir(root_folder)
+
+def rename(df):
+    df.columns=['Pa','Pe','b','agricultural output','net transfers','forest services','adjustment costs','planner value']
+    # Define the custom values for the first row
+    custom_values = ['($)'] + ['($)'] + ['($)'] + ['($10^11)'] * (len(df.columns) - 3)
+    
+    # Create a new DataFrame for the new row with the custom values
+    new_row = pd.DataFrame([custom_values], columns=df.columns)
+    
+    # Concatenate this new row to the top of the existing DataFrame
+    df = pd.concat([new_row, df], ignore_index=True)
+    
+    return df
+# Example DataFrames for Model A and Model B
+df_det_1043 = pd.read_csv(os.getcwd()+'/data/1043site/det/pv_41.11.csv')
+df_det_1043 = rename(df_det_1043)
+# df_det_78_41 = pd.read_csv('data/78site/det/pv_41.11.csv')
+# df_det_78_35 = pd.read_csv('data/78site/det/pv_35.71.csv')
+# df_det_78_44 = pd.read_csv('data/78site/det/pv_44.26.csv')
+# df_det_78 = pd.concat([df_det_78_35, df_det_78_41, df_det_78_44], ignore_index=True)
+df_det_78 = pd.read_csv(os.getcwd()+'/data/78site/det/pv_41.11.csv')
+df_det_78 = rename(df_det_78)
+df_xi1 = pd.read_csv(os.getcwd()+'/data/78site/hmc/pv_xi1.csv')
+df_xi1 = rename(df_xi1)
+df_xi2 = pd.read_csv(os.getcwd()+'/data/78site/hmc/pv_xi2.csv')
+df_xi2 = rename(df_xi2)
+df_mpc=pd.read_csv(os.getcwd()+'/data/78site/mpc/mpc.csv',na_filter=False)
+
+
+def create_df_widget(df,subtitle):
+    """Utility function to create a widget for displaying a DataFrame with centered cells."""
+    # Define CSS to center text in table cells
+    style = """
+    <style>
+        .dataframe td, .dataframe th {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .dataframe thead th {
+            background-color: #f2f2f2;  # Light gray background in the header
+        }
+    </style>
+    """
+    html = style + df.to_html(index=False)
+    html_widget = widgets.HTML(value=html)  # Use ipywidgets.HTML here
+    subtitle_widget = widgets.Label(value=subtitle, layout=widgets.Layout(justify_content='center'))
+    out = widgets.VBox([subtitle_widget, html_widget], layout={'border': '1px solid black'})
+    return out
+
+
+
+
+# Tab widget to hold different models
+tab = widgets.Tab()
+children = [create_df_widget(df_det_1043,'Present-value decomposition - 1043 sites'),
+            create_df_widget(df_det_78,'Present-value decomposition - 78 sites'), 
+            create_df_widget(df_xi2,'Present-value decomposition - parameter ambiguity'),
+            create_df_widget(df_xi1,'Present-value decomposition - parameter ambiguity'),
+            create_df_widget(df_mpc,'Present-value decomposition with stochastic agricultural prices')]
+tab.children = children
+for i, title in enumerate(['1043site ξ = ∞ ','78site ξ = ∞ ', '78site ξ = 2','78site ξ = 1','78site Pa stochastic']):
+    tab.set_title(i, title)
+
+# Display the tab widget
+tab.selected_index = 1
+display(tab)
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [8][0m, in [0;36m<cell line: 21>[0;34m()[0m
+[1;32m     19[0m     [38;5;28;01mreturn[39;00m df
+[1;32m     20[0m [38;5;66;03m# Example DataFrames for Model A and Model B[39;00m
+[0;32m---> 21[0m df_det_1043 [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[43mos[49m[38;5;241;43m.[39;49m[43mgetcwd[49m[43m([49m[43m)[49m[38;5;241;43m+[39;49m[38;5;124;43m'[39;49m[38;5;124;43m/data/1043site/det/pv_41.11.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m     22[0m df_det_1043 [38;5;241m=[39m rename(df_det_1043)
+[1;32m     23[0m [38;5;66;03m# df_det_78_41 = pd.read_csv('data/78site/det/pv_41.11.csv')[39;00m
+[1;32m     24[0m [38;5;66;03m# df_det_78_35 = pd.read_csv('data/78site/det/pv_35.71.csv')[39;00m
+[1;32m     25[0m [38;5;66;03m# df_det_78_44 = pd.read_csv('data/78site/det/pv_44.26.csv')[39;00m
+[1;32m     26[0m [38;5;66;03m# df_det_78 = pd.concat([df_det_78_35, df_det_78_41, df_det_78_44], ignore_index=True)[39;00m
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py:948[0m, in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m
+[1;32m    935[0m kwds_defaults [38;5;241m=[39m _refine_defaults_read(
+[1;32m    936[0m     dialect,
+[1;32m    937[0m     delimiter,
+[0;32m   (...)[0m
+[1;32m    944[0m     dtype_backend[38;5;241m=[39mdtype_backend,
+[1;32m    945[0m )
+[1;32m    946[0m kwds[38;5;241m.[39mupdate(kwds_defaults)
+[0;32m--> 948[0m [38;5;28;01mreturn[39;00m [43m_read[49m[43m([49m[43mfilepath_or_buffer[49m[43m,[49m[43m [49m[43mkwds[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py:611[0m, in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    608[0m _validate_names(kwds[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mnames[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+[1;32m    610[0m [38;5;66;03m# Create the parser.[39;00m
+[0;32m--> 611[0m parser [38;5;241m=[39m [43mTextFileReader[49m[43m([49m[43mfilepath_or_buffer[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m)[49m
+[1;32m    613[0m [38;5;28;01mif[39;00m chunksize [38;5;129;01mor[39;00m iterator:
+[1;32m    614[0m     [38;5;28;01mreturn[39;00m parser
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1448[0m, in [0;36mTextFileReader.__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m   1445[0m     [38;5;28mself[39m[38;5;241m.[39moptions[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m] [38;5;241m=[39m kwds[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m]
+[1;32m   1447[0m [38;5;28mself[39m[38;5;241m.[39mhandles: IOHandles [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[0;32m-> 1448[0m [38;5;28mself[39m[38;5;241m.[39m_engine [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_engine[49m[43m([49m[43mf[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mengine[49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1705[0m, in [0;36mTextFileReader._make_engine[0;34m(self, f, engine)[0m
+[1;32m   1703[0m     [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m mode:
+[1;32m   1704[0m         mode [38;5;241m+[39m[38;5;241m=[39m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m
+[0;32m-> 1705[0m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;241m=[39m [43mget_handle[49m[43m([49m
+[1;32m   1706[0m [43m    [49m[43mf[49m[43m,[49m
+[1;32m   1707[0m [43m    [49m[43mmode[49m[43m,[49m
+[1;32m   1708[0m [43m    [49m[43mencoding[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mencoding[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[1;32m   1709[0m [43m    [49m[43mcompression[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mcompression[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[1;32m   1710[0m [43m    [49m[43mmemory_map[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mmemory_map[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[43m,[49m
+[1;32m   1711[0m [43m    [49m[43mis_text[49m[38;5;241;43m=[39;49m[43mis_text[49m[43m,[49m
+[1;32m   1712[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mencoding_errors[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mstrict[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[1;32m   1713[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstorage_options[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[1;32m   1714[0m [43m[49m[43m)[49m
+[1;32m   1715[0m [38;5;28;01massert[39;00m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[1;32m   1716[0m f [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhandles[38;5;241m.[39mhandle
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/io/common.py:863[0m, in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    858[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(handle, [38;5;28mstr[39m):
+[1;32m    859[0m     [38;5;66;03m# Check whether the filename is to be opened in binary mode.[39;00m
+[1;32m    860[0m     [38;5;66;03m# Binary mode does not support 'encoding' and 'newline'.[39;00m
+[1;32m    861[0m     [38;5;28;01mif[39;00m ioargs[38;5;241m.[39mencoding [38;5;129;01mand[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m ioargs[38;5;241m.[39mmode:
+[1;32m    862[0m         [38;5;66;03m# Encoding[39;00m
+[0;32m--> 863[0m         handle [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m
+[1;32m    864[0m [43m            [49m[43mhandle[49m[43m,[49m
+[1;32m    865[0m [43m            [49m[43mioargs[49m[38;5;241;43m.[39;49m[43mmode[49m[43m,[49m
+[1;32m    866[0m [43m            [49m[43mencoding[49m[38;5;241;43m=[39;49m[43mioargs[49m[38;5;241;43m.[39;49m[43mencoding[49m[43m,[49m
+[1;32m    867[0m [43m            [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[1;32m    868[0m [43m            [49m[43mnewline[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    869[0m [43m        [49m[43m)[49m
+[1;32m    870[0m     [38;5;28;01melse[39;00m:
+[1;32m    871[0m         [38;5;66;03m# Binary mode[39;00m
+[1;32m    872[0m         handle [38;5;241m=[39m [38;5;28mopen[39m(handle, ioargs[38;5;241m.[39mmode)
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/project/lhansen/HMC_book/Amazon/data/1043site/det/pv_41.11.csv'
+FileNotFoundError: [Errno 2] No such file or directory: '/project/lhansen/HMC_book/Amazon/data/1043site/det/pv_41.11.csv'
+
