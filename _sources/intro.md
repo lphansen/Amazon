@@ -9,12 +9,16 @@ Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman
 
 <br>
 
-This website provides a series of online texts for *Carbon prices and forest preservation over space and time in the Brazilian Amazon* by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman. 
+## Overview
+This notebook illustrates and explains the code used to solve the model from the paper *Carbon prices and forest preservation over space and time in the Brazilian Amazon* by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman. 
 <br>
 <br>
-The paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>.
+The latest version of the paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>. The calibrated data used for computation can be 
+downloaded <a href = "https://www.dropbox.com/scl/fo/zqq5pgq3mxe4fe36qfxss/ACdW3YtoFKPeCxX9HuoLa0Q?rlkey=1nyvfmlkk8y2g0rt4recxb256&st=ms0u10hz&dl=0">here</a>. 
+<!-- and further details about data cleaning are documented in this <a href = "https://github.com/patohdzs/amazon-carbon-prices">website</a>. -->
 
 
+<!-- 
 ## Abstract
 Deforestation for cattle ranching in the Brazilian Amazon emits carbon,
 and reforestation absorbs carbon. The social productivities for these alternative activities vary across locations. We analyze a spatial/dynamic model of
@@ -23,7 +27,7 @@ prices as stochastic and location-specific productivities as uncertain when asse
 Modest price increases would incentivize Brazil to choose policies that capture
 a significant amount of greenhouse gases in the next 30 years. Our analysis
 pinpoints tropical forest management as an important contributor to climate
-change mitigation.
+change mitigation. -->
 
 <!-- 
 ```{image} biome.png
@@ -33,11 +37,11 @@ change mitigation.
 :align: center
 ``` -->
 
-```{figure} movie_1043site.gif
+<!-- ```{figure} movie_1043site.gif
 :name: evolution-gif
 
 Evolution of the land allocation for Brazilian Amazon until Year 2050
-```
+``` -->
 
 <!-- 1. [Introduction]()
     - [Background](introduction/background.ipynb)
@@ -51,7 +55,15 @@ Evolution of the land allocation for Brazilian Amazon until Year 2050
     - [with stochastic variation in agricultural prices](results/MPC.ipynb) -->
 
 ## Table of contents
-1. [Introduction](introduction/introduction.md)
+1. [Baseline distribution](baseline/baseline.ipynb)
+2. [Solution with parameter ambiguity neutrality](solution/det.ipynb)
+3. [Solution with parameter ambiguity aversion](solution/hmc.ipynb)
+4. [Solution with price stochasticity](solution/mpc.ipynb)
+5. [Data calibration](baseline/calibration.ipynb)
+6. [Environment settings](solution/envir.ipynb)
+
+
+<!-- 1. [Introduction](introduction/introduction.md)
 2. [Related Substantive Literature](literature/literature.md)
 3. [Model](model/model.md)
 4. [Parameter uncertainty](uncertainty/uncertainty.md)
@@ -65,6 +77,6 @@ Evolution of the land allocation for Brazilian Amazon until Year 2050
     - [Results for case without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
     - [Results with robustness to parameter uncertainty](results/HMC.ipynb)
     - [Results with stochastic variation in agricultural prices](results/MPC.ipynb)
-8. [Conclusions](conclusion/conclusion.md)
+8. [Conclusions](conclusion/conclusion.md) -->
 
 

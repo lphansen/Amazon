@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5. Data calibration &#8212; Amazon project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'baseline/calibration';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../_static/mfr.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Environment settings" href="../solution/envir.html" />
+    <link rel="prev" title="4. Solution with price stochasticity" href="../solution/mpc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mfr.png" class="logo__image only-light" alt="Amazon project - Home"/>
+    <script>document.write(`<img src="../_static/mfr.png" class="logo__image only-dark" alt="Amazon project - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Carbon prices and forest preservation over space and time in the Brazilian Amazon</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">1. Baseline distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../solution/det.html">2. Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../solution/hmc.html">3. Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../solution/mpc.html">4. Solution with price stochasticity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Data calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../solution/envir.html">6. Environment settings</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/lphansen/Amazon/live?urlpath=tree/docs/baseline/calibration.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/lphansen/Amazon/blob/live/docs/baseline/calibration.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lphansen/Amazon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lphansen/Amazon/edit/live/docs/baseline/calibration.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lphansen/Amazon/issues/new?title=Issue%20on%20page%20%2Fbaseline/calibration.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/baseline/calibration.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data calibration</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-extent">5.1. Geographic Extent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-variations">5.2. Model Variations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sites">5.2.1. 1043 sites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2.2. 78 sites</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-and-initial-conditions">5.3. Parameters and Initial Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-i-0-and-bar-z-i">5.3.1. <span class="math notranslate nohighlight">\(Z^i_0\)</span> and <span class="math notranslate nohighlight">\(\bar{z^i}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-i">5.3.2. <span class="math notranslate nohighlight">\(\gamma^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha">5.3.3. <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-0-i">5.3.4. <span class="math notranslate nohighlight">\(X_0^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kappa">5.3.5. <span class="math notranslate nohighlight">\(\kappa\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-i">5.3.6. <span class="math notranslate nohighlight">\(\theta^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta">5.3.7. <span class="math notranslate nohighlight">\(\zeta\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">5.4. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.6. References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-calibration">
+<h1><span class="section-number">5. </span>Data calibration<a class="headerlink" href="#data-calibration" title="Link to this heading">#</a></h1>
+<hr style="height:4px; background-color:black; border:none;">
+<br><p>This section explains the calibration procedure of the model’s parameters. It describes the processing steps, data sources, and relevant references.</p>
+<section id="geographic-extent">
+<h2><span class="section-number">5.1. </span>Geographic Extent<a class="headerlink" href="#geographic-extent" title="Link to this heading">#</a></h2>
+<p>Brazilian Amazon Biome as defined in IBGE (2019), with a total area of 421,274,200 hectares.</p>
+</section>
+<section id="model-variations">
+<h2><span class="section-number">5.2. </span>Model Variations<a class="headerlink" href="#model-variations" title="Link to this heading">#</a></h2>
+<section id="sites">
+<h3><span class="section-number">5.2.1. </span>1043 sites<a class="headerlink" href="#sites" title="Link to this heading">#</a></h3>
+<p>Regular grid of 1,043 sites with ∼ 67.5km x 67.5km resolution (67.5km-sites) covering the Brazilian Amazon Biome. The aggregation process consisted of three steps:</p>
+<ol class="arabic simple">
+<li><p>We rasterized the Amazon Biome using the MapBiomas grid (Souza et al. 2020), with pixels of ∼ 30m x 30m resolution (30m-pixels), as the baseline (to guarantee a perfect spatial overlap between the sites and the MapBiomas data).</p></li>
+<li><p>We aggregated the Amazon grid by a factor of 2,250. Considering the top-left corner as the origin,
+approximately every combination of 2,250 x 2,250 30m-pixels becomes one of the 67.5km-sites (grid
+of 37x51 67.5km-sites).</p></li>
+<li><p>From the 1,887 67.5km-sites, we selected the 1,043 sites with at least 3% of their area inside the
+biome.</p></li>
+</ol>
+</section>
+<section id="id1">
+<h3><span class="section-number">5.2.2. </span>78 sites<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Regular grid of 78 sites with ∼ 270km x 270km resolution (270km-sites) covering the Brazilian Amazon Biome. The aggregation process consisted of two steps:</p>
+<ol class="arabic simple">
+<li><p>We further aggregated the grid of 37x51 67.5km-sites by a factor of 4. Considering the topleft corner as the origin, approximately every combination of 4x4 67.5km-sites becomes one of
+the 270km-sites. As 37/4 and 51/4 do not return an integer, the extent of the resulting grid is
+somewhat larger (grid of 10x13 270km-sites).</p></li>
+<li><p>From the 130 270km-sites, we selected the 78 sites with at least 3% of their area inside the biome</p></li>
+</ol>
+</section>
+</section>
+<section id="parameters-and-initial-conditions">
+<h2><span class="section-number">5.3. </span>Parameters and Initial Conditions<a class="headerlink" href="#parameters-and-initial-conditions" title="Link to this heading">#</a></h2>
+<section id="z-i-0-and-bar-z-i">
+<h3><span class="section-number">5.3.1. </span><span class="math notranslate nohighlight">\(Z^i_0\)</span> and <span class="math notranslate nohighlight">\(\bar{z^i}\)</span><a class="headerlink" href="#z-i-0-and-bar-z-i" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>We aggregated the MapBiomas land use/cover 30m-pixels (Souza et al. 2020) to the 67.5km-sites
+calculating the area (in hectares) of the 67.5km-sites with forest cover and agricultural use in 2017.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z^i_0\)</span> is defined as the area with agricultural use for each site <span class="math notranslate nohighlight">\(i\)</span> in 2017, while <span class="math notranslate nohighlight">\(\bar{z^i}\)</span> is the total land available in 2017 (sum of the area with agricultural use or forest cover).</p></li>
+<li><p>Source: MapBiomas Land Use/Cover Collection 5 (Souza et al. 2020)</p></li>
+</ol>
+</section>
+<section id="gamma-i">
+<h3><span class="section-number">5.3.2. </span><span class="math notranslate nohighlight">\(\gamma^i\)</span><a class="headerlink" href="#gamma-i" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>We extracted a random sample of 1.2 million 30m-pixels from the MapBiomas grid, with land
+cover/use information from 1985-2019.</p></li>
+<li><p>We identified 893,753 pixels that could be considered primary forests in 2018 (with no deforestation, at least since 1985).</p></li>
+<li><p>We added aboveground biomass density data for 2017 from ESA Biomass (Santoro
+and Cartus 2021). Biomass data also comes in a grid format with ∼ 100m resolution, so we
+spatially matched it to our sample and calculated the average CO2 density (Mg/ha) on the
+primary forest pixels within each site for each year.</p></li>
+<li><p>We conducted bayesian estimation using log of average CO2 density as dependent variable and predicted <span class="math notranslate nohighlight">\(\gamma^i\)</span> as expoential of fitted values. The specification is presented below,
+where CO2e ha is the average CO2 density we calculated, rainfall and temperature are the average annual precipitation (mm) and temperature (degrees Celsius),
+respectively, for the period of 1970-2000, and longitude and latitude are the geographical coordinates of the
+municipality centroids. We do the estimation at the level of 1043 sites and <span class="math notranslate nohighlight">\(\nu^i\)</span> is the coarse 78-site each observation belongs to.</p></li>
+<li><p>Source: ESA Biomass (v3) (Santoro and Cartus 2021) and MapBiomas Land Use/Cover Collection 5
+(Souza et al. 2020)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+log(CO2e ha) = \beta^\gamma_{0} 
++ \beta^\gamma_{1} \log(\text{historical_precip}) 
++ \beta^\gamma_{2} \log(\text{historical_temp}) \\
+\quad + \beta^\gamma_{3} \text{latitude} 
++ \beta^\gamma_{4} \text{longitude} 
++ \beta^\gamma_{5} (\text{latitude} \times \text{longitude}) + \nu^i + u_i
+\end{align*}\end{split}\]</div>
+</section>
+<section id="alpha">
+<h3><span class="section-number">5.3.3. </span><span class="math notranslate nohighlight">\(\alpha\)</span><a class="headerlink" href="#alpha" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is the carbon depreciation parameter calculated as <span class="math notranslate nohighlight">\(1-0.01^{1/100}=0.045\)</span></p></li>
+<li><p>We used an approximation, based on Heinrich et al. (2021), of 100 years for the time of convergence
+of the carbon accumulation process. The convergence time depends only on α and the convergence
+threshold (set to 0.99).</p></li>
+<li><p>Assuming the 100 years-period and a convergence threshold of 99%, we set <span class="math notranslate nohighlight">\(\alpha=1-(1-0.99)^{1/100}=0.045\)</span></p></li>
+<li><p>Source: Heinrich et al. (2021)</p></li>
+</ol>
+</section>
+<section id="x-0-i">
+<h3><span class="section-number">5.3.4. </span><span class="math notranslate nohighlight">\(X_0^i\)</span><a class="headerlink" href="#x-0-i" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(X^i_0\)</span> is the stock of CO2e stored in site’s <span class="math notranslate nohighlight">\(i\)</span> forest in 2017: Calculated as <span class="math notranslate nohighlight">\(X^i_0 = \gamma^i*(\bar{z}^i - Z_0^i)\)</span>, assuming
+that all forest at the initial point is primary</p></li>
+<li><p>Source: ESA Biomass (v3) (Santoro and Cartus 2021) and MapBiomas Land Use/Cover Collection 5
+(Souza et al. 2020)</p></li>
+</ol>
+</section>
+<section id="kappa">
+<h3><span class="section-number">5.3.5. </span><span class="math notranslate nohighlight">\(\kappa\)</span><a class="headerlink" href="#kappa" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> is annual emission factor from agricultural use (CO2e/ha).</p></li>
+<li><p>We combined the agricultural net annual emission data at the state level from SEEG (Sistema de
+Estimativas de Emissões e Remoções de Gases de Efeito Estufa) with the agricultural area from
+MapBiomas at the municipal level from 1990 to 2019.</p></li>
+<li><p>Finally, <span class="math notranslate nohighlight">\(\kappa\)</span> is the sum of the net agricultural emission divided by the sum of the agricultural area
+averaged across States from 1990-2019 and weighted by the fraction inside the Amazon Biome.
+Since we only have coarse data at the State level, we set a single value for all sites.</p></li>
+<li><p>Source: SEEG/Observatorio do Clima (De Azevedo et al. 2018); State division aggregated from 2015
+Municipality Division of IBGE (IBGE 2015); Mapbiomas Collection 5 Muni Level (Souza et al. 2020);
+Biomes Division 2019 IBGE (IBGE 2019)</p></li>
+</ol>
+</section>
+<section id="theta-i">
+<h3><span class="section-number">5.3.6. </span><span class="math notranslate nohighlight">\(\theta^i\)</span><a class="headerlink" href="#theta-i" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>We used data at the municipal level from the 2017 and 2006 Agricultural Census on the value of
+cattle sold for slaughter per hectare of pasture.</p></li>
+<li><p>To build a smoother representation of technology and fill in missing values, we used the fitted
+values of the bayesian estimation to get predicted slaughter value per hectare at municipal level(See eq below),
+where slaughter value per hectare is the value of cattle sold per pasture area in 2017 (USD/ha),
+rainfall and temperature are the average annual precipitation (mm) and temperature (degrees Celsius),
+respectively, for the period of 1970-2000, and longitude and latitude are the geographical coordinates of the
+municipality centroids. <span class="math notranslate nohighlight">\(\nu^m\)</span> is the Amazonian water basins the municipality belongs to.</p></li>
+<li><p>To convert from the municipal level to the site level, we calculated a weighted mean of the predicted
+value of this regression, with weights based on the share of the municipal area inside the site and the
+pasture area of the municipality</p></li>
+<li><p>To convert to a productivity parameter, we divide the average predicted value of cattle sold for slaughter
+per hectare of pasture area for each site in 2017 or 2006 (expressed in constant 01/2017 USD) by the
+observed <span class="math notranslate nohighlight">\(\bar{P_t}^a\)</span> (expressed in constant 01/2017 USD) with <span class="math notranslate nohighlight">\(t=2017\)</span> or <span class="math notranslate nohighlight">\(t=2006\)</span></p></li>
+<li><p>Source: 2017 Agricultural Census (IBGE 2017); 2006 Agricultural Census (IBGE 2006); Cattle prices
+from SEAB-PR (SEAB-PR 2021); Historical climate data - WorldClim (Fick and Hijmans 2017)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+log(Slaughter value)= \beta^\theta_{0} + \beta^\theta_{1} (\text{historical_precip}) 
++ \beta^\theta_{2} (\text{historical_temp}) + \beta^\theta_{3} (\text{historical_temp}^2) \\
+\quad + \beta^\theta_{4} (\text{lat}) + \beta^\theta_{5} (\text{lat}^2) 
++ \beta^\theta_{6} \log(\text{cattleSlaughter_farmGatePrice}) 
++ \beta^\theta_{7} (\text{distance}) + \nu^m + u_m
+\end{align*}\end{split}\]</div>
+</section>
+<section id="zeta">
+<h3><span class="section-number">5.3.7. </span><span class="math notranslate nohighlight">\(\zeta\)</span><a class="headerlink" href="#zeta" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span>s are the adjustment cost parameters. <span class="math notranslate nohighlight">\(\zeta_1\)</span> is for deforestation and <span class="math notranslate nohighlight">\(\zeta_2\)</span> for reforestation.</p></li>
+<li><p>To calibrate <span class="math notranslate nohighlight">\(\zeta_1\)</span>, we compute the average marginal cost of
+deforestation implied by our model using data from MapBiomas on annual historical deforestation between 2008 – 2017 (Souza et al., 2020) and match this to the difference in prices for
+forested and clear land (Araújo, Costa and Sant’Anna, 2024). To calibrate <span class="math notranslate nohighlight">\(\zeta_2\)</span>, we compute the
+average marginal cost of natural reforestation using data from MapBiomas on annual historical
+secondary vegetation age (Souza et al., 2020) and match this to natural reforestation costs in
+Benini and Adeodato (2017).</p></li>
+</ol>
+</section>
+</section>
+<section id="code">
+<h2><span class="section-number">5.4. </span>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<p>The calibration code is written in R and is available <a href = "https://github.com/patohdzs/amazon-carbon-prices/tree/fix_bayesian_model/rsrc">here</a>. Please refer to the <code class="docutils literal notranslate"><span class="pre">.Rprofile</span></code> file for the required package dependencies.</p>
+<p>The code is composed of four parts:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cleaning/_masterfile.R</span></code> downloads and loads the raw data, then performs cleaning and filtering to retain only relevant variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processing/_masterfile.R</span></code> aggregates and merges datasets to align their scales, transforming the cleaned data into a format suitable for calibration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calibration/_masterfile.R</span></code> uses the processed data to calibrate the model parameters introduced in this section.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_masterfile_all.R</span></code> provides a convenient one-click solution for external users by automatically executing all steps—cleaning, processing, without requiring manual intervention.</p></li>
+</ol>
+</section>
+<section id="summary">
+<h2><span class="section-number">5.5. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Here is a summary of all the raw data used, sorted by sourse:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>─ raw
+    ├── esa
+    ├── fgv
+    ├── global_forest_watch
+    ├── ibge
+    ├── ipea
+    ├── mapbiomas
+    ├── seabpr
+    ├── seeg
+    ├── worldbank
+    └── worldclim
+</pre></div>
+</div>
+</section>
+<section id="references">
+<h2><span class="section-number">5.6. </span>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Araujo, Rafael, Francisco Costa, and Marcelo Sant’Anna. 2022. “Efficient Forestation in the Brazilian
+Amazon: Evidence from a Dynamic Model.” SocArXiv.</p></li>
+<li><p>De Azevedo, Tasso Rezende, Ciniro Costa Junior, Amintas Brandão Junior, Marcelo dos Santos Cremer,
+Marina Piatto, David Shiling Tsai, Paulo Barreto, et al. 2018. “SEEG Initiative Estimates of Brazilian
+Greenhouse Gas Emissions from 1970 to 2015.” Scientific Data 5 (1): 1–43.</p></li>
+<li><p>Fick, Stephen E, and Robert J Hijmans. 2017. “WorldClim 2: New 1-Km Spatial Resolution Climate
+Surfaces for Global Land Areas.” International Journal of Climatology 37 (12): 4302–15.</p></li>
+<li><p>Heinrich, Viola HA, Ricardo Dalagnol, Henrique LG Cassol, Thais M Rosan, Catherine Torres de Almeida,
+Celso HL Silva Junior, Wesley A Campanharo, et al. 2021. “Large Carbon Sink Potential of Secondary
+Forests in the Brazilian Amazon to Mitigate Climate Change.” Nature Communications 12 (1): 1–11.</p></li>
+<li><p>IBGE. 2006. “Censo Agropecuário: Tabelas 930, 1421.” Instituto Brasileiro de Geografia e Estatística
+(IBGE), Ministério da Economia. Available at: <a class="reference external" href="https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;amp;">https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;</a>
+name=agCensus2006_agUseArea.csv&amp;terr=NC&amp;rank=-&amp;query=t/1421/n6/all/v/184/p/all/c222/
+113466,113467,113468,113469,113470,113471,113472/c12603/0/c12625/0/c472/0/d/v184%202/l/,p%
+2Bc12603%2Bv%2Bc222,t%2Bc12625%2Bc472, <a class="reference external" href="https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;amp;">https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;</a>
+name=agCensus2006_cattleSlaughter.csv&amp;terr=NC&amp;rank=-&amp;query=t/930/n6/all/v/2067,2068/p/all/
+c12645/114291,114292,114293/c218/0/c7940/0/c3244/0/c12517/0/c12625/0/d/v2068%200/l/,c3244%
+2Bp%2Bc12517%2Bc12625%2Bc218%2Bc7940%2Bv,t%2Bc12645. Acessed on: May 5, 2023.</p></li>
+<li><p>IBGE. 2015. “Malhas Muncipais: Shapefile, 2015.” Instituto Brasileiro de Geografia e Estatística
+(IBGE), Ministério da Economia. Archived at: <a class="reference external" href="https://web.archive.org/web/20200916142056/ftp:">https://web.archive.org/web/20200916142056/ftp:</a>
+<a class="reference external" href="//geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_">//geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_</a>
+2015/Brasil/BR/br_municipios.zip. Archived on: September 16, 2020.</p></li>
+<li><p>IBGE. 2017. “Censo Agropecuário: Tabelas 6882, 6911.” Instituto Brasileiro de Geografia e Estatística (IBGE), Ministério da Economia. Available at: <a class="reference external" href="https://sidra.ibge.gov.br/geratabela?format=">https://sidra.ibge.gov.br/geratabela?format=</a>
+us.csv&amp;name=agCensus2017_cattleSold.csv&amp;terr=NC&amp;rank=-&amp;query=t/6911/n6/all/v/9523,9529,
+9743,9749/p/all/c829/46302/c12625/41140/c220/110085/d/v9743%203,v9749%203/l/,p%2Bc829%
+2Bc12625%2Bv,t%2Bc220, <a class="reference external" href="https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;amp;name=agCensus2017_">https://sidra.ibge.gov.br/geratabela?format=us.csv&amp;name=agCensus2017_</a>
+agUseArea.csv&amp;terr=NC&amp;rank=-&amp;query=t/6882/n6/all/v/184/p/all/c829/46302/c222/40677,40678,
+113469,113470,113471,113472/c12771/45951/c830/46427/c220/110085/d/v184%203/l/,p%2Bc829%
+2Bc12771%2Bv%2Bc222,t%2Bc830%2Bc220. Acessed on: May 5, 2023.</p></li>
+<li><p>IBGE. 2019. “Biomas Do Brasil: Shapefile, 2019.” Instituto Brasileiro de Geografia e Estatística (IBGE),
+Ministério da Economia. Archived at: <a class="reference external" href="https://web.archive.org/web/20200916173523/ftp://geoftp.ibge">https://web.archive.org/web/20200916173523/ftp://geoftp.ibge</a>.
+<a class="reference external" href="http://gov.br/informacoes_ambientais/estudos_ambientais/biomas/vetores/Biomas_250mil.zip">gov.br/informacoes_ambientais/estudos_ambientais/biomas/vetores/Biomas_250mil.zip</a>. Archived on:
+September 16, 2020.</p></li>
+<li><p>Santoro, Maurizio, and Oliver Cartus. 2021. “ESA Biomass Climate Change Initiative (Biomass_cci):
+Global Datasets of Forest Above-Ground Biomass for the Years 2010, 2017 and 2018, V3.” NERC EDS
+Centre for Environmental Data Analysis. <a class="reference external" href="https://doi.org/10.5285/5F331C418E9F4935B8EB1B836F8A91B8">https://doi.org/10.5285/5F331C418E9F4935B8EB1B836F8A91B8</a>.</p></li>
+<li><p>SEAB-PR. 2021. “Preço Médio - Recebido Pelo Agricultor: Boi Gordo, Arroz (Em Casca), Cana-de-Açúcar,
+Milho, Mandioca, 1990-2021.” Secretaria da Agricultura e do Abastecimento do Estado do Paraná,
+Departamento de Economia Rural [publisher], Instituto de Pesquisa Econômica Aplicada, Ministério da
+Economia [distributor]. Available at: <a class="reference external" href="http://www.ipeadata.gov.br">http://www.ipeadata.gov.br</a>. Acessed on: February 22, 2021.</p></li>
+<li><p>Souza, Carlos M., Julia Z. Shimbo, Marcos R. Rosa, Leandro L. Parente, Ane A. Alencar, Bernardo F.
+T. Rudorff, Heinrich Hasenack, et al. 2020. “Reconstructing Three Decades of Land Use and Land
+Cover Changes in Brazilian Biomes with Landsat Archive and Earth Engine.” Remote Sensing 12 (17).
+<a class="reference external" href="https://doi.org/10.3390/rs12172735">https://doi.org/10.3390/rs12172735</a>.</p></li>
+</ol>
+<br>
+<hr style="height:4px; background-color:black; border:none;"></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "lphansen/Amazon",
+            ref: "live",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./baseline"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../solution/mpc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Solution with price stochasticity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../solution/envir.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Environment settings</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-extent">5.1. Geographic Extent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-variations">5.2. Model Variations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sites">5.2.1. 1043 sites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2.2. 78 sites</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-and-initial-conditions">5.3. Parameters and Initial Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-i-0-and-bar-z-i">5.3.1. <span class="math notranslate nohighlight">\(Z^i_0\)</span> and <span class="math notranslate nohighlight">\(\bar{z^i}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-i">5.3.2. <span class="math notranslate nohighlight">\(\gamma^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha">5.3.3. <span class="math notranslate nohighlight">\(\alpha\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-0-i">5.3.4. <span class="math notranslate nohighlight">\(X_0^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kappa">5.3.5. <span class="math notranslate nohighlight">\(\kappa\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-i">5.3.6. <span class="math notranslate nohighlight">\(\theta^i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta">5.3.7. <span class="math notranslate nohighlight">\(\zeta\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">5.4. Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">5.6. References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -66,7 +66,7 @@
     <link rel="icon" href="_static/mfr.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="introduction/introduction.html" />
+    <link rel="next" title="1. Baseline distribution" href="baseline/baseline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,36 +179,14 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Carbon prices and forest preservation over space and time in the Brazilian Amazon
-                </a>
-            </li>
-        </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction/introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="literature/literature.html">Related Substantive Literature</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/model.html">Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uncertainty/uncertainty.html">Parameter uncertainty</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration/calibration.html">Productivity measurement</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="solution/solution.html">Solving the maximization problem</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="solution/neutrality.html">Solution with parameter ambiguity neutrality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solution/parameter.html">Solution with parameter ambiguity aversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solution/price.html">Solution with price stochasticity under ambiguity neutrality</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="results/results.html">Results</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="results/shadow_price.html">Shadow prices under business-as-usual</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results/Deterministic.html">Results for case without stochasticity or ambiguity aversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results/HMC.html">Results with robustness to parameter uncertainty</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results/MPC.html">Results with stochastic variation in agricultural prices</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion/conclusion.html">Conclusions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix/appendix.html">Appendix</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Carbon prices and forest preservation over space and time in the Brazilian Amazon</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="baseline/baseline.html">1. Baseline distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution/det.html">2. Solution with parameter ambiguity neutrality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution/hmc.html">3. Solution with parameter ambiguity aversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution/mpc.html">4. Solution with price stochasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline/calibration.html">5. Data calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution/envir.html">6. Environment settings</a></li>
 </ul>
 
     </div>
@@ -421,7 +399,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
             </nav>
@@ -439,20 +417,24 @@ document.write(`
 <p>Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman</p>
 <hr style="height:4px; background-color:black; border:none;">
 <br>
-<p>This website provides a series of online texts for <em>Carbon prices and forest preservation over space and time in the Brazilian Amazon</em> by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman.
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This notebook illustrates and explains the code used to solve the model from the paper <em>Carbon prices and forest preservation over space and time in the Brazilian Amazon</em> by Juliano J Assunção, Lars Peter Hansen, Todd Munson and José A Scheinkman.
 <br>
 <br>
-The paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>.</p>
-<section id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h2>
-<p>Deforestation for cattle ranching in the Brazilian Amazon emits carbon,
+The latest version of the paper can be found <a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4414217">here</a>. The calibrated data used for computation can be
+downloaded <a href = "https://www.dropbox.com/scl/fo/zqq5pgq3mxe4fe36qfxss/ACdW3YtoFKPeCxX9HuoLa0Q?rlkey=1nyvfmlkk8y2g0rt4recxb256&st=ms0u10hz&dl=0">here</a>.</p>
+<!-- and further details about data cleaning are documented in this <a href = "https://github.com/patohdzs/amazon-carbon-prices">website</a>. -->
+<!-- 
+## Abstract
+Deforestation for cattle ranching in the Brazilian Amazon emits carbon,
 and reforestation absorbs carbon. The social productivities for these alternative activities vary across locations. We analyze a spatial/dynamic model of
 efficient land allocation to establish a benchmark for policies. We treat cattle
 prices as stochastic and location-specific productivities as uncertain when assessing the consequences of imposing alternative prices of carbon emissions.
 Modest price increases would incentivize Brazil to choose policies that capture
 a significant amount of greenhouse gases in the next 30 years. Our analysis
 pinpoints tropical forest management as an important contributor to climate
-change mitigation.</p>
+change mitigation. -->
 <!-- 
 ```{image} biome.png
 :alt: fishy
@@ -460,12 +442,11 @@ change mitigation.</p>
 :width: 700px
 :align: center
 ``` -->
-<figure class="align-default" id="evolution-gif">
-<img alt="_images/movie_1043site.gif" src="_images/movie_1043site.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Evolution of the land allocation for Brazilian Amazon until Year 2050</span><a class="headerlink" href="#evolution-gif" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<!-- ```{figure} movie_1043site.gif
+:name: evolution-gif
+
+Evolution of the land allocation for Brazilian Amazon until Year 2050
+``` -->
 <!-- 1. [Introduction]()
     - [Background](introduction/background.ipynb)
     - [Related Substantive Literature](introduction/literature.ipynb)
@@ -480,28 +461,28 @@ change mitigation.</p>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="introduction/introduction.html"><span class="std std-doc">Introduction</span></a></p></li>
-<li><p><a class="reference internal" href="literature/literature.html"><span class="std std-doc">Related Substantive Literature</span></a></p></li>
-<li><p><a class="reference internal" href="model/model.html"><span class="std std-doc">Model</span></a></p></li>
-<li><p><a class="reference internal" href="uncertainty/uncertainty.html"><span class="std std-doc">Parameter uncertainty</span></a></p></li>
-<li><p><a class="reference internal" href="calibration/calibration.html"><span class="std std-doc">Productivity measurement</span></a></p></li>
-<li><p><a class="reference internal" href="solution/solution.html"><span class="std std-doc">Solving the maximization problem</span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="solution/neutrality.html"><span class="std std-doc">Solution with parameter ambiguity neutrality</span></a></p></li>
-<li><p><a class="reference internal" href="solution/parameter.html"><span class="std std-doc">Solution with parameter ambiguity aversion</span></a></p></li>
-<li><p><a class="reference internal" href="solution/price.html"><span class="std std-doc">Solution with price stochasticity under ambiguity neutrality</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="results/results.html"><span class="std std-doc">Results</span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="results/shadow_price.html"><span class="std std-doc">Shadow prices under business-as-usual</span></a></p></li>
-<li><p><a class="reference internal" href="results/Deterministic.html"><span class="std std-doc">Results for case without stochasticity or ambiguity aversion</span></a></p></li>
-<li><p><a class="reference internal" href="results/HMC.html"><span class="std std-doc">Results with robustness to parameter uncertainty</span></a></p></li>
-<li><p><a class="reference internal" href="results/MPC.html"><span class="std std-doc">Results with stochastic variation in agricultural prices</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="conclusion/conclusion.html"><span class="std std-doc">Conclusions</span></a></p></li>
+<li><p><a class="reference internal" href="baseline/baseline.html"><span class="std std-doc">Baseline distribution</span></a></p></li>
+<li><p><a class="reference internal" href="solution/det.html"><span class="std std-doc">Solution with parameter ambiguity neutrality</span></a></p></li>
+<li><p><a class="reference internal" href="solution/hmc.html"><span class="std std-doc">Solution with parameter ambiguity aversion</span></a></p></li>
+<li><p><a class="reference internal" href="solution/mpc.html"><span class="std std-doc">Solution with price stochasticity</span></a></p></li>
+<li><p><a class="reference internal" href="baseline/calibration.html"><span class="std std-doc">Data calibration</span></a></p></li>
+<li><p><a class="reference internal" href="solution/envir.html"><span class="std std-doc">Environment settings</span></a></p></li>
 </ol>
+<!-- 1. [Introduction](introduction/introduction.md)
+2. [Related Substantive Literature](literature/literature.md)
+3. [Model](model/model.md)
+4. [Parameter uncertainty](uncertainty/uncertainty.md)
+5. [Productivity measurement](calibration/calibration.md)
+6. [Solving the maximization problem](solution/solution.md)
+    - [Solution with parameter ambiguity neutrality](solution/neutrality.md)
+    - [Solution with parameter ambiguity aversion](solution/parameter.md)
+    - [Solution with price stochasticity under ambiguity neutrality](solution/price.md)
+7. [Results](results/results.md) 
+    - [Shadow prices under business-as-usual](results/shadow_price.md)
+    - [Results for case without stochasticity or ambiguity aversion](results/Deterministic.ipynb)
+    - [Results with robustness to parameter uncertainty](results/HMC.ipynb)
+    - [Results with stochastic variation in agricultural prices](results/MPC.ipynb)
+8. [Conclusions](conclusion/conclusion.md) -->
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -538,11 +519,11 @@ change mitigation.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="introduction/introduction.html"
+       href="baseline/baseline.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Baseline distribution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -562,7 +543,7 @@ change mitigation.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
 </ul>
   </nav></div>
