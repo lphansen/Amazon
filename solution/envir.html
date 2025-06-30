@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5482a125" />
   
@@ -485,7 +485,7 @@ document.write(`
 <h1><span class="section-number">6. </span>Environment settings<a class="headerlink" href="#environment-settings" title="Link to this heading">#</a></h1>
 <hr style="height:4px; background-color:black; border:none;">
 <br><p>In this section, we outline the computational environment and core tools used throughout the project. Our implementation relies primarily on <span class="math notranslate nohighlight">\(\bf{Stan}\)</span> for Bayesian sampling and <span class="math notranslate nohighlight">\(\bf{Gurobi}\)</span> for solving optimization problems.</p>
-<ul class="simple">
+<ul class="simple" id="sec-stan">
 <li><p><strong>Stan</strong> is a probabilistic programming language designed for statistical modeling and high-performance Bayesian inference. We use it to implement hierarchical models and sample from posterior distributions using Hamiltonian Monte Carlo (HMC) and its No-U-Turn Sampler (NUTS) variant. Here is the link to the tutorial for first time users: <a href = "https://mc-stan.org/install/">https://mc-stan.org/install/</a>.</p></li>
 <li><p><strong>Gurobi</strong> is employed as the primary solver for numerical optimization tasks, particularly when handling high-dimensional or constrained problems. Its efficiency and robustness make it suitable for solving large-scale convex and non-convex formulations. See: <a href = "https://www.gurobi.com/">https://www.gurobi.com/</a>.</p></li>
 </ul>
@@ -522,7 +522,7 @@ document.write(`
 <section id="questions">
 <h2><span class="section-number">6.2. </span>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
 <p>For a full replication of the results in the paper, please refer to the git repository <a href = "https://github.com/patohdzs/amazon-carbon-prices/tree/fix_bayesian_model">here</a>.</p>
-<p>If you have any questions about the website, please contact <a href = "pengyu@uchicago.edu">pengyu&#64;uchicago.edu</a>.</p>
+<p>If you have any questions about the website, please contact the authors.</p>
 <br>
 <hr style="height:4px; background-color:black; border:none;"></section>
 </section>
